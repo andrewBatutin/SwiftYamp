@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A4BF1EE51EEEA967006B075C /* SwiftYampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EE41EEEA967006B075C /* SwiftYampTests.swift */; };
-		A4BF1EE71EEEA967006B075C /* SwiftYamp.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BF1ED91EEEA967006B075C /* SwiftYamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4BF1EF51EEEAA58006B075C /* SwiftYamp.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4BF1EF81EEEAA84006B075C /* BaseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */; };
+		A4BF1EF91EEEAA84006B075C /* BaseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */; };
+		A4BF1EFB1EEEADAA006B075C /* BaseFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +27,13 @@
 
 /* Begin PBXFileReference section */
 		A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4BF1ED91EEEA967006B075C /* SwiftYamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftYamp.h; sourceTree = "<group>"; };
 		A4BF1EDA1EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EDF1EEEA967006B075C /* SwiftYampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftYampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EE41EEEA967006B075C /* SwiftYampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftYampTests.swift; sourceTree = "<group>"; };
 		A4BF1EE61EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftYamp.h; sourceTree = "<group>"; };
+		A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFrame.swift; sourceTree = "<group>"; };
+		A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFrameTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +76,8 @@
 		A4BF1ED81EEEA967006B075C /* SwiftYamp */ = {
 			isa = PBXGroup;
 			children = (
-				A4BF1ED91EEEA967006B075C /* SwiftYamp.h */,
+				A4BF1EF61EEEAA6C006B075C /* Models */,
+				A4BF1EF31EEEAA58006B075C /* Headers */,
 				A4BF1EDA1EEEA967006B075C /* Info.plist */,
 			);
 			path = SwiftYamp;
@@ -82,8 +88,25 @@
 			children = (
 				A4BF1EE41EEEA967006B075C /* SwiftYampTests.swift */,
 				A4BF1EE61EEEA967006B075C /* Info.plist */,
+				A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */,
 			);
 			path = SwiftYampTests;
+			sourceTree = "<group>";
+		};
+		A4BF1EF31EEEAA58006B075C /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		A4BF1EF61EEEAA6C006B075C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +116,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4BF1EE71EEEA967006B075C /* SwiftYamp.h in Headers */,
+				A4BF1EF51EEEAA58006B075C /* SwiftYamp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +172,7 @@
 					A4BF1ED51EEEA967006B075C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JZHM2Q974G;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A4BF1EDE1EEEA967006B075C = {
@@ -198,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BF1EF81EEEAA84006B075C /* BaseFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BF1EFB1EEEADAA006B075C /* BaseFrameTest.swift in Sources */,
+				A4BF1EF91EEEAA84006B075C /* BaseFrame.swift in Sources */,
 				A4BF1EE51EEEA967006B075C /* SwiftYampTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +351,7 @@
 		A4BF1EEB1EEEA967006B075C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
@@ -336,6 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HouseOfRisingSun.SwiftYamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +372,7 @@
 		A4BF1EEC1EEEA967006B075C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
@@ -362,6 +392,7 @@
 		A4BF1EEE1EEEA967006B075C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +405,7 @@
 		A4BF1EEF1EEEA967006B075C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
