@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
-		A4BF1EE51EEEA967006B075C /* SwiftYampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EE41EEEA967006B075C /* SwiftYampTests.swift */; };
 		A4BF1EF51EEEAA58006B075C /* SwiftYamp.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4BF1EF81EEEAA84006B075C /* BaseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */; };
-		A4BF1EF91EEEAA84006B075C /* BaseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */; };
+		A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
+		A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
 		A4BF1EFB1EEEADAA006B075C /* BaseFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +28,9 @@
 		A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EDA1EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EDF1EEEA967006B075C /* SwiftYampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftYampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4BF1EE41EEEA967006B075C /* SwiftYampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftYampTests.swift; sourceTree = "<group>"; };
 		A4BF1EE61EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftYamp.h; sourceTree = "<group>"; };
-		A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFrame.swift; sourceTree = "<group>"; };
+		A4BF1EF71EEEAA84006B075C /* FrameModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameModels.swift; sourceTree = "<group>"; };
 		A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFrameTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +84,6 @@
 		A4BF1EE31EEEA967006B075C /* SwiftYampTests */ = {
 			isa = PBXGroup;
 			children = (
-				A4BF1EE41EEEA967006B075C /* SwiftYampTests.swift */,
 				A4BF1EE61EEEA967006B075C /* Info.plist */,
 				A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */,
 			);
@@ -104,7 +101,7 @@
 		A4BF1EF61EEEAA6C006B075C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A4BF1EF71EEEAA84006B075C /* BaseFrame.swift */,
+				A4BF1EF71EEEAA84006B075C /* FrameModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4BF1EF81EEEAA84006B075C /* BaseFrame.swift in Sources */,
+				A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4BF1EFB1EEEADAA006B075C /* BaseFrameTest.swift in Sources */,
-				A4BF1EF91EEEAA84006B075C /* BaseFrame.swift in Sources */,
-				A4BF1EE51EEEA967006B075C /* SwiftYampTests.swift in Sources */,
+				A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
