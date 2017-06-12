@@ -1,3 +1,3 @@
-## SwiftYaml
+## SwiftYamp
 
-Swift implementation of the [YAML](https://github.com/yyyar/yamp) protocol
+Swift implementation of the [Yamp](https://github.com/yyyar/yamp) protocol
