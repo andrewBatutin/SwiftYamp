@@ -11,25 +11,6 @@ import XCTest
 
 class DeserializerTest: XCTestCase {
     
-    func testFrameTypeDeSerializationSuccsesfyll() {
-        let inputData = Data(bytes: [0x00])
-        let realFrame:BaseFrame = try! deserialize(data: inputData)
-        let expectedFrame:BaseFrame = BaseFrame(type: FrameType.Handshake)
-        XCTAssertEqual(realFrame, expectedFrame)
-    }
-    
-    func testFrameTypeDeSerializationWrongInputDataThorwsError() {
-        let inputData = Data(bytes: [0x99])
-        let realFrame:BaseFrame? = try? deserialize(data: inputData)
-        XCTAssertNil(realFrame)
-    }
-    
-    func testFrameTypeDeSerializationEmptyInputDataThorwsError() {
-        let inputData = Data(bytes: [])
-        let realFrame:BaseFrame? = try? deserialize(data: inputData)
-        XCTAssertNil(realFrame)
-    }
-    
     func testHandshakeDeSerializationWithValidInput() {
         let inputData = Data(bytes: [0x00, 0x01, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = try! HandshakeFrame(data: inputData)

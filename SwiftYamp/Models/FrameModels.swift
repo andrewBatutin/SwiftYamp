@@ -51,7 +51,7 @@ struct BaseFrame: Equatable, YampFrame {
     
 }
 
-struct HandshakeFrame: YampFrame {
+struct HandshakeFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Handshake)
     let version:UInt16
@@ -97,12 +97,16 @@ struct HandshakeFrame: YampFrame {
     
 }
 
-struct PingFrame: YampFrame {
+struct PingFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Ping)
     let size:UInt8
     var payload:String = "" // (optional)
     
+    static func ==(lhs: PingFrame, rhs: PingFrame) -> Bool {
+        return lhs.type == rhs.type && lhs.size == rhs.size && lhs.payload == rhs.payload
+    }
+    
     init(size: UInt8) {
         self.size = size
     }
@@ -135,12 +139,16 @@ struct PingFrame: YampFrame {
     
 }
 
-struct PongFrame: YampFrame {
+struct PongFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Pong)
     let size:UInt8
     var payload:String = "" // (optional)
     
+    static func ==(lhs: PongFrame, rhs: PongFrame) -> Bool {
+        return lhs.type == rhs.type && lhs.size == rhs.size && lhs.payload == rhs.payload
+    }
+    
     init(size: UInt8) {
         self.size = size
     }
@@ -173,11 +181,15 @@ struct PongFrame: YampFrame {
 
 }
 
-struct CloseFrame: YampFrame {
+struct CloseFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Close)
     let size:UInt16
     var reason:String = "" // (optional)
+    
+    static func ==(lhs: CloseFrame, rhs: CloseFrame) -> Bool {
+        return lhs.type == rhs.type && lhs.size == rhs.size && lhs.reason == rhs.reason
+    }
     
     init(size: UInt16) {
         self.size = size
@@ -216,7 +228,11 @@ struct CloseRedirectFrame: YampFrame {
     let type:BaseFrame = BaseFrame(type: FrameType.Close_Redirect)
     let size:UInt16
     var url:String
-     
+    
+    static func ==(lhs: CloseRedirectFrame, rhs: CloseRedirectFrame) -> Bool {
+        return lhs.type == rhs.type && lhs.size == rhs.size && lhs.url == rhs.url
+    }
+    
     init(size: UInt16, url: String) {
         self.size = size
         self.url = url
