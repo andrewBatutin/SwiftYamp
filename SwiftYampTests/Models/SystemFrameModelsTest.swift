@@ -109,7 +109,7 @@ class SystemFrameModelsTest: XCTestCase {
     func testUserMessageBodyFrameWithNilBodyCreatedCorrectly() {
         let subject = UserMessageBodyFrame(size: 0x01, body: nil)
         XCTAssertEqual(subject.size, 0x01)
-        XCTAssertNil(subject.body)
+        XCTAssertEqual(subject.body!, [])
     }
     
     func testUserMessageBodyFramesAreEqual() {

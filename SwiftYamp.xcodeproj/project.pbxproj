@@ -33,6 +33,9 @@
 		A4EC70411EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */; };
 		A4EC70421EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */; };
 		A4EC70441EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */; };
+		A4EC70461EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */; };
+		A4EC70471EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */; };
+		A4EC70491EF040D5006F7F54 /* UserMessageBodyFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70481EF040D5006F7F54 /* UserMessageBodyFrameTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,8 @@
 		A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseRedirectFrame.swift; sourceTree = "<group>"; };
 		A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageHeaderFrame.swift; sourceTree = "<group>"; };
 		A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageHeaderFrameTest.swift; sourceTree = "<group>"; };
+		A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageBodyFrame.swift; sourceTree = "<group>"; };
+		A4EC70481EF040D5006F7F54 /* UserMessageBodyFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageBodyFrameTest.swift; sourceTree = "<group>"; };
 		A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYampTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests.release.xcconfig"; sourceTree = "<group>"; };
 		E46B083CB1CE308D9760A8A4 /* Pods-SwiftYamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp/Pods-SwiftYamp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 				A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */,
 				A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */,
 				A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */,
+				A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 			children = (
 				A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */,
 				A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */,
+				A4EC70481EF040D5006F7F54 /* UserMessageBodyFrameTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,6 +408,7 @@
 			files = (
 				A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */,
 				A4EC70381EF033F8006F7F54 /* PongFrame.swift in Sources */,
+				A4EC70461EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */,
 				A4EC70351EF033CF006F7F54 /* PingFrame.swift in Sources */,
 				A4EC70321EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
 				A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */,
@@ -423,6 +431,8 @@
 				A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */,
 				A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
+				A4EC70491EF040D5006F7F54 /* UserMessageBodyFrameTest.swift in Sources */,
+				A4EC70471EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */,
 				A4EC70441EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift in Sources */,
 				A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */,
 				A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */,

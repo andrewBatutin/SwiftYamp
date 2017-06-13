@@ -51,19 +51,6 @@ struct BaseFrame: Equatable, YampFrame {
     
 }
 
-struct UserMessageBodyFrame: Equatable {
-    
-    let size:UInt32
-    var body:[UInt8]? // (optional) maximum 4Gb
-    
-    static func ==(lhs: UserMessageBodyFrame, rhs: UserMessageBodyFrame) -> Bool {
-        let lBody = lhs.body ?? []
-        let rBody = rhs.body ?? []
-        return lhs.size == rhs.size && lBody == rBody
-    }
-    
-}
-
 struct EventFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Event)
