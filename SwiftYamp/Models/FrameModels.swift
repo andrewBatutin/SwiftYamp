@@ -61,19 +61,23 @@ struct HandshakeFrame: YampFrame {
         self.serializer = serializer
     }
     
-    init(data: Data) {
-        
+    init(data: Data) throws{
+        let dataSize = data.count
+        if dataSize < 3 { throw SerializationError.WrongDataFrameSize(dataSize) }
         version = data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee}
         size = data[3]
-        let offset = 4 + size
-        let s = data.subdata(in: 4..<Int(offset))
-        serializer = String(data: s, encoding: String.Encoding.utf8) as String!
-        print(serializer)
+        let offset:Int = 4 + Int(size)
+        if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
+        let s = data.subdata(in: 4..<offset)
+        guard let str = String(data: s, encoding: String.Encoding.utf8) else {
+            throw SerializationError.UnexpectedError
+        }
+        serializer = str
     }
     
 }
 
-struct PingFrame {
+struct PingFrame: YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Ping)
     let size:UInt8
@@ -88,9 +92,19 @@ struct PingFrame {
         self.payload = payload
     }
     
+    init(data: Data) throws{
+        let dataSize = data.count
+        if dataSize < 1 { throw SerializationError.WrongDataFrameSize(dataSize) }
+        size = data[1]
+        let offset:Int = 2 + Int(size)
+        if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
+        let s = data.subdata(in: 2..<offset)
+        payload = String(data: s, encoding: String.Encoding.utf8) ?? ""
+    }
+    
 }
 
-struct PongFrame {
+struct PongFrame: YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Pong)
     let size:UInt8
@@ -105,9 +119,19 @@ struct PongFrame {
         self.payload = payload
     }
     
+    init(data: Data) throws{
+        let dataSize = data.count
+        if dataSize < 1 { throw SerializationError.WrongDataFrameSize(dataSize) }
+        size = data[1]
+        let offset:Int = 2 + Int(size)
+        if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
+        let s = data.subdata(in: 2..<offset)
+        payload = String(data: s, encoding: String.Encoding.utf8) ?? ""
+    }
+
 }
 
-struct CloseFrame {
+struct CloseFrame: YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Close)
     let size:UInt16
@@ -122,13 +146,45 @@ struct CloseFrame {
         self.reason = reason
     }
     
+    init(data: Data) throws{
+        let dataSize = data.count
+        if dataSize < 3 { throw SerializationError.WrongDataFrameSize(dataSize) }
+        size = data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee}
+        let offset:Int = 3 + Int(size)
+        if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
+        let s = data.subdata(in: 3..<offset)
+        reason = String(data: s, encoding: String.Encoding.utf8) ?? ""
+    }
+    
 }
 
-struct CloseRedirectFrame {
+struct CloseRedirectFrame: YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Close_Redirect)
     let size:UInt16
-    let url:String
+    var url:String = ""
+    
+    init(size: UInt16) {
+        self.size = size
+    }
+    
+    init(size: UInt16, url: String) {
+        self.size = size
+        self.url = url
+    }
+    
+    init(data: Data) throws{
+        let dataSize = data.count
+        if dataSize < 3 { throw SerializationError.WrongDataFrameSize(dataSize) }
+        size = data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee}
+        let offset:Int = 3 + Int(size)
+        if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
+        let s = data.subdata(in: 3..<offset)
+        guard let str = String(data: s, encoding: String.Encoding.utf8) else {
+            throw SerializationError.UnexpectedError
+        }
+        url = str
+    }
     
 }
 

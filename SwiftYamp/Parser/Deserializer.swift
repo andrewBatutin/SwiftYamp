@@ -12,6 +12,7 @@ enum SerializationError: Error{
     
     case UnexpectedError
     case TypeNotFound(UInt8)
+    case WrongDataFrameSize(Int)
     
 }
 
@@ -32,7 +33,7 @@ enum SerfializeFrame {
 
 func serialize(data: Data) throws -> BaseFrame{
    
-    if data.count < 1 { throw SerializationError.UnexpectedError }
+    if data.count < 1 { throw SerializationError.WrongDataFrameSize(data.count) }
     
     guard let type = FrameType(rawValue: data[0]) else {
         throw SerializationError.TypeNotFound(data[0])
