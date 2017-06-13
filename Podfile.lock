@@ -1,0 +1,12 @@
+PODS:
+  - ByteBackpacker (1.1.1)
+
+DEPENDENCIES:
+  - ByteBackpacker
+
+SPEC CHECKSUMS:
+  ByteBackpacker: 456301d0a1f5a7fded8c8e87c9ad295a8f4b3056
+
+PODFILE CHECKSUM: cafb0177cb18b5c167fb9f3ebe5fc3fbf8ab11c8
+
+COCOAPODS: 1.2.1

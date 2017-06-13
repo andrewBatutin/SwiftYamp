@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00933C2BF28238BBB971494E /* Pods_SwiftYampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */; };
+		5F8B9E17C72B28730D318782 /* Pods_SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */; };
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A4BF1EF51EEEAA58006B075C /* SwiftYamp.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
 		A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
-		A4BF1EFB1EEEADAA006B075C /* BaseFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */; };
+		A4EC701D1EEFCF68006F7F54 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701B1EEFCF68006F7F54 /* Deserializer.swift */; };
+		A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701C1EEFCF68006F7F54 /* Serializer.swift */; };
+		A4EC70211EEFCF88006F7F54 /* FrameModelsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70201EEFCF88006F7F54 /* FrameModelsTest.swift */; };
+		A4EC70241EEFCFC8006F7F54 /* DeserializerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70231EEFCFC8006F7F54 /* DeserializerTest.swift */; };
+		A4EC70251EEFD58B006F7F54 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701B1EEFCF68006F7F54 /* Deserializer.swift */; };
+		A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701C1EEFCF68006F7F54 /* Serializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,13 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ECA136DDD3A769D13C908BE /* Pods-SwiftYamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp/Pods-SwiftYamp.release.xcconfig"; sourceTree = "<group>"; };
+		7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYampTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EDA1EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EDF1EEEA967006B075C /* SwiftYampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftYampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EE61EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftYamp.h; sourceTree = "<group>"; };
 		A4BF1EF71EEEAA84006B075C /* FrameModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameModels.swift; sourceTree = "<group>"; };
-		A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFrameTest.swift; sourceTree = "<group>"; };
+		A4EC701B1EEFCF68006F7F54 /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializer.swift; sourceTree = "<group>"; };
+		A4EC701C1EEFCF68006F7F54 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		A4EC70201EEFCF88006F7F54 /* FrameModelsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameModelsTest.swift; sourceTree = "<group>"; };
+		A4EC70231EEFCFC8006F7F54 /* DeserializerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializerTest.swift; sourceTree = "<group>"; };
+		A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYampTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests.release.xcconfig"; sourceTree = "<group>"; };
+		E46B083CB1CE308D9760A8A4 /* Pods-SwiftYamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp/Pods-SwiftYamp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8B9E17C72B28730D318782 /* Pods_SwiftYamp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,18 +64,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */,
+				00933C2BF28238BBB971494E /* Pods_SwiftYampTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702C33D16BE9766EAC06C488 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */,
+				A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A4BF1ECC1EEEA967006B075C = {
 			isa = PBXGroup;
 			children = (
 				A4BF1ED81EEEA967006B075C /* SwiftYamp */,
 				A4BF1EE31EEEA967006B075C /* SwiftYampTests */,
 				A4BF1ED71EEEA967006B075C /* Products */,
+				C91A9747702B814636A750E0 /* Pods */,
+				702C33D16BE9766EAC06C488 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +103,7 @@
 		A4BF1ED81EEEA967006B075C /* SwiftYamp */ = {
 			isa = PBXGroup;
 			children = (
+				A4EC701A1EEFCF68006F7F54 /* Parser */,
 				A4BF1EF61EEEAA6C006B075C /* Models */,
 				A4BF1EF31EEEAA58006B075C /* Headers */,
 				A4BF1EDA1EEEA967006B075C /* Info.plist */,
@@ -84,8 +114,9 @@
 		A4BF1EE31EEEA967006B075C /* SwiftYampTests */ = {
 			isa = PBXGroup;
 			children = (
+				A4EC70221EEFCFB3006F7F54 /* Parser */,
+				A4EC701F1EEFCF75006F7F54 /* Models */,
 				A4BF1EE61EEEA967006B075C /* Info.plist */,
-				A4BF1EFA1EEEADAA006B075C /* BaseFrameTest.swift */,
 			);
 			path = SwiftYampTests;
 			sourceTree = "<group>";
@@ -106,6 +137,42 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A4EC701A1EEFCF68006F7F54 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				A4EC701B1EEFCF68006F7F54 /* Deserializer.swift */,
+				A4EC701C1EEFCF68006F7F54 /* Serializer.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		A4EC701F1EEFCF75006F7F54 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4EC70201EEFCF88006F7F54 /* FrameModelsTest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4EC70221EEFCFB3006F7F54 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				A4EC70231EEFCFC8006F7F54 /* DeserializerTest.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		C91A9747702B814636A750E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E46B083CB1CE308D9760A8A4 /* Pods-SwiftYamp.debug.xcconfig */,
+				2ECA136DDD3A769D13C908BE /* Pods-SwiftYamp.release.xcconfig */,
+				9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */,
+				BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -124,10 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4BF1EEA1EEEA967006B075C /* Build configuration list for PBXNativeTarget "SwiftYamp" */;
 			buildPhases = (
+				DCE37944A026259CA9B93079 /* [CP] Check Pods Manifest.lock */,
 				A4BF1ED11EEEA967006B075C /* Sources */,
 				A4BF1ED21EEEA967006B075C /* Frameworks */,
 				A4BF1ED31EEEA967006B075C /* Headers */,
 				A4BF1ED41EEEA967006B075C /* Resources */,
+				F98B733581644936B2F88275 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4BF1EED1EEEA967006B075C /* Build configuration list for PBXNativeTarget "SwiftYampTests" */;
 			buildPhases = (
+				F5E7E59271F3B4D9482E76BC /* [CP] Check Pods Manifest.lock */,
 				A4BF1EDB1EEEA967006B075C /* Sources */,
 				A4BF1EDC1EEEA967006B075C /* Frameworks */,
 				A4BF1EDD1EEEA967006B075C /* Resources */,
+				A3137ADA79A3FB8820E4150D /* [CP] Embed Pods Frameworks */,
+				AEC120AE102486B07F173D66 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,11 +286,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A3137ADA79A3FB8820E4150D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEC120AE102486B07F173D66 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE37944A026259CA9B93079 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5E7E59271F3B4D9482E76BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F98B733581644936B2F88275 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYamp/Pods-SwiftYamp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4BF1ED11EEEA967006B075C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4EC701D1EEFCF68006F7F54 /* Deserializer.swift in Sources */,
+				A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */,
 				A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,8 +379,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4BF1EFB1EEEADAA006B075C /* BaseFrameTest.swift in Sources */,
+				A4EC70251EEFD58B006F7F54 /* Deserializer.swift in Sources */,
+				A4EC70211EEFCF88006F7F54 /* FrameModelsTest.swift in Sources */,
+				A4EC70241EEFCFC8006F7F54 /* DeserializerTest.swift in Sources */,
 				A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */,
+				A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +501,7 @@
 		};
 		A4BF1EEB1EEEA967006B075C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E46B083CB1CE308D9760A8A4 /* Pods-SwiftYamp.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -367,6 +523,7 @@
 		};
 		A4BF1EEC1EEEA967006B075C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECA136DDD3A769D13C908BE /* Pods-SwiftYamp.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -387,6 +544,7 @@
 		};
 		A4BF1EEE1EEEA967006B075C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
@@ -400,6 +558,7 @@
 		};
 		A4BF1EEF1EEEA967006B075C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
@@ -430,6 +589,7 @@
 				A4BF1EEC1EEEA967006B075C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4BF1EED1EEEA967006B075C /* Build configuration list for PBXNativeTarget "SwiftYampTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +598,7 @@
 				A4BF1EEF1EEEA967006B075C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

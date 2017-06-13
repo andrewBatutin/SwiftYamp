@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftYamp
 
-class BaseFrameTest: XCTestCase {
+class FrameModelsTest: XCTestCase {
     
     func testFrameTypeIsSetCorrectly() {
         let subject = BaseFrame(type: FrameType.Handshake)
@@ -17,12 +17,12 @@ class BaseFrameTest: XCTestCase {
     }
     
     func testHandshakeFrameIsCreatedCorrectly() {
-        let subject = HandshakeFrame(version: 0x01, size: 0x04, serialized: "1234")
+        let subject = HandshakeFrame(version: 0x01, size: 0x04, serializer: "1234")
         let expectedType = BaseFrame(type: FrameType.Handshake)
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.version, 0x01)
         XCTAssertEqual(subject.size, 0x04)
-        XCTAssertEqual(subject.serialized, "1234")
+        XCTAssertEqual(subject.serializer, "1234")
     }
     
     func testPingFrameCreatedCorrectly() {

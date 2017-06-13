@@ -1,0 +1,6 @@
+framework module ByteBackpacker {
+  umbrella header "ByteBackpacker-umbrella.h"
+
+  export *
+  module * { export * }
+}

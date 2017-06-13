@@ -1,0 +1,6 @@
+framework module Pods_SwiftYamp {
+  umbrella header "Pods-SwiftYamp-umbrella.h"
+
+  export *
+  module * { export * }
+}
