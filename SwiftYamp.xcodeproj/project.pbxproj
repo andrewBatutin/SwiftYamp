@@ -15,11 +15,24 @@
 		A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
 		A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701B1EEFCF68006F7F54 /* Parser.swift */; };
 		A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701C1EEFCF68006F7F54 /* Serializer.swift */; };
-		A4EC70211EEFCF88006F7F54 /* FrameModelsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70201EEFCF88006F7F54 /* FrameModelsTest.swift */; };
-		A4EC70241EEFCFC8006F7F54 /* FrameModelParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70231EEFCFC8006F7F54 /* FrameModelParserTest.swift */; };
+		A4EC70211EEFCF88006F7F54 /* SystemFrameModelsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */; };
+		A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70231EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift */; };
 		A4EC70251EEFD58B006F7F54 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701B1EEFCF68006F7F54 /* Parser.swift */; };
 		A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701C1EEFCF68006F7F54 /* Serializer.swift */; };
 		A4EC70281EF003F1006F7F54 /* ParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70271EF003F1006F7F54 /* ParserTest.swift */; };
+		A4EC70321EF03384006F7F54 /* HandshakeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70311EF03384006F7F54 /* HandshakeFrame.swift */; };
+		A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70311EF03384006F7F54 /* HandshakeFrame.swift */; };
+		A4EC70351EF033CF006F7F54 /* PingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70341EF033CF006F7F54 /* PingFrame.swift */; };
+		A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70341EF033CF006F7F54 /* PingFrame.swift */; };
+		A4EC70381EF033F8006F7F54 /* PongFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70371EF033F8006F7F54 /* PongFrame.swift */; };
+		A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70371EF033F8006F7F54 /* PongFrame.swift */; };
+		A4EC703B1EF0345A006F7F54 /* CloseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */; };
+		A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */; };
+		A4EC703E1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */; };
+		A4EC703F1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */; };
+		A4EC70411EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */; };
+		A4EC70421EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */; };
+		A4EC70441EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +57,16 @@
 		A4BF1EF71EEEAA84006B075C /* FrameModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameModels.swift; sourceTree = "<group>"; };
 		A4EC701B1EEFCF68006F7F54 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A4EC701C1EEFCF68006F7F54 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
-		A4EC70201EEFCF88006F7F54 /* FrameModelsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameModelsTest.swift; sourceTree = "<group>"; };
-		A4EC70231EEFCFC8006F7F54 /* FrameModelParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameModelParserTest.swift; sourceTree = "<group>"; };
+		A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFrameModelsTest.swift; sourceTree = "<group>"; };
+		A4EC70231EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFrameModelParserTest.swift; sourceTree = "<group>"; };
 		A4EC70271EF003F1006F7F54 /* ParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTest.swift; sourceTree = "<group>"; };
+		A4EC70311EF03384006F7F54 /* HandshakeFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandshakeFrame.swift; sourceTree = "<group>"; };
+		A4EC70341EF033CF006F7F54 /* PingFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingFrame.swift; sourceTree = "<group>"; };
+		A4EC70371EF033F8006F7F54 /* PongFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongFrame.swift; sourceTree = "<group>"; };
+		A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseFrame.swift; sourceTree = "<group>"; };
+		A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseRedirectFrame.swift; sourceTree = "<group>"; };
+		A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageHeaderFrame.swift; sourceTree = "<group>"; };
+		A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageHeaderFrameTest.swift; sourceTree = "<group>"; };
 		A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYampTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests.release.xcconfig"; sourceTree = "<group>"; };
 		E46B083CB1CE308D9760A8A4 /* Pods-SwiftYamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp/Pods-SwiftYamp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +155,12 @@
 			isa = PBXGroup;
 			children = (
 				A4BF1EF71EEEAA84006B075C /* FrameModels.swift */,
+				A4EC70311EF03384006F7F54 /* HandshakeFrame.swift */,
+				A4EC70341EF033CF006F7F54 /* PingFrame.swift */,
+				A4EC70371EF033F8006F7F54 /* PongFrame.swift */,
+				A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */,
+				A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */,
+				A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,7 +177,8 @@
 		A4EC701F1EEFCF75006F7F54 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A4EC70201EEFCF88006F7F54 /* FrameModelsTest.swift */,
+				A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */,
+				A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,7 +186,7 @@
 		A4EC70221EEFCFB3006F7F54 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				A4EC70231EEFCFC8006F7F54 /* FrameModelParserTest.swift */,
+				A4EC70231EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift */,
 				A4EC70271EF003F1006F7F54 /* ParserTest.swift */,
 			);
 			path = Parser;
@@ -373,8 +400,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */,
+				A4EC70381EF033F8006F7F54 /* PongFrame.swift in Sources */,
+				A4EC70351EF033CF006F7F54 /* PingFrame.swift in Sources */,
+				A4EC70321EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
 				A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */,
+				A4EC70411EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 				A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */,
+				A4EC703E1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */,
+				A4EC703B1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,11 +416,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4EC70251EEFD58B006F7F54 /* Parser.swift in Sources */,
-				A4EC70211EEFCF88006F7F54 /* FrameModelsTest.swift in Sources */,
+				A4EC70211EEFCF88006F7F54 /* SystemFrameModelsTest.swift in Sources */,
 				A4EC70281EF003F1006F7F54 /* ParserTest.swift in Sources */,
-				A4EC70241EEFCFC8006F7F54 /* FrameModelParserTest.swift in Sources */,
+				A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */,
+				A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
+				A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */,
+				A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */,
+				A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
+				A4EC70441EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift in Sources */,
 				A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */,
 				A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */,
+				A4EC703F1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */,
+				A4EC70421EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

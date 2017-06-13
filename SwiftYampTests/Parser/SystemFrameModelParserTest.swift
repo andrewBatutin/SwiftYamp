@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftYamp
 
-class DeserializerTest: XCTestCase {
+class SystemFrameModelParserTest: XCTestCase {
     
     func testHandshakeDeSerializationWithValidInput() {
         let inputData = Data(bytes: [0x00, 0x01, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])

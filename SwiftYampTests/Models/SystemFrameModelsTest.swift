@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftYamp
 
-class FrameModelsTest: XCTestCase {
+class SystemFrameModelsTest: XCTestCase {
     
     func testFrameTypeIsSetCorrectly() {
         let subject = BaseFrame(type: FrameType.Handshake)
