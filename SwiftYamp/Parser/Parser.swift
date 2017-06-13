@@ -16,7 +16,7 @@ enum SerializationError: Error{
     
 }
 
-enum SerfializeFrame {
+enum DeserfializeFrame {
     case Frame(FrameType, [Int8])
     
     func parse() -> YampFrame{
@@ -31,7 +31,7 @@ enum SerfializeFrame {
     }
 }
 
-func serialize(data: Data) throws -> BaseFrame{
+func deserialize(data: Data) throws -> BaseFrame{
    
     if data.count < 1 { throw SerializationError.WrongDataFrameSize(data.count) }
     
@@ -42,7 +42,7 @@ func serialize(data: Data) throws -> BaseFrame{
     
 }
 
-func serializeT<T: YampFrame>(data: Data) throws -> T{
+func deserialize<T: YampFrame>(data: Data) throws -> T{
     
     guard let type = FrameType(rawValue: data[0]) else {
         throw SerializationError.TypeNotFound(data[0])

@@ -9,7 +9,9 @@
 import Foundation
 import ByteBackpacker
 
-protocol YampFrame {}
+protocol YampFrame {
+    func toData() throws -> Data
+}
 
 enum ResponseType: UInt8 {
     
@@ -40,6 +42,11 @@ struct BaseFrame: Equatable, YampFrame {
     
     static func ==(lhs: BaseFrame, rhs: BaseFrame) -> Bool {
         return lhs.type == rhs.type
+    }
+    
+    func toData() throws -> Data{
+        let r = ByteBackpacker.pack(self.type.rawValue)
+        return Data(bytes: r)
     }
     
 }
@@ -75,6 +82,19 @@ struct HandshakeFrame: YampFrame {
         serializer = str
     }
     
+    func toData() throws -> Data{
+        
+        var r = ByteBackpacker.pack(self.type.type.rawValue)
+        r = r + ByteBackpacker.pack(self.version)
+        r = r + ByteBackpacker.pack(self.size)
+        guard let encStr = self.serializer.data(using: .utf8) else{
+            throw SerializationError.UnexpectedError
+        }
+        var res = Data(bytes: r)
+        res.append(encStr)
+        return res
+    }
+    
 }
 
 struct PingFrame: YampFrame {
@@ -87,9 +107,9 @@ struct PingFrame: YampFrame {
         self.size = size
     }
     
-    init(size: UInt8, payload: String) {
+    init(size: UInt8, payload: String?) {
         self.size = size
-        self.payload = payload
+        self.payload = payload ?? ""
     }
     
     init(data: Data) throws{
@@ -100,6 +120,17 @@ struct PingFrame: YampFrame {
         if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
         let s = data.subdata(in: 2..<offset)
         payload = String(data: s, encoding: String.Encoding.utf8) ?? ""
+    }
+    
+    func toData() throws -> Data{
+        var r = ByteBackpacker.pack(self.type.type.rawValue)
+        r = r + ByteBackpacker.pack(self.size)
+        guard let encStr = self.payload.data(using: .utf8) else{
+            throw SerializationError.UnexpectedError
+        }
+        var res = Data(bytes: r)
+        res.append(encStr)
+        return res
     }
     
 }
@@ -114,9 +145,9 @@ struct PongFrame: YampFrame {
         self.size = size
     }
     
-    init(size: UInt8, payload: String) {
+    init(size: UInt8, payload: String?) {
         self.size = size
-        self.payload = payload
+        self.payload = payload ?? ""
     }
     
     init(data: Data) throws{
@@ -127,6 +158,17 @@ struct PongFrame: YampFrame {
         if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
         let s = data.subdata(in: 2..<offset)
         payload = String(data: s, encoding: String.Encoding.utf8) ?? ""
+    }
+    
+    func toData() throws -> Data{
+        var r = ByteBackpacker.pack(self.type.type.rawValue)
+        r = r + ByteBackpacker.pack(self.size)
+        guard let encStr = self.payload.data(using: .utf8) else{
+            throw SerializationError.UnexpectedError
+        }
+        var res = Data(bytes: r)
+        res.append(encStr)
+        return res
     }
 
 }
@@ -141,9 +183,9 @@ struct CloseFrame: YampFrame {
         self.size = size
     }
     
-    init(size: UInt16, reason: String) {
+    init(size: UInt16, reason: String?) {
         self.size = size
-        self.reason = reason
+        self.reason = reason ?? ""
     }
     
     init(data: Data) throws{
@@ -156,18 +198,25 @@ struct CloseFrame: YampFrame {
         reason = String(data: s, encoding: String.Encoding.utf8) ?? ""
     }
     
+    func toData() throws -> Data{
+        var r = ByteBackpacker.pack(self.type.type.rawValue)
+        r = r + ByteBackpacker.pack(self.size)
+        guard let encStr = self.reason.data(using: .utf8) else{
+            throw SerializationError.UnexpectedError
+        }
+        var res = Data(bytes: r)
+        res.append(encStr)
+        return res
+    }
+    
 }
 
 struct CloseRedirectFrame: YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Close_Redirect)
     let size:UInt16
-    var url:String = ""
-    
-    init(size: UInt16) {
-        self.size = size
-    }
-    
+    var url:String
+     
     init(size: UInt16, url: String) {
         self.size = size
         self.url = url
@@ -184,6 +233,17 @@ struct CloseRedirectFrame: YampFrame {
             throw SerializationError.UnexpectedError
         }
         url = str
+    }
+    
+    func toData() throws -> Data{
+        var r = ByteBackpacker.pack(self.type.type.rawValue)
+        r = r + ByteBackpacker.pack(self.size)
+        guard let encStr = self.url.data(using: .utf8) else{
+            throw SerializationError.UnexpectedError
+        }
+        var res = Data(bytes: r)
+        res.append(encStr)
+        return res
     }
     
 }
