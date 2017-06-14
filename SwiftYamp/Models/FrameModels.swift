@@ -51,14 +51,6 @@ struct BaseFrame: Equatable, YampFrame {
     
 }
 
-struct EventFrame {
-    
-    let type:BaseFrame = BaseFrame(type: FrameType.Event)
-    let header:UserMessageHeaderFrame
-    let body:UserMessageBodyFrame
-    
-}
-
 struct RequestFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Request)

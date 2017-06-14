@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		00933C2BF28238BBB971494E /* Pods_SwiftYampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */; };
 		5F8B9E17C72B28730D318782 /* Pods_SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */; };
+		A4804F621EF121A1005CBCCD /* EventFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F611EF121A1005CBCCD /* EventFrameTest.swift */; };
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A4BF1EF51EEEAA58006B075C /* SwiftYamp.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
 		A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
+		A4C841671EF1184C0093EBEE /* EventFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C841661EF1184C0093EBEE /* EventFrame.swift */; };
+		A4C841681EF1184C0093EBEE /* EventFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C841661EF1184C0093EBEE /* EventFrame.swift */; };
 		A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701B1EEFCF68006F7F54 /* Parser.swift */; };
 		A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701C1EEFCF68006F7F54 /* Serializer.swift */; };
 		A4EC70211EEFCF88006F7F54 /* SystemFrameModelsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */; };
@@ -52,12 +55,14 @@
 		2ECA136DDD3A769D13C908BE /* Pods-SwiftYamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp/Pods-SwiftYamp.release.xcconfig"; sourceTree = "<group>"; };
 		7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYampTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A4804F611EF121A1005CBCCD /* EventFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFrameTest.swift; sourceTree = "<group>"; };
 		A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EDA1EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EDF1EEEA967006B075C /* SwiftYampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftYampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EE61EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftYamp.h; sourceTree = "<group>"; };
 		A4BF1EF71EEEAA84006B075C /* FrameModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameModels.swift; sourceTree = "<group>"; };
+		A4C841661EF1184C0093EBEE /* EventFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFrame.swift; sourceTree = "<group>"; };
 		A4EC701B1EEFCF68006F7F54 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A4EC701C1EEFCF68006F7F54 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFrameModelsTest.swift; sourceTree = "<group>"; };
@@ -167,6 +172,7 @@
 				A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */,
 				A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */,
 				A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */,
+				A4C841661EF1184C0093EBEE /* EventFrame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */,
 				A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */,
 				A4EC70481EF040D5006F7F54 /* UserMessageBodyFrameTest.swift */,
+				A4804F611EF121A1005CBCCD /* EventFrameTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -406,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C841671EF1184C0093EBEE /* EventFrame.swift in Sources */,
 				A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */,
 				A4EC70381EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70461EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */,
@@ -426,11 +434,13 @@
 				A4EC70251EEFD58B006F7F54 /* Parser.swift in Sources */,
 				A4EC70211EEFCF88006F7F54 /* SystemFrameModelsTest.swift in Sources */,
 				A4EC70281EF003F1006F7F54 /* ParserTest.swift in Sources */,
+				A4804F621EF121A1005CBCCD /* EventFrameTest.swift in Sources */,
 				A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */,
 				A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
 				A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */,
 				A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
+				A4C841681EF1184C0093EBEE /* EventFrame.swift in Sources */,
 				A4EC70491EF040D5006F7F54 /* UserMessageBodyFrameTest.swift in Sources */,
 				A4EC70471EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */,
 				A4EC70441EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift in Sources */,
