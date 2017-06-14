@@ -51,15 +51,6 @@ struct BaseFrame: Equatable, YampFrame {
     
 }
 
-struct RequestFrame {
-    
-    let type:BaseFrame = BaseFrame(type: FrameType.Request)
-    let header:UserMessageHeaderFrame
-    let isProgressive:Bool
-    let body:UserMessageBodyFrame
-    
-}
-
 struct CancelFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Cancel)
