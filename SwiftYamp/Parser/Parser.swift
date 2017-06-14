@@ -11,7 +11,8 @@ import Foundation
 enum SerializationError: Error{
     
     case UnexpectedError
-    case TypeNotFound(UInt8)
+    case FrameTypeNotFound(UInt8)
+    case ReponseTypeNotFound(UInt8)
     case WrongDataFrameSize(Int)
     
 }
@@ -42,7 +43,7 @@ func deserialize(data: Data) throws -> YampFrame{
     if data.count < 1 { throw SerializationError.WrongDataFrameSize(data.count) }
     
     guard let type = FrameType(rawValue: data[0]) else {
-        throw SerializationError.TypeNotFound(data[0])
+        throw SerializationError.FrameTypeNotFound(data[0])
     }
     
     let resultFrame = try DeserializeFrame.Frame(type, data).parse()

@@ -159,10 +159,10 @@ class SystemFrameModelsTest: XCTestCase {
     func testResponseFrameCreatedCorrectly() {
         let body = UserMessageBodyFrame(size: 0x01, body: [0x00, 0x01])
         let header = UserMessageHeaderFrame(uid: [0x1, 0x2, 0x4], size: 0x01, uri: "uri")
-        let subject = ResponseFrame(header: header, requestUid: [0x00, 0x01], responseType: ResponseType.done, body: body)
+        let subject = ResponseFrame(header: header, requestUid: [0x00, 0x01], responseType: ResponseType.Done, body: body)
         XCTAssertEqual(subject.header, header)
         XCTAssertEqual(subject.requestUid, [0x00, 0x01])
-        XCTAssertEqual(subject.responseType, ResponseType.done)
+        XCTAssertEqual(subject.responseType, ResponseType.Done)
         XCTAssertEqual(subject.body, body)
     }
     

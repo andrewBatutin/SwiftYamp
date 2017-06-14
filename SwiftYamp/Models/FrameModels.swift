@@ -20,16 +20,13 @@ protocol YampFrame {
 }
 
 enum ResponseType: UInt8 {
-    
-    case done = 0x00
-    case error = 0x01
-    case progress = 0x02
-    case cancelled = 0x03
-    
+    case Done = 0x00
+    case Error = 0x01
+    case Progress = 0x02
+    case Cancelled = 0x03
 }
 
 enum FrameType : UInt8 {
-    
     case Handshake = 0x00
     case Ping = 0x01
     case Pong = 0x02
@@ -39,7 +36,6 @@ enum FrameType : UInt8 {
     case Request = 0x06
     case Cancel = 0x07
     case Response = 0x08
-    
 }
 
 struct BaseFrame: Equatable, YampFrame { 
@@ -53,14 +49,4 @@ struct BaseFrame: Equatable, YampFrame {
         let r = ByteBackpacker.pack(self.type.rawValue)
         return Data(bytes: r)
     }
-}
-
-struct ResponseFrame {
-    
-    let type:BaseFrame = BaseFrame(type: FrameType.Response)
-    let header:UserMessageHeaderFrame
-    let requestUid:[UInt8]
-    let responseType:ResponseType
-    let body:UserMessageBodyFrame
-    
 }
