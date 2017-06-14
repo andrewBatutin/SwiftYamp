@@ -54,4 +54,11 @@ class RequestFrameTest: XCTestCase {
         XCTAssertEqual(expectedData, try! subject.toData())
     }
     
+    func testRequestFrameDeSerializeThorwsForShortFrameWithNoIsProgressiveData(){
+        let expectedHeaderData:[UInt8] = [0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41]
+        let expectedBodyData:[UInt8] = [0x04, 0x00, 0x00, 0x00, 0x01, 0x02, 0x03, 0x04]
+        let fullData = Data([0x06] + expectedHeaderData + expectedBodyData)
+        XCTAssertThrowsError(try RequestFrame(data: fullData))
+    }
+    
 }

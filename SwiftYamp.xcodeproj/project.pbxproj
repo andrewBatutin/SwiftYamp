@@ -13,6 +13,9 @@
 		A4804F641EF12BAF005CBCCD /* RequestFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F631EF12BAF005CBCCD /* RequestFrame.swift */; };
 		A4804F651EF12BAF005CBCCD /* RequestFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F631EF12BAF005CBCCD /* RequestFrame.swift */; };
 		A4804F671EF12CF8005CBCCD /* RequestFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F661EF12CF8005CBCCD /* RequestFrameTest.swift */; };
+		A4804F691EF12F1D005CBCCD /* CancelFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F681EF12F1D005CBCCD /* CancelFrame.swift */; };
+		A4804F6A1EF12F1D005CBCCD /* CancelFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F681EF12F1D005CBCCD /* CancelFrame.swift */; };
+		A4804F6C1EF137C6005CBCCD /* CancelFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F6B1EF137C6005CBCCD /* CancelFrameTest.swift */; };
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A4BF1EF51EEEAA58006B075C /* SwiftYamp.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
@@ -61,6 +64,8 @@
 		A4804F611EF121A1005CBCCD /* EventFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFrameTest.swift; sourceTree = "<group>"; };
 		A4804F631EF12BAF005CBCCD /* RequestFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFrame.swift; sourceTree = "<group>"; };
 		A4804F661EF12CF8005CBCCD /* RequestFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFrameTest.swift; sourceTree = "<group>"; };
+		A4804F681EF12F1D005CBCCD /* CancelFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelFrame.swift; sourceTree = "<group>"; };
+		A4804F6B1EF137C6005CBCCD /* CancelFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelFrameTest.swift; sourceTree = "<group>"; };
 		A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EDA1EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EDF1EEEA967006B075C /* SwiftYampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftYampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +184,7 @@
 				A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */,
 				A4C841661EF1184C0093EBEE /* EventFrame.swift */,
 				A4804F631EF12BAF005CBCCD /* RequestFrame.swift */,
+				A4804F681EF12F1D005CBCCD /* CancelFrame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				A4EC70481EF040D5006F7F54 /* UserMessageBodyFrameTest.swift */,
 				A4804F611EF121A1005CBCCD /* EventFrameTest.swift */,
 				A4804F661EF12CF8005CBCCD /* RequestFrameTest.swift */,
+				A4804F6B1EF137C6005CBCCD /* CancelFrameTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -420,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4804F691EF12F1D005CBCCD /* CancelFrame.swift in Sources */,
 				A4C841671EF1184C0093EBEE /* EventFrame.swift in Sources */,
 				A4804F641EF12BAF005CBCCD /* RequestFrame.swift in Sources */,
 				A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */,
@@ -443,7 +451,9 @@
 				A4EC70211EEFCF88006F7F54 /* SystemFrameModelsTest.swift in Sources */,
 				A4EC70281EF003F1006F7F54 /* ParserTest.swift in Sources */,
 				A4804F621EF121A1005CBCCD /* EventFrameTest.swift in Sources */,
+				A4804F6C1EF137C6005CBCCD /* CancelFrameTest.swift in Sources */,
 				A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */,
+				A4804F6A1EF12F1D005CBCCD /* CancelFrame.swift in Sources */,
 				A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
 				A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */,

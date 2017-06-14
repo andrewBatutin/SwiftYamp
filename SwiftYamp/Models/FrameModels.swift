@@ -9,6 +9,12 @@
 import Foundation
 import ByteBackpacker
 
+extension Bool {
+    init<T : Integer>(_ integer: T){
+        self.init(integer != 0)
+    }
+}
+
 protocol YampFrame {
     func toData() throws -> Data
 }
@@ -36,8 +42,7 @@ enum FrameType : UInt8 {
     
 }
 
-struct BaseFrame: Equatable, YampFrame {
-    
+struct BaseFrame: Equatable, YampFrame { 
     let type:FrameType;
     
     static func ==(lhs: BaseFrame, rhs: BaseFrame) -> Bool {
@@ -48,16 +53,6 @@ struct BaseFrame: Equatable, YampFrame {
         let r = ByteBackpacker.pack(self.type.rawValue)
         return Data(bytes: r)
     }
-    
-}
-
-struct CancelFrame {
-    
-    let type:BaseFrame = BaseFrame(type: FrameType.Cancel)
-    let header:UserMessageHeaderFrame
-    let requestUid:[UInt8]
-    let kill:Bool
-    
 }
 
 struct ResponseFrame {

@@ -26,7 +26,7 @@ struct EventFrame: Equatable, YampFrame {
     init(data: Data) throws{
         let (h, offset) = try parseHeader(data: data.subdata(in: 1..<data.count))
         header = h
-        body = try parseBody(data: data.subdata(in: (offset + 1)..<data.count))
+        body = try parseBody(data: data.subdata(in: offset..<data.count))
     }
 
     func  toData() throws -> Data {

@@ -9,12 +9,6 @@
 import Foundation
 import ByteBackpacker
 
-extension Bool {
-    init<T : Integer>(_ integer: T){
-        self.init(integer != 0)
-    }
-}
-
 struct RequestFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Request)
@@ -35,8 +29,10 @@ struct RequestFrame: Equatable, YampFrame {
     init(data: Data) throws{
         let (h, offset) = try parseHeader(data: data.subdata(in: 1..<data.count))
         header = h
-        isProgressive = Bool(data[offset + 1])
-        body = try parseBody(data: data.subdata(in: (offset + 2)..<data.count))
+        if offset >= data.count { throw SerializationError.WrongDataFrameSize(data.count) }
+        isProgressive = Bool(data[offset])
+        if offset + 1 >= data.count { throw SerializationError.WrongDataFrameSize(data.count) }
+        body = try parseBody(data: data.subdata(in: (offset + 1)..<data.count))
     }
     
     func  toData() throws -> Data {

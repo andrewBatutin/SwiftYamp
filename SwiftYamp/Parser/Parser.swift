@@ -61,7 +61,7 @@ func parseHeader(data: Data) throws -> (header: UserMessageHeaderFrame, offset: 
         throw SerializationError.UnexpectedError
     }
     let header = UserMessageHeaderFrame(uid: uid, size: size, uri: uri)
-    return (header, offset)
+    return (header, offset + 1)
 }
 
 func parseBody(data: Data) throws -> UserMessageBodyFrame{
