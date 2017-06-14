@@ -9,7 +9,7 @@
 import Foundation
 import ByteBackpacker
 
-struct ResponseFrame {
+struct ResponseFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Response)
     let header:UserMessageHeaderFrame

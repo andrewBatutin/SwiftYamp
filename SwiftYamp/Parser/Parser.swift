@@ -32,6 +32,14 @@ enum DeserializeFrame {
             return try CloseFrame(data: data)
         case .Frame(.Close_Redirect, let data):
             return try CloseRedirectFrame(data: data)
+        case .Frame(.Event, let data):
+            return try EventFrame(data: data)
+        case .Frame(.Request, let data):
+            return try RequestFrame(data: data)
+        case .Frame(.Cancel, let data):
+            return try CancelFrame(data: data)
+        case .Frame(.Response, let data):
+            return try ResponseFrame(data: data)
         default:
             throw SerializationError.UnexpectedError
         }
