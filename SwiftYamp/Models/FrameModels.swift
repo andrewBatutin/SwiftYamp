@@ -15,7 +15,7 @@ extension Bool {
     }
 }
 
-protocol YampFrame {
+public protocol YampFrame {
     func toData() throws -> Data
 }
 

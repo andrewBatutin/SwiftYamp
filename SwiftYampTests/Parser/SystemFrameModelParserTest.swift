@@ -12,7 +12,7 @@ import XCTest
 class SystemFrameModelParserTest: XCTestCase {
     
     func testHandshakeDeSerializationWithValidInput() {
-        let inputData = Data(bytes: [0x00, 0x01, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = try! HandshakeFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Handshake))
         XCTAssertEqual(subject.version, 0x01)
@@ -122,7 +122,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseFrameDeSerializationWithValidInput() {
-        let inputData = Data(bytes: [0x03, 0x04, 0x00, 0x41, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x03, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = try! CloseFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Close))
         XCTAssertEqual(subject.size, 0x04)

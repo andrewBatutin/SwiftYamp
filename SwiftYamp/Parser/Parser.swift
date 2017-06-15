@@ -46,7 +46,7 @@ enum DeserializeFrame {
     }
 }
 
-func deserialize(data: Data) throws -> YampFrame{
+public func deserialize(data: Data) throws -> YampFrame{
    
     if data.count < 1 { throw SerializationError.WrongDataFrameSize(data.count) }
     

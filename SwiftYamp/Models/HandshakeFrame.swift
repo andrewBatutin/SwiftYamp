@@ -9,27 +9,27 @@
 import Foundation
 import ByteBackpacker
 
-struct HandshakeFrame: Equatable, YampFrame {
+public struct HandshakeFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Handshake)
     let version:UInt16
     let size:UInt8
     let serializer:String
     
-    static func ==(lhs: HandshakeFrame, rhs: HandshakeFrame) -> Bool {
+    public static func ==(lhs: HandshakeFrame, rhs: HandshakeFrame) -> Bool {
         return lhs.type == rhs.type && lhs.version == rhs.version && lhs.size == rhs.size && lhs.serializer == rhs.serializer
     }
     
-    init(version: UInt16, size: UInt8, serializer:String) {
+    public init(version: UInt16, size: UInt8, serializer:String) {
         self.version = version
         self.size = size
         self.serializer = serializer
     }
     
-    init(data: Data) throws{
+   public init(data: Data) throws{
         let dataSize = data.count
         if dataSize < 3 { throw SerializationError.WrongDataFrameSize(dataSize) }
-        version = data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee}
+    version = UInt16(bigEndian: data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee})
         size = data[3]
         let offset:Int = 4 + Int(size)
         if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
@@ -40,9 +40,11 @@ struct HandshakeFrame: Equatable, YampFrame {
         serializer = str
     }
     
-    func toData() throws -> Data{
+    public func toData() throws -> Data{
         
         var r = ByteBackpacker.pack(self.type.type.rawValue)
+        var v = self.version
+        let vData = NSData(bytes: &v, length: MemoryLayout<Int16>.size)
         r = r + ByteBackpacker.pack(self.version)
         r = r + ByteBackpacker.pack(self.size)
         guard let encStr = self.serializer.data(using: .utf8) else{

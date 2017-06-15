@@ -31,7 +31,7 @@ struct CloseFrame: Equatable, YampFrame {
     init(data: Data) throws{
         let dataSize = data.count
         if dataSize < 3 { throw SerializationError.WrongDataFrameSize(dataSize) }
-        size = data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee}
+        size =  UInt16(bigEndian: data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee})
         let offset:Int = 3 + Int(size)
         if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
         let s = data.subdata(in: 3..<offset)
