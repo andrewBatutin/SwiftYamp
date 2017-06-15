@@ -1,12 +1,15 @@
 PODS:
   - ByteBackpacker (1.1.1)
+  - Starscream (2.0.4)
 
 DEPENDENCIES:
   - ByteBackpacker
+  - Starscream
 
 SPEC CHECKSUMS:
   ByteBackpacker: 456301d0a1f5a7fded8c8e87c9ad295a8f4b3056
+  Starscream: df5974ee928b157c8eda8af8de7c620276b7dfcc
 
-PODFILE CHECKSUM: cafb0177cb18b5c167fb9f3ebe5fc3fbf8ab11c8
+PODFILE CHECKSUM: 82be58d2f284aa4433c520b1682e0283de0affa1
 
 COCOAPODS: 1.2.1

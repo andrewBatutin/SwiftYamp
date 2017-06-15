@@ -7,19 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28AAD6D39C0FC942AEBFD8A580CBF001 /* ByteBackpacker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 263FDB314C494ED6C388412519795D43 /* ByteBackpacker-dummy.m */; };
-		3CACDA6368820E1825B7EE4FBFB23831 /* Pods-SwiftYampTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BC8B61A5F1CAE9354E83C743B31EC9 /* Pods-SwiftYampTests-dummy.m */; };
-		41AD905692811BFBF6722BE883CDCC5E /* Pods-SwiftYamp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C297DCE957F0DA4039759C6BF4B43142 /* Pods-SwiftYamp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28AAD6D39C0FC942AEBFD8A580CBF001 /* ByteBackpacker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE44F9ED907C1859DEF2406AC86EF86 /* ByteBackpacker-dummy.m */; };
+		3599BBEB8DE3EA0627E16C20FC3BE9AB /* Pods-SwiftYamp-SwiftYampTester-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC32AA6B9A99566536DA31215C2EB40 /* Pods-SwiftYamp-SwiftYampTester-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CACDA6368820E1825B7EE4FBFB23831 /* Pods-SwiftYampTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD6914C10C7BC028580A4095BA693F1 /* Pods-SwiftYampTests-dummy.m */; };
+		41AD905692811BFBF6722BE883CDCC5E /* Pods-SwiftYamp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 511BCF90F824B9D53C1FA9CB2BEDDF19 /* Pods-SwiftYamp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44B32C10DE58FA3F82461049916D1622 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		4AB3E2CFF3A962E0AAA7A8A809B2D794 /* Pods-SwiftYamp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A21D201B695D9129EBEBE4D5212009B2 /* Pods-SwiftYamp-dummy.m */; };
+		4AB3E2CFF3A962E0AAA7A8A809B2D794 /* Pods-SwiftYamp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FE413AC0FB20D718EF0976A0139B7E /* Pods-SwiftYamp-dummy.m */; };
+		5673FC786EEA9A130E36DC2917A232D1 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CCD05B90435065C1BA4269616A387 /* WebSocket.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		58BD4349534A45325D76815A465FF62E /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BDB069AE91950BDF5128865299EADFB5 /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5967DE14A320E89DAF2D22025E036D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		750E076F6E442759A0C04E762E3416F2 /* ByteBackpacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCF92EB9C9577B8BFDF5285E6CEC77 /* ByteBackpacker.swift */; };
-		7E868AEA5741F26B4B830F73F99FAD55 /* Pods-SwiftYampTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3925A9E6E279B5650F9D84A33851AD6C /* Pods-SwiftYampTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		750E076F6E442759A0C04E762E3416F2 /* ByteBackpacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68642731AD37C762D0F079F70AB9E9 /* ByteBackpacker.swift */; };
+		7D1FF8C8C0969765A9B49ED103108253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7E868AEA5741F26B4B830F73F99FAD55 /* Pods-SwiftYampTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50259C2B8E94F033929189AA6EB0112D /* Pods-SwiftYampTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B149A3A36B2056F38F1CD9508E57C9E4 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94FCD7BF10AD1A8287756156C946D34 /* SSLSecurity.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BAB3ABBF3F9DECED6D029FCA52E0E988 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		BC46FC184E17916E15DB367B258A7F95 /* Pods-SwiftYamp-SwiftYampTester-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CBB91ED2C0AAEA5CB6EF998BC1638 /* Pods-SwiftYamp-SwiftYampTester-dummy.m */; };
+		D3B1479BF07D2B06C7407967FDD511A5 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C88B754815AAAEF8EDF17FA8B59F6D /* Starscream-dummy.m */; };
 		E15093BAF1C3681D089BAC7738EC129C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		F81F60647DA25247768F25707C26E023 /* ByteBackpacker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD0DC30224DD490657BD5439F3545EF9 /* ByteBackpacker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F81F60647DA25247768F25707C26E023 /* ByteBackpacker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75D024CFCCA0DF9CE7A66E9D25D3C46B /* ByteBackpacker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5BFC1838B3E35F1DE7132A0993C58A03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D233AA1066EE2575AAC1040110697A2B;
+			remoteInfo = ByteBackpacker;
+		};
 		7B472A71A278ACF9511E622A7F6B03D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -34,40 +49,67 @@
 			remoteGlobalIDString = D233AA1066EE2575AAC1040110697A2B;
 			remoteInfo = ByteBackpacker;
 		};
+		C87881E726937C37B5B227CF1097238F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F871C3AC20659812A13A2E4DEEBF2F74;
+			remoteInfo = Starscream;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06BC8B61A5F1CAE9354E83C743B31EC9 /* Pods-SwiftYampTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftYampTests-dummy.m"; sourceTree = "<group>"; };
-		0B6EEE78267E6BB33AD651970AF173AB /* Pods-SwiftYamp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftYamp.modulemap"; sourceTree = "<group>"; };
-		11C07FF00882B6EA2D39C0B76D41A313 /* Pods-SwiftYampTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftYampTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		133BB28A7FBC7170C2345135CA3AD733 /* Pods-SwiftYampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYampTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1A638F2A40FD9053A64B8C11C2064D6B /* Pods-SwiftYampTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftYampTests.modulemap"; sourceTree = "<group>"; };
-		1C8C33E3BC7A162294981361C51F0457 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		263FDB314C494ED6C388412519795D43 /* ByteBackpacker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ByteBackpacker-dummy.m"; sourceTree = "<group>"; };
-		2CFFD319AFF1D4DC0FFD716F4A58F72D /* Pods-SwiftYamp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftYamp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2EB40925344DF766E85B7C16BA42EC10 /* ByteBackpacker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ByteBackpacker-prefix.pch"; sourceTree = "<group>"; };
-		326C712E373706205C7869ABC1CFF47B /* ByteBackpacker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ByteBackpacker.framework; path = ByteBackpacker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3449C89F527ED31C2F41D657B5BE9987 /* Pods-SwiftYampTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYampTests.release.xcconfig"; sourceTree = "<group>"; };
-		3925A9E6E279B5650F9D84A33851AD6C /* Pods-SwiftYampTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftYampTests-umbrella.h"; sourceTree = "<group>"; };
-		3AF0DD32B899977EEDDF489E1E066915 /* Pods-SwiftYampTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYampTests-resources.sh"; sourceTree = "<group>"; };
+		02EA6C9FA7E964543109E64FABD9BCBF /* Pods-SwiftYampTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYampTests.release.xcconfig"; sourceTree = "<group>"; };
+		0F41032459941755F4406AF81769492D /* Pods-SwiftYamp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYamp-resources.sh"; sourceTree = "<group>"; };
+		0FC46FE4D8073B734DADE14CA98F7504 /* Pods_SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftYamp.framework; path = "Pods-SwiftYamp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13AAF1735F1A1EE4462DFE2DE87BCB1E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15351425370B97C81388F1E619DE4546 /* Pods-SwiftYamp-SwiftYampTester-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftYamp-SwiftYampTester-acknowledgements.markdown"; sourceTree = "<group>"; };
+		17D6CEE078ED3F598B617683592EB26A /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E00927E48F60CAD2B2D40BA91B59664 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24AABDBC17835F711BAA7F81EFF826BD /* Pods-SwiftYamp-SwiftYampTester-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYamp-SwiftYampTester-resources.sh"; sourceTree = "<group>"; };
+		2C68642731AD37C762D0F079F70AB9E9 /* ByteBackpacker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ByteBackpacker.swift; path = ByteBackpacker/ByteBackpacker.swift; sourceTree = "<group>"; };
+		2D6A955D56D41DF6270E9231889979D8 /* Pods-SwiftYamp-SwiftYampTester.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftYamp-SwiftYampTester.modulemap"; sourceTree = "<group>"; };
+		2DE44F9ED907C1859DEF2406AC86EF86 /* ByteBackpacker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ByteBackpacker-dummy.m"; sourceTree = "<group>"; };
+		311EA7D0305440E2DC153E513EF78DCA /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYamp-SwiftYampTester.release.xcconfig"; sourceTree = "<group>"; };
+		349358E99804A440F1FB8AE7BD8597A2 /* ByteBackpacker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ByteBackpacker-prefix.pch"; sourceTree = "<group>"; };
+		3529CE6ACF08AE36D6B497B646B95A70 /* Pods-SwiftYamp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftYamp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3B853F3020175FE9BC0A51F265B4570A /* Starscream.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
+		50259C2B8E94F033929189AA6EB0112D /* Pods-SwiftYampTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftYampTests-umbrella.h"; sourceTree = "<group>"; };
+		511BCF90F824B9D53C1FA9CB2BEDDF19 /* Pods-SwiftYamp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftYamp-umbrella.h"; sourceTree = "<group>"; };
+		53C88B754815AAAEF8EDF17FA8B59F6D /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		5729FAA8A8B164364022F12CC8271723 /* Pods-SwiftYampTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftYampTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		59DAF270C50E9E84B021B586EF4C3C8E /* Pods-SwiftYampTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftYampTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		63ED279FAB54DA8FDB9E26A19AC50F20 /* Pods-SwiftYamp-SwiftYampTester-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYamp-SwiftYampTester-frameworks.sh"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		69FB9B9FB8AB69B3405D18191EB3CF4A /* ByteBackpacker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ByteBackpacker.modulemap; sourceTree = "<group>"; };
-		6D1D8D0E63A4C16D4790F188C21719CC /* ByteBackpacker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ByteBackpacker.xcconfig; sourceTree = "<group>"; };
-		6F2D8679FDE9D5FE8A3FE442203E853B /* Pods_SwiftYampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftYampTests.framework; path = "Pods-SwiftYampTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		77C35ABE73A78F3AED71CAB9272F8189 /* Pods_SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftYamp.framework; path = "Pods-SwiftYamp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84FF36CDB3BCB392EFC1C80CC516AA6F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88DCF92EB9C9577B8BFDF5285E6CEC77 /* ByteBackpacker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ByteBackpacker.swift; path = ByteBackpacker/ByteBackpacker.swift; sourceTree = "<group>"; };
+		668BA3D3BC49BABCD8DABFEAF71CEEAC /* Pods-SwiftYamp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftYamp-acknowledgements.plist"; sourceTree = "<group>"; };
+		6FC32AA6B9A99566536DA31215C2EB40 /* Pods-SwiftYamp-SwiftYampTester-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftYamp-SwiftYampTester-umbrella.h"; sourceTree = "<group>"; };
+		71CB7560591FD5ED8599C2D529021D26 /* ByteBackpacker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ByteBackpacker.xcconfig; sourceTree = "<group>"; };
+		75D024CFCCA0DF9CE7A66E9D25D3C46B /* ByteBackpacker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ByteBackpacker-umbrella.h"; sourceTree = "<group>"; };
+		7A8CBB91ED2C0AAEA5CB6EF998BC1638 /* Pods-SwiftYamp-SwiftYampTester-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftYamp-SwiftYampTester-dummy.m"; sourceTree = "<group>"; };
+		7D1D7A0E4533DC957CDAF745DC85348C /* Pods-SwiftYampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYampTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D675E80BDA6BC91DA9AB0FA785AC01B /* Pods_SwiftYampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftYampTests.framework; path = "Pods-SwiftYampTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0EB11FFDC7A6982E2C36C1C1FF5481 /* Pods-SwiftYamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYamp.debug.xcconfig"; sourceTree = "<group>"; };
+		813AC02D89D25486AE0AE1921CDCD865 /* Pods-SwiftYampTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYampTests-frameworks.sh"; sourceTree = "<group>"; };
+		8CD6914C10C7BC028580A4095BA693F1 /* Pods-SwiftYampTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftYampTests-dummy.m"; sourceTree = "<group>"; };
+		902EB7D1CB68148980D2EB2493A275FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EEF95C975091B80D3371FDF1FDF066D /* Pods-SwiftYampTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftYampTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A1FE9F0790148A1E0F19D9FB6D61DEF9 /* Pods-SwiftYamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYamp.debug.xcconfig"; sourceTree = "<group>"; };
-		A21D201B695D9129EBEBE4D5212009B2 /* Pods-SwiftYamp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftYamp-dummy.m"; sourceTree = "<group>"; };
-		AA5DC76C925B447218F745E9971ED8D3 /* Pods-SwiftYamp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftYamp-acknowledgements.plist"; sourceTree = "<group>"; };
-		BD0DC30224DD490657BD5439F3545EF9 /* ByteBackpacker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ByteBackpacker-umbrella.h"; sourceTree = "<group>"; };
-		C03DD5135A74A768C882F8601E2EAD89 /* Pods-SwiftYamp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYamp-resources.sh"; sourceTree = "<group>"; };
-		C297DCE957F0DA4039759C6BF4B43142 /* Pods-SwiftYamp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftYamp-umbrella.h"; sourceTree = "<group>"; };
-		C957200A5F34E985CAA969343B7AAA0B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D53ECCDF5FB7BF8BAE1F9B2484D42148 /* Pods-SwiftYamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYamp.release.xcconfig"; sourceTree = "<group>"; };
-		EFCFF36123E762FF97C6F492C9ED6943 /* Pods-SwiftYampTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYampTests-frameworks.sh"; sourceTree = "<group>"; };
+		A3CBF3B620D8D19BF652E02F2F2CADB3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FE413AC0FB20D718EF0976A0139B7E /* Pods-SwiftYamp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftYamp-dummy.m"; sourceTree = "<group>"; };
+		BA38A12B221F2D1AA018C078E7866BAC /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Starscream.modulemap; sourceTree = "<group>"; };
+		BA52785758722C8DC54EABD5B5FE5F5C /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
+		BDB069AE91950BDF5128865299EADFB5 /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
+		C3D85DE1AF26351823DFECEE42406BCD /* Pods-SwiftYamp-SwiftYampTester-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftYamp-SwiftYampTester-acknowledgements.plist"; sourceTree = "<group>"; };
+		CCCF9AC718712E88A1D8DF8679C398E9 /* Pods-SwiftYamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYamp.release.xcconfig"; sourceTree = "<group>"; };
+		D041156EA1F83DC6EBC147661DB04127 /* Pods-SwiftYamp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftYamp.modulemap"; sourceTree = "<group>"; };
+		D32CCD05B90435065C1BA4269616A387 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Source/WebSocket.swift; sourceTree = "<group>"; };
+		D5EA2A949E16FEC412740F5D7917EA3C /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftYamp-SwiftYampTester.debug.xcconfig"; sourceTree = "<group>"; };
+		D9046DF0792BBFA57F891A2F18BDDC6D /* Pods_SwiftYamp_SwiftYampTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftYamp_SwiftYampTester.framework; path = "Pods-SwiftYamp-SwiftYampTester.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD66841ACBFE976B142BE4B83C5E4C4E /* Pods-SwiftYampTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftYampTests.modulemap"; sourceTree = "<group>"; };
+		E0705A1774FB26FECF98BDC5FBB18973 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5E7934301DD6053BC3868157F41393F /* Pods-SwiftYampTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftYampTests-resources.sh"; sourceTree = "<group>"; };
+		E94FCD7BF10AD1A8287756156C946D34 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Source/SSLSecurity.swift; sourceTree = "<group>"; };
+		F741B4703E85B0F4FF6ABD8C925F4D79 /* ByteBackpacker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ByteBackpacker.modulemap; sourceTree = "<group>"; };
+		FEF31EEE859BDDA1D94981C1914A194F /* ByteBackpacker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ByteBackpacker.framework; path = ByteBackpacker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +118,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E15093BAF1C3681D089BAC7738EC129C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		368F7EDBBA53E00E25BFD62EC8704613 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB3ABBF3F9DECED6D029FCA52E0E988 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62CBB1D220C815243B8173D82DA40CF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1FF8C8C0969765A9B49ED103108253 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,55 +156,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		177F6FBB5CA34967575688BCA6E38AEB /* Support Files */ = {
+		0433D65149214A7F9514BBF7BBBD9E18 /* Starscream */ = {
 			isa = PBXGroup;
 			children = (
-				69FB9B9FB8AB69B3405D18191EB3CF4A /* ByteBackpacker.modulemap */,
-				6D1D8D0E63A4C16D4790F188C21719CC /* ByteBackpacker.xcconfig */,
-				263FDB314C494ED6C388412519795D43 /* ByteBackpacker-dummy.m */,
-				2EB40925344DF766E85B7C16BA42EC10 /* ByteBackpacker-prefix.pch */,
-				BD0DC30224DD490657BD5439F3545EF9 /* ByteBackpacker-umbrella.h */,
-				1C8C33E3BC7A162294981361C51F0457 /* Info.plist */,
+				E94FCD7BF10AD1A8287756156C946D34 /* SSLSecurity.swift */,
+				D32CCD05B90435065C1BA4269616A387 /* WebSocket.swift */,
+				0567C55370317F0FB26DB285CB2E0771 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ByteBackpacker";
+			name = Starscream;
+			path = Starscream;
 			sourceTree = "<group>";
 		};
-		205B5B104511A4490A9533B65E470622 /* Targets Support Files */ = {
+		0567C55370317F0FB26DB285CB2E0771 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB54029C32649ADB8B87B27383754466 /* Pods-SwiftYamp */,
-				3DDA482797B9B90C0A35BC1C0C27AEDB /* Pods-SwiftYampTests */,
+				902EB7D1CB68148980D2EB2493A275FA /* Info.plist */,
+				BA38A12B221F2D1AA018C078E7866BAC /* Starscream.modulemap */,
+				3B853F3020175FE9BC0A51F265B4570A /* Starscream.xcconfig */,
+				53C88B754815AAAEF8EDF17FA8B59F6D /* Starscream-dummy.m */,
+				BA52785758722C8DC54EABD5B5FE5F5C /* Starscream-prefix.pch */,
+				BDB069AE91950BDF5128865299EADFB5 /* Starscream-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Starscream";
+			sourceTree = "<group>";
+		};
+		1308D154FE5E4EB9157AC6AF59334CDD /* Pods-SwiftYamp */ = {
+			isa = PBXGroup;
+			children = (
+				E0705A1774FB26FECF98BDC5FBB18973 /* Info.plist */,
+				D041156EA1F83DC6EBC147661DB04127 /* Pods-SwiftYamp.modulemap */,
+				3529CE6ACF08AE36D6B497B646B95A70 /* Pods-SwiftYamp-acknowledgements.markdown */,
+				668BA3D3BC49BABCD8DABFEAF71CEEAC /* Pods-SwiftYamp-acknowledgements.plist */,
+				B0FE413AC0FB20D718EF0976A0139B7E /* Pods-SwiftYamp-dummy.m */,
+				0F41032459941755F4406AF81769492D /* Pods-SwiftYamp-resources.sh */,
+				511BCF90F824B9D53C1FA9CB2BEDDF19 /* Pods-SwiftYamp-umbrella.h */,
+				7E0EB11FFDC7A6982E2C36C1C1FF5481 /* Pods-SwiftYamp.debug.xcconfig */,
+				CCCF9AC718712E88A1D8DF8679C398E9 /* Pods-SwiftYamp.release.xcconfig */,
+			);
+			name = "Pods-SwiftYamp";
+			path = "Target Support Files/Pods-SwiftYamp";
+			sourceTree = "<group>";
+		};
+		21D2706D65C54AB9899844697840BB0E /* Pods-SwiftYamp-SwiftYampTester */ = {
+			isa = PBXGroup;
+			children = (
+				13AAF1735F1A1EE4462DFE2DE87BCB1E /* Info.plist */,
+				2D6A955D56D41DF6270E9231889979D8 /* Pods-SwiftYamp-SwiftYampTester.modulemap */,
+				15351425370B97C81388F1E619DE4546 /* Pods-SwiftYamp-SwiftYampTester-acknowledgements.markdown */,
+				C3D85DE1AF26351823DFECEE42406BCD /* Pods-SwiftYamp-SwiftYampTester-acknowledgements.plist */,
+				7A8CBB91ED2C0AAEA5CB6EF998BC1638 /* Pods-SwiftYamp-SwiftYampTester-dummy.m */,
+				63ED279FAB54DA8FDB9E26A19AC50F20 /* Pods-SwiftYamp-SwiftYampTester-frameworks.sh */,
+				24AABDBC17835F711BAA7F81EFF826BD /* Pods-SwiftYamp-SwiftYampTester-resources.sh */,
+				6FC32AA6B9A99566536DA31215C2EB40 /* Pods-SwiftYamp-SwiftYampTester-umbrella.h */,
+				D5EA2A949E16FEC412740F5D7917EA3C /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */,
+				311EA7D0305440E2DC153E513EF78DCA /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */,
+			);
+			name = "Pods-SwiftYamp-SwiftYampTester";
+			path = "Target Support Files/Pods-SwiftYamp-SwiftYampTester";
+			sourceTree = "<group>";
+		};
+		32E7FF0D1FD06F03D1EDC7FDBDF02E34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7D97DA728AA53161399263B09B16F35 /* ByteBackpacker */,
+				0433D65149214A7F9514BBF7BBBD9E18 /* Starscream */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3985772B8D0AC20D4D6A97BD4D7FEB7E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1308D154FE5E4EB9157AC6AF59334CDD /* Pods-SwiftYamp */,
+				21D2706D65C54AB9899844697840BB0E /* Pods-SwiftYamp-SwiftYampTester */,
+				4E15FDB0C7A8AFEA2B2486B620911325 /* Pods-SwiftYampTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		3DDA482797B9B90C0A35BC1C0C27AEDB /* Pods-SwiftYampTests */ = {
+		4E15FDB0C7A8AFEA2B2486B620911325 /* Pods-SwiftYampTests */ = {
 			isa = PBXGroup;
 			children = (
-				C957200A5F34E985CAA969343B7AAA0B /* Info.plist */,
-				1A638F2A40FD9053A64B8C11C2064D6B /* Pods-SwiftYampTests.modulemap */,
-				11C07FF00882B6EA2D39C0B76D41A313 /* Pods-SwiftYampTests-acknowledgements.markdown */,
-				9EEF95C975091B80D3371FDF1FDF066D /* Pods-SwiftYampTests-acknowledgements.plist */,
-				06BC8B61A5F1CAE9354E83C743B31EC9 /* Pods-SwiftYampTests-dummy.m */,
-				EFCFF36123E762FF97C6F492C9ED6943 /* Pods-SwiftYampTests-frameworks.sh */,
-				3AF0DD32B899977EEDDF489E1E066915 /* Pods-SwiftYampTests-resources.sh */,
-				3925A9E6E279B5650F9D84A33851AD6C /* Pods-SwiftYampTests-umbrella.h */,
-				133BB28A7FBC7170C2345135CA3AD733 /* Pods-SwiftYampTests.debug.xcconfig */,
-				3449C89F527ED31C2F41D657B5BE9987 /* Pods-SwiftYampTests.release.xcconfig */,
+				1E00927E48F60CAD2B2D40BA91B59664 /* Info.plist */,
+				DD66841ACBFE976B142BE4B83C5E4C4E /* Pods-SwiftYampTests.modulemap */,
+				59DAF270C50E9E84B021B586EF4C3C8E /* Pods-SwiftYampTests-acknowledgements.markdown */,
+				5729FAA8A8B164364022F12CC8271723 /* Pods-SwiftYampTests-acknowledgements.plist */,
+				8CD6914C10C7BC028580A4095BA693F1 /* Pods-SwiftYampTests-dummy.m */,
+				813AC02D89D25486AE0AE1921CDCD865 /* Pods-SwiftYampTests-frameworks.sh */,
+				E5E7934301DD6053BC3868157F41393F /* Pods-SwiftYampTests-resources.sh */,
+				50259C2B8E94F033929189AA6EB0112D /* Pods-SwiftYampTests-umbrella.h */,
+				7D1D7A0E4533DC957CDAF745DC85348C /* Pods-SwiftYampTests.debug.xcconfig */,
+				02EA6C9FA7E964543109E64FABD9BCBF /* Pods-SwiftYampTests.release.xcconfig */,
 			);
 			name = "Pods-SwiftYampTests";
 			path = "Target Support Files/Pods-SwiftYampTests";
-			sourceTree = "<group>";
-		};
-		719369751EEC1FE00683D6D6C3BF4B5E /* ByteBackpacker */ = {
-			isa = PBXGroup;
-			children = (
-				88DCF92EB9C9577B8BFDF5285E6CEC77 /* ByteBackpacker.swift */,
-				177F6FBB5CA34967575688BCA6E38AEB /* Support Files */,
-			);
-			name = ByteBackpacker;
-			path = ByteBackpacker;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -154,18 +258,22 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				ADF0256A3475871D02E03E44591D23CE /* Pods */,
-				EFC17F580D5B141AE68602AD6D455D93 /* Products */,
-				205B5B104511A4490A9533B65E470622 /* Targets Support Files */,
+				32E7FF0D1FD06F03D1EDC7FDBDF02E34 /* Pods */,
+				B9A1B55AD0C40337D461EF811CDA4FD9 /* Products */,
+				3985772B8D0AC20D4D6A97BD4D7FEB7E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		ADF0256A3475871D02E03E44591D23CE /* Pods */ = {
+		B9A1B55AD0C40337D461EF811CDA4FD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				719369751EEC1FE00683D6D6C3BF4B5E /* ByteBackpacker */,
+				FEF31EEE859BDDA1D94981C1914A194F /* ByteBackpacker.framework */,
+				0FC46FE4D8073B734DADE14CA98F7504 /* Pods_SwiftYamp.framework */,
+				D9046DF0792BBFA57F891A2F18BDDC6D /* Pods_SwiftYamp_SwiftYampTester.framework */,
+				7D675E80BDA6BC91DA9AB0FA785AC01B /* Pods_SwiftYampTests.framework */,
+				17D6CEE078ED3F598B617683592EB26A /* Starscream.framework */,
 			);
-			name = Pods;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -176,21 +284,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CB54029C32649ADB8B87B27383754466 /* Pods-SwiftYamp */ = {
+		BCC072A629E3493F45B6582CAA8CD1CA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				84FF36CDB3BCB392EFC1C80CC516AA6F /* Info.plist */,
-				0B6EEE78267E6BB33AD651970AF173AB /* Pods-SwiftYamp.modulemap */,
-				2CFFD319AFF1D4DC0FFD716F4A58F72D /* Pods-SwiftYamp-acknowledgements.markdown */,
-				AA5DC76C925B447218F745E9971ED8D3 /* Pods-SwiftYamp-acknowledgements.plist */,
-				A21D201B695D9129EBEBE4D5212009B2 /* Pods-SwiftYamp-dummy.m */,
-				C03DD5135A74A768C882F8601E2EAD89 /* Pods-SwiftYamp-resources.sh */,
-				C297DCE957F0DA4039759C6BF4B43142 /* Pods-SwiftYamp-umbrella.h */,
-				A1FE9F0790148A1E0F19D9FB6D61DEF9 /* Pods-SwiftYamp.debug.xcconfig */,
-				D53ECCDF5FB7BF8BAE1F9B2484D42148 /* Pods-SwiftYamp.release.xcconfig */,
+				F741B4703E85B0F4FF6ABD8C925F4D79 /* ByteBackpacker.modulemap */,
+				71CB7560591FD5ED8599C2D529021D26 /* ByteBackpacker.xcconfig */,
+				2DE44F9ED907C1859DEF2406AC86EF86 /* ByteBackpacker-dummy.m */,
+				349358E99804A440F1FB8AE7BD8597A2 /* ByteBackpacker-prefix.pch */,
+				75D024CFCCA0DF9CE7A66E9D25D3C46B /* ByteBackpacker-umbrella.h */,
+				A3CBF3B620D8D19BF652E02F2F2CADB3 /* Info.plist */,
 			);
-			name = "Pods-SwiftYamp";
-			path = "Target Support Files/Pods-SwiftYamp";
+			name = "Support Files";
+			path = "../Target Support Files/ByteBackpacker";
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -201,14 +306,14 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		EFC17F580D5B141AE68602AD6D455D93 /* Products */ = {
+		D7D97DA728AA53161399263B09B16F35 /* ByteBackpacker */ = {
 			isa = PBXGroup;
 			children = (
-				326C712E373706205C7869ABC1CFF47B /* ByteBackpacker.framework */,
-				77C35ABE73A78F3AED71CAB9272F8189 /* Pods_SwiftYamp.framework */,
-				6F2D8679FDE9D5FE8A3FE442203E853B /* Pods_SwiftYampTests.framework */,
+				2C68642731AD37C762D0F079F70AB9E9 /* ByteBackpacker.swift */,
+				BCC072A629E3493F45B6582CAA8CD1CA /* Support Files */,
 			);
-			name = Products;
+			name = ByteBackpacker;
+			path = ByteBackpacker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,11 +335,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		865D6362744C36FF8B24CB9E463EFD6D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58BD4349534A45325D76815A465FF62E /* Starscream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D383563FC4F296406563D47F628696CC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				41AD905692811BFBF6722BE883CDCC5E /* Pods-SwiftYamp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9B33C5A83030AE2BAB4CFB8EC49526 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3599BBEB8DE3EA0627E16C20FC3BE9AB /* Pods-SwiftYamp-SwiftYampTester-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +377,26 @@
 			);
 			name = "Pods-SwiftYampTests";
 			productName = "Pods-SwiftYampTests";
-			productReference = 6F2D8679FDE9D5FE8A3FE442203E853B /* Pods_SwiftYampTests.framework */;
+			productReference = 7D675E80BDA6BC91DA9AB0FA785AC01B /* Pods_SwiftYampTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C53189B6C0BC61B814345F1BC6E402EC /* Pods-SwiftYamp-SwiftYampTester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41A1F2A43A32991755266F095B7BE2B4 /* Build configuration list for PBXNativeTarget "Pods-SwiftYamp-SwiftYampTester" */;
+			buildPhases = (
+				CF01747E599C997D1A860AA679EB709E /* Sources */,
+				62CBB1D220C815243B8173D82DA40CF9 /* Frameworks */,
+				DB9B33C5A83030AE2BAB4CFB8EC49526 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8BF0CF1781100E5AD1E9B7E3F100A69 /* PBXTargetDependency */,
+				EA826D612682FA1AF4E128B4EEF9D89C /* PBXTargetDependency */,
+			);
+			name = "Pods-SwiftYamp-SwiftYampTester";
+			productName = "Pods-SwiftYamp-SwiftYampTester";
+			productReference = D9046DF0792BBFA57F891A2F18BDDC6D /* Pods_SwiftYamp_SwiftYampTester.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D233AA1066EE2575AAC1040110697A2B /* ByteBackpacker */ = {
@@ -273,7 +413,7 @@
 			);
 			name = ByteBackpacker;
 			productName = ByteBackpacker;
-			productReference = 326C712E373706205C7869ABC1CFF47B /* ByteBackpacker.framework */;
+			productReference = FEF31EEE859BDDA1D94981C1914A194F /* ByteBackpacker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EE57AD459C8C5E56655C839E596F5804 /* Pods-SwiftYamp */ = {
@@ -291,7 +431,24 @@
 			);
 			name = "Pods-SwiftYamp";
 			productName = "Pods-SwiftYamp";
-			productReference = 77C35ABE73A78F3AED71CAB9272F8189 /* Pods_SwiftYamp.framework */;
+			productReference = 0FC46FE4D8073B734DADE14CA98F7504 /* Pods_SwiftYamp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F871C3AC20659812A13A2E4DEEBF2F74 /* Starscream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8C280D09E0C34FDD1E4AE55D9A2FE3F /* Build configuration list for PBXNativeTarget "Starscream" */;
+			buildPhases = (
+				C4DFC5387965F19CED05862A61094C21 /* Sources */,
+				368F7EDBBA53E00E25BFD62EC8704613 /* Frameworks */,
+				865D6362744C36FF8B24CB9E463EFD6D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starscream;
+			productName = Starscream;
+			productReference = 17D6CEE078ED3F598B617683592EB26A /* Starscream.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -311,13 +468,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = EFC17F580D5B141AE68602AD6D455D93 /* Products */;
+			productRefGroup = B9A1B55AD0C40337D461EF811CDA4FD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D233AA1066EE2575AAC1040110697A2B /* ByteBackpacker */,
 				EE57AD459C8C5E56655C839E596F5804 /* Pods-SwiftYamp */,
+				C53189B6C0BC61B814345F1BC6E402EC /* Pods-SwiftYamp-SwiftYampTester */,
 				9BC66FF6CCD74C118C9C4D2C007C7867 /* Pods-SwiftYampTests */,
+				F871C3AC20659812A13A2E4DEEBF2F74 /* Starscream */,
 			);
 		};
 /* End PBXProject section */
@@ -336,6 +495,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB3E2CFF3A962E0AAA7A8A809B2D794 /* Pods-SwiftYamp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4DFC5387965F19CED05862A61094C21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B149A3A36B2056F38F1CD9508E57C9E4 /* SSLSecurity.swift in Sources */,
+				D3B1479BF07D2B06C7407967FDD511A5 /* Starscream-dummy.m in Sources */,
+				5673FC786EEA9A130E36DC2917A232D1 /* WebSocket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF01747E599C997D1A860AA679EB709E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC46FC184E17916E15DB367B258A7F95 /* Pods-SwiftYamp-SwiftYampTester-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,9 +540,60 @@
 			target = D233AA1066EE2575AAC1040110697A2B /* ByteBackpacker */;
 			targetProxy = 9053527D675FEBB98D0C4C84C0821DD8 /* PBXContainerItemProxy */;
 		};
+		E8BF0CF1781100E5AD1E9B7E3F100A69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ByteBackpacker;
+			target = D233AA1066EE2575AAC1040110697A2B /* ByteBackpacker */;
+			targetProxy = 5BFC1838B3E35F1DE7132A0993C58A03 /* PBXContainerItemProxy */;
+		};
+		EA826D612682FA1AF4E128B4EEF9D89C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Starscream;
+			target = F871C3AC20659812A13A2E4DEEBF2F74 /* Starscream */;
+			targetProxy = C87881E726937C37B5B227CF1097238F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		096E431920639A6B30A2343B30EF4F0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5EA2A949E16FEC412740F5D7917EA3C /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftYamp-SwiftYampTester/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftYamp-SwiftYampTester/Pods-SwiftYamp-SwiftYampTester.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftYamp_SwiftYampTester;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -416,7 +644,7 @@
 		};
 		2DB85C31C80CF763BFA6F2E8EBEA1397 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1FE9F0790148A1E0F19D9FB6D61DEF9 /* Pods-SwiftYamp.debug.xcconfig */;
+			baseConfigurationReference = 7E0EB11FFDC7A6982E2C36C1C1FF5481 /* Pods-SwiftYamp.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -455,7 +683,7 @@
 		};
 		4A2D26E2ECE656392BE3A2410ADB7332 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D1D8D0E63A4C16D4790F188C21719CC /* ByteBackpacker.xcconfig */;
+			baseConfigurationReference = 71CB7560591FD5ED8599C2D529021D26 /* ByteBackpacker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -489,7 +717,7 @@
 		};
 		6484CA37652D148724961D107B5E5575 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D53ECCDF5FB7BF8BAE1F9B2484D42148 /* Pods-SwiftYamp.release.xcconfig */;
+			baseConfigurationReference = CCCF9AC718712E88A1D8DF8679C398E9 /* Pods-SwiftYamp.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -569,9 +797,43 @@
 			};
 			name = Release;
 		};
+		927FC2AAD9033BF22C59DF77E2610A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B853F3020175FE9BC0A51F265B4570A /* Starscream.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		A3DB9BF95DD739DA7897E4BB7AD8753A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 133BB28A7FBC7170C2345135CA3AD733 /* Pods-SwiftYampTests.debug.xcconfig */;
+			baseConfigurationReference = 7D1D7A0E4533DC957CDAF745DC85348C /* Pods-SwiftYampTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -610,7 +872,7 @@
 		};
 		C59C598FBDDC003C73119B69D10F39B1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3449C89F527ED31C2F41D657B5BE9987 /* Pods-SwiftYampTests.release.xcconfig */;
+			baseConfigurationReference = 02EA6C9FA7E964543109E64FABD9BCBF /* Pods-SwiftYampTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -646,9 +908,47 @@
 			};
 			name = Release;
 		};
+		D1F9119A7BECE0FB89412C6B5DBC8E2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 311EA7D0305440E2DC153E513EF78DCA /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftYamp-SwiftYampTester/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftYamp-SwiftYampTester/Pods-SwiftYamp-SwiftYampTester.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftYamp_SwiftYampTester;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		DCE9B088DE55F124382276F5ABB61E94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D1D8D0E63A4C16D4790F188C21719CC /* ByteBackpacker.xcconfig */;
+			baseConfigurationReference = 71CB7560591FD5ED8599C2D529021D26 /* ByteBackpacker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -681,6 +981,41 @@
 			};
 			name = Debug;
 		};
+		E641D465702D88DBC106EAA13D481553 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B853F3020175FE9BC0A51F265B4570A /* Starscream.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -689,6 +1024,15 @@
 			buildConfigurations = (
 				163D87BE96A63549B0EACF1CC31A2E90 /* Debug */,
 				707B86CFB21B645E37109F39754D4051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41A1F2A43A32991755266F095B7BE2B4 /* Build configuration list for PBXNativeTarget "Pods-SwiftYamp-SwiftYampTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				096E431920639A6B30A2343B30EF4F0B /* Debug */,
+				D1F9119A7BECE0FB89412C6B5DBC8E2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -707,6 +1051,15 @@
 			buildConfigurations = (
 				A3DB9BF95DD739DA7897E4BB7AD8753A /* Debug */,
 				C59C598FBDDC003C73119B69D10F39B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8C280D09E0C34FDD1E4AE55D9A2FE3F /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E641D465702D88DBC106EAA13D481553 /* Debug */,
+				927FC2AAD9033BF22C59DF77E2610A51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
