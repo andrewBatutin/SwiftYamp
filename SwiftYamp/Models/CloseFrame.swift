@@ -40,7 +40,7 @@ struct CloseFrame: Equatable, YampFrame {
     
     func toData() throws -> Data{
         var r = ByteBackpacker.pack(self.type.type.rawValue)
-        r = r + ByteBackpacker.pack(self.size)
+        r = r + ByteBackpacker.pack(self.size, byteOrder: .bigEndian)
         guard let encStr = self.reason.data(using: .utf8) else{
             throw SerializationError.UnexpectedError
         }

@@ -21,7 +21,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testHandshakeDeSerializationWithToShortFrame() {
-        let inputData = Data(bytes: [0x00, 0x01, 0x00, 0x04, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41])
         XCTAssertThrowsError( try HandshakeFrame(data: inputData) )
     }
     
@@ -31,7 +31,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testHandshakeFrameSerializationSuccsefull(){
-        let expectedData = Data(bytes: [0x00, 0x01, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let expectedData = Data(bytes: [0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = HandshakeFrame(version: 1, size: 4, serializer: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
@@ -130,7 +130,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseFrameDeSerializationWithInValidInputShortReason() {
-        let inputData = Data(bytes: [0x03, 0x04, 0x00, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x03, 0x00, 0x04, 0x41, 0x41, 0x41])
         XCTAssertThrowsError( try CloseFrame(data: inputData) )
     }
     
@@ -143,7 +143,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseFrameSerializationSuccsefullWithPayload(){
-        let expectedData = Data(bytes: [0x03, 0x04, 0x00, 0x41, 0x41, 0x41, 0x41])
+        let expectedData = Data(bytes: [0x03, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = CloseFrame(size: 4, reason: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
@@ -157,7 +157,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseRedirectFrameDeSerializationWithValidInput() {
-        let inputData = Data(bytes: [0x04, 0x04, 0x00, 0x41, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x04, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = try! CloseRedirectFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Close_Redirect))
         XCTAssertEqual(subject.size, 0x04)
@@ -165,7 +165,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseRedirectFrameDeSerializationWithInValidInputShortReason() {
-        let inputData = Data(bytes: [0x04, 0x04, 0x00, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x04, 0x00, 0x04, 0x41, 0x41, 0x41])
         XCTAssertThrowsError( try CloseRedirectFrame(data: inputData) )
     }
     
@@ -175,7 +175,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseRedirectFrameSerializationSuccsefullWithPayload(){
-        let expectedData = Data(bytes: [0x04, 0x04, 0x00, 0x41, 0x41, 0x41, 0x41])
+        let expectedData = Data(bytes: [0x04, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = CloseRedirectFrame(size: 4, url: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)

@@ -76,7 +76,7 @@ func parseHeader(data: Data) throws -> (header: UserMessageHeaderFrame, offset: 
 func parseBody(data: Data) throws -> UserMessageBodyFrame{
     let dataSize = data.count
     if dataSize < 5 { throw SerializationError.WrongDataFrameSize(dataSize) }
-    let size:UInt32 = data.subdata(in: 0..<4).withUnsafeBytes{$0.pointee}
+    let size:UInt32 = UInt32(bigEndian: data.subdata(in: 0..<4).withUnsafeBytes{$0.pointee})
     var body:[UInt8]? = nil
     if size > 0{
         let offset:Int = 4 + Int(size)

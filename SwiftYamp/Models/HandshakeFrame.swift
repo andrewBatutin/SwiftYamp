@@ -29,7 +29,7 @@ public struct HandshakeFrame: Equatable, YampFrame {
    public init(data: Data) throws{
         let dataSize = data.count
         if dataSize < 3 { throw SerializationError.WrongDataFrameSize(dataSize) }
-    version = UInt16(bigEndian: data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee})
+        version = UInt16(bigEndian: data.subdata(in: 1..<3).withUnsafeBytes{$0.pointee})
         size = data[3]
         let offset:Int = 4 + Int(size)
         if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
@@ -43,9 +43,7 @@ public struct HandshakeFrame: Equatable, YampFrame {
     public func toData() throws -> Data{
         
         var r = ByteBackpacker.pack(self.type.type.rawValue)
-        var v = self.version
-        let vData = NSData(bytes: &v, length: MemoryLayout<Int16>.size)
-        r = r + ByteBackpacker.pack(self.version)
+        r = r + ByteBackpacker.pack(self.version, byteOrder: .bigEndian)
         r = r + ByteBackpacker.pack(self.size)
         guard let encStr = self.serializer.data(using: .utf8) else{
             throw SerializationError.UnexpectedError

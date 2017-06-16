@@ -28,7 +28,7 @@ struct UserMessageBodyFrame: Equatable, YampFrame {
     init(data: Data) throws {
         let dataSize = data.count
         if dataSize < 5 { throw SerializationError.WrongDataFrameSize(dataSize) }
-        size = data.subdata(in: 0..<4).withUnsafeBytes{$0.pointee}
+        size = UInt32(bigEndian: data.subdata(in: 0..<4).withUnsafeBytes{$0.pointee})
         if size > 0{
             let offset:Int = 4 + Int(size)
             if dataSize != offset { throw SerializationError.WrongDataFrameSize(dataSize) }
@@ -37,7 +37,7 @@ struct UserMessageBodyFrame: Equatable, YampFrame {
     }
     
     func  toData() throws -> Data {
-        var r = ByteBackpacker.pack(self.size)
+        var r = ByteBackpacker.pack(self.size, byteOrder: .bigEndian)
         if let b = body {
             r += b
         }
