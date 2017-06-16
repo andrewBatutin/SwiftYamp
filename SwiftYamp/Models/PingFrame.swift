@@ -9,26 +9,26 @@
 import Foundation
 import ByteBackpacker
 
-struct PingFrame: Equatable, YampFrame {
+public struct PingFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Ping)
     let size:UInt8
     var payload:String = "" // (optional)
     
-    static func ==(lhs: PingFrame, rhs: PingFrame) -> Bool {
+    public static func ==(lhs: PingFrame, rhs: PingFrame) -> Bool {
         return lhs.type == rhs.type && lhs.size == rhs.size && lhs.payload == rhs.payload
     }
     
-    init(size: UInt8) {
+   public  init(size: UInt8) {
         self.size = size
     }
     
-    init(size: UInt8, payload: String?) {
+    public init(size: UInt8, payload: String?) {
         self.size = size
         self.payload = payload ?? ""
     }
     
-    init(data: Data) throws{
+    public init(data: Data) throws{
         let dataSize = data.count
         if dataSize < 1 { throw SerializationError.WrongDataFrameSize(dataSize) }
         size = data[1]
@@ -38,7 +38,7 @@ struct PingFrame: Equatable, YampFrame {
         payload = String(data: s, encoding: String.Encoding.utf8) ?? ""
     }
     
-    func toData() throws -> Data{
+    public func toData() throws -> Data{
         var r = ByteBackpacker.pack(self.type.type.rawValue)
         r = r + ByteBackpacker.pack(self.size)
         guard let encStr = self.payload.data(using: .utf8) else{

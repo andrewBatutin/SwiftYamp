@@ -9,7 +9,7 @@
 import Foundation
 import ByteBackpacker
 
-struct ResponseFrame: Equatable, YampFrame {
+public struct ResponseFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Response)
     let header:UserMessageHeaderFrame
@@ -17,11 +17,11 @@ struct ResponseFrame: Equatable, YampFrame {
     let responseType:ResponseType
     let body:UserMessageBodyFrame
     
-    static func ==(lhs: ResponseFrame, rhs: ResponseFrame) -> Bool {
+    public static func ==(lhs: ResponseFrame, rhs: ResponseFrame) -> Bool {
         return lhs.type == rhs.type && lhs.header == rhs.header && lhs.requestUid == rhs.requestUid && lhs.responseType == rhs.responseType && lhs.body == rhs.body
     }
     
-    init(header: UserMessageHeaderFrame, requestUid: [UInt8], responseType: ResponseType, body: UserMessageBodyFrame) {
+    public init(header: UserMessageHeaderFrame, requestUid: [UInt8], responseType: ResponseType, body: UserMessageBodyFrame) {
         self.header = header
         self.requestUid = requestUid
         self.responseType = responseType
@@ -29,7 +29,7 @@ struct ResponseFrame: Equatable, YampFrame {
     }
     
     
-    init(data: Data) throws{
+    public init(data: Data) throws{
         let (h, offset) = try parseHeader(data: data.subdata(in: 1..<data.count))
         header = h
         if offset + 16 >= data.count { throw SerializationError.WrongDataFrameSize(data.count) }
@@ -43,7 +43,7 @@ struct ResponseFrame: Equatable, YampFrame {
         body = try parseBody(data: data.subdata(in: (offset + 17)..<data.count))
     }
     
-    func  toData() throws -> Data {
+    public func toData() throws -> Data {
         var res = try type.toData()
         let hData = try header.toData()
         let respTypeData = ByteBackpacker.pack(responseType.rawValue)

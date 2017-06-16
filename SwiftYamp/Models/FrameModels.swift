@@ -19,7 +19,7 @@ public protocol YampFrame {
     func toData() throws -> Data
 }
 
-enum ResponseType: UInt8 {
+public enum ResponseType: UInt8 {
     case Done = 0x00
     case Error = 0x01
     case Progress = 0x02

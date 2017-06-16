@@ -9,23 +9,23 @@
 import Foundation
 import ByteBackpacker
 
-struct UserMessageHeaderFrame: Equatable, YampFrame {
+public struct UserMessageHeaderFrame: Equatable, YampFrame {
     
     let uid:[UInt8]
     let size:UInt8
     let uri:String
     
-    static func ==(lhs: UserMessageHeaderFrame, rhs: UserMessageHeaderFrame) -> Bool {
+    public static func ==(lhs: UserMessageHeaderFrame, rhs: UserMessageHeaderFrame) -> Bool {
         return lhs.uid == rhs.uid && lhs.size == rhs.size && lhs.uri == rhs.uri
     }
     
-    init(uid: [UInt8], size: UInt8, uri: String) {
+    public init(uid: [UInt8], size: UInt8, uri: String) {
         self.uid = uid
         self.size = size
         self.uri = uri
     }
     
-    init(data: Data) throws {
+    public init(data: Data) throws {
         let dataSize = data.count
         if dataSize < 17 { throw SerializationError.WrongDataFrameSize(dataSize) }
         
@@ -41,7 +41,7 @@ struct UserMessageHeaderFrame: Equatable, YampFrame {
         
     }
     
-    func  toData() throws -> Data {
+    public func  toData() throws -> Data {
         var r = self.uid
         r = r + ByteBackpacker.pack(self.size)
         guard let encStr = self.uri.data(using: .utf8) else{

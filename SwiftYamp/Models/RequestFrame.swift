@@ -9,24 +9,24 @@
 import Foundation
 import ByteBackpacker
 
-struct RequestFrame: Equatable, YampFrame {
+public struct RequestFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Request)
     let header:UserMessageHeaderFrame
     let isProgressive:Bool
     let body:UserMessageBodyFrame
     
-    static func ==(lhs: RequestFrame, rhs: RequestFrame) -> Bool {
+    public static func ==(lhs: RequestFrame, rhs: RequestFrame) -> Bool {
         return lhs.type == rhs.type && lhs.header == rhs.header && lhs.isProgressive == rhs.isProgressive && lhs.body == rhs.body
     }
     
-    init(header: UserMessageHeaderFrame, isProgressive: Bool, body: UserMessageBodyFrame) {
+    public init(header: UserMessageHeaderFrame, isProgressive: Bool, body: UserMessageBodyFrame) {
         self.header = header
         self.isProgressive = isProgressive
         self.body = body
     }
     
-    init(data: Data) throws{
+    public init(data: Data) throws{
         let (h, offset) = try parseHeader(data: data.subdata(in: 1..<data.count))
         header = h
         if offset >= data.count { throw SerializationError.WrongDataFrameSize(data.count) }
@@ -35,7 +35,7 @@ struct RequestFrame: Equatable, YampFrame {
         body = try parseBody(data: data.subdata(in: (offset + 1)..<data.count))
     }
     
-    func  toData() throws -> Data {
+    public func  toData() throws -> Data {
         var res = try type.toData()
         let hData = try header.toData()
         let bData = try body.toData()

@@ -26,16 +26,42 @@ class ViewController: UIViewController {
     
     @IBAction func onSendButton(_ sender: Any) {
         
-        let h = HandshakeFrame(version: 1, size: 4, serializer: "test")
+        let h = HandshakeFrame(version: 1, size: 4, serializer: "json")
         
-        //socket?.write(data: try! h.toData())
+        socket?.write(data: try! h.toData())
         //socket?.write(data:Data(bytes: [0x00, 0x00, 0x01, 0x01, 0x41]))
         
-        socket?.write(data:Data(bytes: [0x00]))
-        socket?.write(data:Data(bytes: [0x00, 0x01]))
-        socket?.write(data:Data(bytes: [0x04]))
-        socket?.write(data:Data(bytes: [0x6a, 0x73, 0x6f, 0x6e]))
+        //socket?.write(data:Data(bytes: [0x00]))
+        //socket?.write(data:Data(bytes: [0x00, 0x01]))
+        //socket?.write(data:Data(bytes: [0x04]))
+        //socket?.write(data:Data(bytes: [0x6a, 0x73, 0x6f, 0x6e]))
     }
+    
+    @IBAction func onPingButton(_ sender: Any) {
+        
+        let p = PingFrame(size: 4, payload: "DEAD")
+        socket?.write(data: try! p.toData())
+        
+    }
+    
+    @IBAction func onCloseButton(_ sender: Any) {
+        let c = CloseFrame(size:1, reason: "D")
+        socket?.write(data: try! c.toData())
+    }
+    
+    
+    @IBAction func onCloseRedirectButton(_ sender: Any) {
+        let cr = CloseRedirectFrame(size: 1, url: "A")
+        socket?.write(data: try! cr.toData())
+    }
+    
+    @IBAction func onSendRequestButton(_ sender: Any) {
+        let h = UserMessageHeaderFrame(uid: [0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], size: 3, uri: "mul")
+        let b = UserMessageBodyFrame(size: 16, body: [0x7b, 0x22, 0x74, 0x65, 0x73, 0x74, 0x22, 0x3a, 0x20, 0x22, 0x74, 0x65, 0x73, 0x74, 0x22, 0x7d])
+        let r = RequestFrame(header: h, isProgressive: false, body: b)
+        socket?.write(data: try! r.toData())
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +75,6 @@ class ViewController: UIViewController {
         //websocketDidDisconnect
         socket?.onDisconnect = { (error: NSError?) in
             print("websocket is disconnected: \(error?.localizedDescription)")
-            let r = try? deserialize(data: self.d)
-            print(r)
         }
         //websocketDidReceiveMessage
         socket?.onText = { (text: String) in
@@ -62,7 +86,13 @@ class ViewController: UIViewController {
             self.d.append(data)
             //let res = try! deserialize(data: data) as! HandshakeFrame
             //print(res)
-            
+            do{
+                let res = try deserialize(data: self.d)
+                print(res)
+                self.d = Data()
+            }catch _{
+                
+            }
             
         }
         

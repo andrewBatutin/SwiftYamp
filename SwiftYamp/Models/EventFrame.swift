@@ -8,28 +8,28 @@
 
 import Foundation
 
-struct EventFrame: Equatable, YampFrame {
+public struct EventFrame: Equatable, YampFrame {
     
     let type:BaseFrame = BaseFrame(type: FrameType.Event)
     let header:UserMessageHeaderFrame
     let body:UserMessageBodyFrame
     
-    static func ==(lhs: EventFrame, rhs: EventFrame) -> Bool {
+    public static func ==(lhs: EventFrame, rhs: EventFrame) -> Bool {
         return lhs.type == rhs.type && lhs.header == rhs.header && lhs.body == rhs.body
     }
     
-    init(header: UserMessageHeaderFrame, body: UserMessageBodyFrame) {
+    public init(header: UserMessageHeaderFrame, body: UserMessageBodyFrame) {
         self.header = header
         self.body = body
     }
     
-    init(data: Data) throws{
+    public init(data: Data) throws{
         let (h, offset) = try parseHeader(data: data.subdata(in: 1..<data.count))
         header = h
         body = try parseBody(data: data.subdata(in: offset..<data.count))
     }
 
-    func  toData() throws -> Data {
+    public func toData() throws -> Data {
         var res = try type.toData()
         let hData = try header.toData()
         let bData = try body.toData()

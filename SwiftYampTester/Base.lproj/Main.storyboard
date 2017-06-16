@@ -31,29 +31,74 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-vb-nfu">
                                 <rect key="frame" x="16" y="66" width="343" height="30"/>
-                                <state key="normal" title="Send Message"/>
+                                <state key="normal" title="Send Handshake"/>
                                 <connections>
                                     <action selector="onSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ecI-5H-b88"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBk-GC-x5Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP2-SX-aid">
                                 <rect key="frame" x="16" y="104" width="343" height="30"/>
+                                <state key="normal" title="Send Ping"/>
+                                <connections>
+                                    <action selector="onPingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkG-xE-GPS"/>
+                                    <action selector="onSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="os5-0D-lH3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8a-ar-lHn">
+                                <rect key="frame" x="16" y="142" width="343" height="30"/>
+                                <state key="normal" title="Send Close"/>
+                                <connections>
+                                    <action selector="onCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yRD-gM-xqK"/>
+                                    <action selector="onPingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9iL-nj-DWX"/>
+                                    <action selector="onSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3x-vV-SaB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBk-GC-x5Q">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
                                 <state key="normal" title="Disconnect"/>
                                 <connections>
                                     <action selector="onDisconnectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yh9-jJ-85h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-jV-a6w">
+                                <rect key="frame" x="16" y="218" width="343" height="30"/>
+                                <state key="normal" title="Send Request"/>
+                                <connections>
+                                    <action selector="onSendRequestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dz-gK-J3t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-qQ-evs">
+                                <rect key="frame" x="16" y="180" width="343" height="30"/>
+                                <state key="normal" title="Send Close Redirect"/>
+                                <connections>
+                                    <action selector="onCloseRedirectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A9Z-Eb-b1E"/>
+                                    <action selector="onPingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tx1-sa-0Ke"/>
+                                    <action selector="onSendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TmI-7C-VN6"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Rl-xn-aHx"/>
-                            <constraint firstItem="zBk-GC-x5Q" firstAttribute="top" secondItem="gaf-vb-nfu" secondAttribute="bottom" constant="8" id="2Kv-1T-1lh"/>
+                            <constraint firstItem="JP2-SX-aid" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1zc-P2-q2o"/>
+                            <constraint firstItem="hhO-jV-a6w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="46j-q2-Wpl"/>
+                            <constraint firstItem="A1s-qQ-evs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4lj-0a-EhN"/>
+                            <constraint firstItem="JP2-SX-aid" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6l9-3x-9DG"/>
                             <constraint firstItem="gaf-vb-nfu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BLC-IR-6iY"/>
+                            <constraint firstItem="o8a-ar-lHn" firstAttribute="top" secondItem="JP2-SX-aid" secondAttribute="bottom" constant="8" id="DyH-AK-Q72"/>
                             <constraint firstItem="gaf-vb-nfu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ens-GR-eQW"/>
+                            <constraint firstItem="A1s-qQ-evs" firstAttribute="top" secondItem="o8a-ar-lHn" secondAttribute="bottom" constant="8" id="Hba-mu-HEA"/>
+                            <constraint firstItem="hhO-jV-a6w" firstAttribute="top" secondItem="A1s-qQ-evs" secondAttribute="bottom" constant="8" id="Rxg-FS-kgh"/>
+                            <constraint firstItem="o8a-ar-lHn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SfD-DS-0aw"/>
                             <constraint firstItem="zBk-GC-x5Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V1Y-gl-DIb"/>
+                            <constraint firstItem="hhO-jV-a6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WtU-OH-rVt"/>
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="X58-zQ-WyL"/>
+                            <constraint firstItem="A1s-qQ-evs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zl4-uc-jY3"/>
+                            <constraint firstItem="JP2-SX-aid" firstAttribute="top" secondItem="gaf-vb-nfu" secondAttribute="bottom" constant="8" id="b76-XM-HFU"/>
+                            <constraint firstItem="o8a-ar-lHn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eUF-ZO-Zew"/>
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hFi-Jr-KP2"/>
                             <constraint firstItem="zBk-GC-x5Q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jBa-HC-8VV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zBk-GC-x5Q" secondAttribute="bottom" constant="20" id="qVQ-lZ-TDl"/>
                             <constraint firstItem="gaf-vb-nfu" firstAttribute="top" secondItem="MwW-DP-8BV" secondAttribute="bottom" constant="8" id="wWg-A1-023"/>
                         </constraints>
                     </view>
