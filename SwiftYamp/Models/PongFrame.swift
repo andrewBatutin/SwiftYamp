@@ -9,7 +9,11 @@
 import Foundation
 import ByteBackpacker
 
-public struct PongFrame: Equatable, YampFrame {
+public struct PongFrame: Equatable, YampFrame, YampTypedFrame{
+    
+    public var frameType:FrameType{
+        return type.type
+    }
     
     let type:BaseFrame = BaseFrame(type: FrameType.Pong)
     let size:UInt8

@@ -11,7 +11,7 @@ import Foundation
 protocol YampConnection {
 
     func connect()
-    func disconnect()
+    func disconnect(reason: String?)
     func sendFrame(frame: YampFrame)
-    
+    func sendPing(payload: String?)
 }

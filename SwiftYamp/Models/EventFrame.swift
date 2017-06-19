@@ -8,7 +8,11 @@
 
 import Foundation
 
-public struct EventFrame: Equatable, YampFrame {
+public struct EventFrame: Equatable, YampFrame, YampTypedFrame{
+    
+    public var frameType:FrameType{
+        return type.type
+    }
     
     let type:BaseFrame = BaseFrame(type: FrameType.Event)
     let header:UserMessageHeaderFrame

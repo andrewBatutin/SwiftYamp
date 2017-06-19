@@ -9,7 +9,11 @@
 import Foundation
 import ByteBackpacker
 
-public struct CloseRedirectFrame: YampFrame {
+public struct CloseRedirectFrame: YampFrame, YampTypedFrame{
+    
+    public var frameType:FrameType{
+        return type.type
+    }
     
     let type:BaseFrame = BaseFrame(type: FrameType.Close_Redirect)
     let size:UInt16

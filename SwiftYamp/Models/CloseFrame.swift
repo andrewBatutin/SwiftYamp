@@ -9,7 +9,11 @@
 import Foundation
 import ByteBackpacker
 
-public struct CloseFrame: Equatable, YampFrame {
+public struct CloseFrame: Equatable, YampFrame, YampTypedFrame{
+    
+    public var frameType:FrameType{
+        return type.type
+    }
     
     let type:BaseFrame = BaseFrame(type: FrameType.Close)
     let size:UInt16

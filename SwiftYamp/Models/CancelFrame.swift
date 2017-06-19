@@ -9,7 +9,11 @@
 import Foundation
 import ByteBackpacker
 
-public struct CancelFrame: Equatable, YampFrame {
+public struct CancelFrame: Equatable, YampFrame, YampTypedFrame{
+    
+    public var frameType:FrameType{
+        return type.type
+    }
     
     let type:BaseFrame = BaseFrame(type: FrameType.Cancel)
     let header:UserMessageHeaderFrame
