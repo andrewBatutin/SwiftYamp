@@ -40,8 +40,6 @@ enum DeserializeFrame {
             return try CancelFrame(data: data)
         case .Frame(.Response, let data):
             return try ResponseFrame(data: data)
-        default:
-            throw SerializationError.UnexpectedError
         }
     }
 }

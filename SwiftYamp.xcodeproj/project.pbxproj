@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		00933C2BF28238BBB971494E /* Pods_SwiftYampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */; };
 		5F8B9E17C72B28730D318782 /* Pods_SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */; };
+		A47D7AD01EF7B6EA00028767 /* YampConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */; };
+		A47D7AD31EF7B96A00028767 /* WebsocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */; };
+		A47D7AD41EF7B96A00028767 /* WebsocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */; };
+		A47D7AD51EF7C8C000028767 /* YampConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */; };
 		A4804F621EF121A1005CBCCD /* EventFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F611EF121A1005CBCCD /* EventFrameTest.swift */; };
 		A4804F641EF12BAF005CBCCD /* RequestFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F631EF12BAF005CBCCD /* RequestFrame.swift */; };
 		A4804F651EF12BAF005CBCCD /* RequestFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F631EF12BAF005CBCCD /* RequestFrame.swift */; };
@@ -97,6 +101,8 @@
 		7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F858801373C5AD009861E /* Pods_SwiftYamp_SwiftYampTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYamp_SwiftYampTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYampTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YampConnection.swift; sourceTree = "<group>"; };
+		A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketConnection.swift; sourceTree = "<group>"; };
 		A4804F611EF121A1005CBCCD /* EventFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFrameTest.swift; sourceTree = "<group>"; };
 		A4804F631EF12BAF005CBCCD /* RequestFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFrame.swift; sourceTree = "<group>"; };
 		A4804F661EF12CF8005CBCCD /* RequestFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFrameTest.swift; sourceTree = "<group>"; };
@@ -178,6 +184,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A47D7ACE1EF7B6C900028767 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		A47D7AD11EF7B94700028767 /* WebSocketServer */ = {
+			isa = PBXGroup;
+			children = (
+				A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */,
+			);
+			path = WebSocketServer;
+			sourceTree = "<group>";
+		};
 		A494DC991EF273B1000698E6 /* SwiftYampTester */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +238,8 @@
 		A4BF1ED81EEEA967006B075C /* SwiftYamp */ = {
 			isa = PBXGroup;
 			children = (
+				A47D7AD11EF7B94700028767 /* WebSocketServer */,
+				A47D7ACE1EF7B6C900028767 /* Server */,
 				A4EC701A1EEFCF68006F7F54 /* Parser */,
 				A4BF1EF61EEEAA6C006B075C /* Models */,
 				A4BF1EF31EEEAA58006B075C /* Headers */,
@@ -596,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4804F691EF12F1D005CBCCD /* CancelFrame.swift in Sources */,
+				A47D7AD01EF7B6EA00028767 /* YampConnection.swift in Sources */,
 				A4C841671EF1184C0093EBEE /* EventFrame.swift in Sources */,
 				A4804F641EF12BAF005CBCCD /* RequestFrame.swift in Sources */,
 				A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */,
@@ -605,6 +630,7 @@
 				A4EC70351EF033CF006F7F54 /* PingFrame.swift in Sources */,
 				A4EC70321EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
 				A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */,
+				A47D7AD31EF7B96A00028767 /* WebsocketConnection.swift in Sources */,
 				A4EC70411EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 				A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */,
 				A4EC703E1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */,
@@ -622,11 +648,13 @@
 				A4EC70281EF003F1006F7F54 /* ParserTest.swift in Sources */,
 				A4804F621EF121A1005CBCCD /* EventFrameTest.swift in Sources */,
 				A4804F6C1EF137C6005CBCCD /* CancelFrameTest.swift in Sources */,
+				A47D7AD51EF7C8C000028767 /* YampConnection.swift in Sources */,
 				A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */,
 				A4804F6A1EF12F1D005CBCCD /* CancelFrame.swift in Sources */,
 				A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
 				A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */,
+				A47D7AD41EF7B96A00028767 /* WebsocketConnection.swift in Sources */,
 				A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
 				A4804F711EF14337005CBCCD /* ResponseFrameTest.swift in Sources */,
 				A4C841681EF1184C0093EBEE /* EventFrame.swift in Sources */,

@@ -7,6 +7,7 @@ target 'SwiftYamp' do
 
   # Pods for SwiftYamp
   pod 'ByteBackpacker'
+  pod 'Starscream'
   
   target 'SwiftYampTester' do
       pod 'Starscream'

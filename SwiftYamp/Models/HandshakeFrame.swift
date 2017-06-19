@@ -9,7 +9,11 @@
 import Foundation
 import ByteBackpacker
 
-public struct HandshakeFrame: Equatable, YampFrame {
+public struct HandshakeFrame: Equatable, YampFrame, YampTypedFrame {
+    
+    public var frameType:FrameType{
+        return type.type
+    }
     
     let type:BaseFrame = BaseFrame(type: FrameType.Handshake)
     let version:UInt16
