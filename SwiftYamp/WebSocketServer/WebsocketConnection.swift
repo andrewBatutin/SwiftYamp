@@ -91,7 +91,7 @@ public class WebSocketConnection: YampConnection{
     public func sendPing(payload: String?){
         do{
             let size = payload?.characters.count ?? 0
-            let frame = PingFrame(ack: true, size: UInt8(size), payload: payload)
+            let frame = PingFrame(ack: false, size: UInt8(size), payload: payload)
             webSocket?.write(data: try frame.toData())
         }catch(let exp){
             print(exp)
