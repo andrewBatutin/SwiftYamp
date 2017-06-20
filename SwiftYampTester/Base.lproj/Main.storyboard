@@ -36,13 +36,6 @@
                                     <action selector="onCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qqd-sW-u0I"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBk-GC-x5Q">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
-                                <state key="normal" title="Disconnect"/>
-                                <connections>
-                                    <action selector="onDisconnectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yh9-jJ-85h"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-jV-a6w">
                                 <rect key="frame" x="16" y="180" width="343" height="30"/>
                                 <state key="normal" title="Send Request"/>
@@ -76,15 +69,12 @@
                             <constraint firstItem="A1s-qQ-evs" firstAttribute="top" secondItem="o8a-ar-lHn" secondAttribute="bottom" constant="8" id="Hba-mu-HEA"/>
                             <constraint firstItem="hhO-jV-a6w" firstAttribute="top" secondItem="A1s-qQ-evs" secondAttribute="bottom" constant="8" id="Rxg-FS-kgh"/>
                             <constraint firstItem="o8a-ar-lHn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SfD-DS-0aw"/>
-                            <constraint firstItem="zBk-GC-x5Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V1Y-gl-DIb"/>
                             <constraint firstItem="hhO-jV-a6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WtU-OH-rVt"/>
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="X58-zQ-WyL"/>
                             <constraint firstItem="A1s-qQ-evs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zl4-uc-jY3"/>
                             <constraint firstItem="JP2-SX-aid" firstAttribute="top" secondItem="MwW-DP-8BV" secondAttribute="bottom" constant="8" id="eQz-df-Hus"/>
                             <constraint firstItem="o8a-ar-lHn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eUF-ZO-Zew"/>
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hFi-Jr-KP2"/>
-                            <constraint firstItem="zBk-GC-x5Q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jBa-HC-8VV"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zBk-GC-x5Q" secondAttribute="bottom" constant="20" id="qVQ-lZ-TDl"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -20,11 +20,6 @@ class ViewController: UIViewController {
         socket?.connect()
     }
     
-    @IBAction func onDisconnectButton(_ sender: Any) {
-        socket?.disconnect(reason: "because")
-    }
-
-    
     @IBAction func onPingButton(_ sender: Any) {
         socket?.sendPing(payload: "hi")
     }
