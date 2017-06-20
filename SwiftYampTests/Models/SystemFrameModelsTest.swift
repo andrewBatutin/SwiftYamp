@@ -124,9 +124,8 @@ class SystemFrameModelsTest: XCTestCase {
     func testRequestFrameCreatedCorrectly() {
         let header = UserMessageHeaderFrame(uid: [0x1, 0x2, 0x4], size: 0x01, uri: "uri")
         let body = UserMessageBodyFrame(size: 0x01, body: [0x00, 0x01])
-        let subject = RequestFrame(header: header, isProgressive: true, body: body)
+        let subject = RequestFrame(header: header, body: body)
         XCTAssertEqual(subject.header, header)
-        XCTAssertEqual(subject.isProgressive, true)
         XCTAssertEqual(subject.body, body)
     }
     
