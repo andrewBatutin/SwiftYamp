@@ -54,15 +54,24 @@ public class WebSocketConnection: YampConnection{
                 print(exp)
             }
         }
+        
+        webSocket?.onConnect = {
+            let handshakeFrame = HandshakeFrame(version: self.version, size: 4, serializer: "json")
+            do{
+                self.webSocket?.write(data: try handshakeFrame.toData())
+            }catch(let exp){
+                print(exp)
+            }
+        }
+        
+        webSocket?.onDisconnect = {(error)in
+            print("\(String(describing: error?.localizedDescription))")
+        }
+        
     }
     
     public func connect() {
-        let handshakeFrame = HandshakeFrame(version: version, size: 4, serializer: "json")
-        do{
-            webSocket?.write(data: try handshakeFrame.toData())
-        }catch(let exp){
-            print(exp)
-        }
+        webSocket?.connect()
     }
     
     public func disconnect(reason: String?) {

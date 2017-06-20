@@ -23,12 +23,9 @@ class ViewController: UIViewController {
     @IBAction func onDisconnectButton(_ sender: Any) {
         socket?.disconnect(reason: "because")
     }
-    
-    @IBAction func onSendButton(_ sender: Any) {
-    }
+
     
     @IBAction func onPingButton(_ sender: Any) {
-        
         socket?.sendPing(payload: "hi")
     }
     
@@ -36,9 +33,8 @@ class ViewController: UIViewController {
         socket?.disconnect(reason: "close")
     }
     
-    
     @IBAction func onCloseRedirectButton(_ sender: Any) {
-        
+        print("to be emplemented")
     }
     
     @IBAction func onSendRequestButton(_ sender: Any) {
