@@ -16,23 +16,16 @@ class SystemFrameModelParserTest: XCTestCase {
         let subject = try! HandshakeFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Handshake))
         XCTAssertEqual(subject.version, 0x01)
-        XCTAssertEqual(subject.size, 0x04)
-        XCTAssertEqual(subject.serializer, "AAAA")
     }
-    
-    func testHandshakeDeSerializationWithToShortFrame() {
-        let inputData = Data(bytes: [0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41])
-        XCTAssertThrowsError( try HandshakeFrame(data: inputData) )
-    }
-    
+
     func testHandshakeDeSerializationWithemptyFrame() {
         let inputData = Data(bytes: [])
         XCTAssertThrowsError( try HandshakeFrame(data: inputData) )
     }
     
     func testHandshakeFrameSerializationSuccsefull(){
-        let expectedData = Data(bytes: [0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = HandshakeFrame(version: 1, size: 4, serializer: "AAAA")
+        let expectedData = Data(bytes: [0x00, 0x00, 0x01])
+        let subject = HandshakeFrame(version: 1)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }

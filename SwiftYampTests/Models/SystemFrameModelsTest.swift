@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import SwiftYamp
 
 class SystemFrameModelsTest: XCTestCase {
     
@@ -17,17 +16,15 @@ class SystemFrameModelsTest: XCTestCase {
     }
     
     func testHandshakeFrameIsCreatedCorrectly() {
-        let subject = HandshakeFrame(version: 0x01, size: 0x04, serializer: "1234")
+        let subject = HandshakeFrame(version: 0x01)
         let expectedType = BaseFrame(type: FrameType.Handshake)
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.version, 0x01)
-        XCTAssertEqual(subject.size, 0x04)
-        XCTAssertEqual(subject.serializer, "1234")
     }
     
     func testHandshakeSerizlizedCorrectly() {
-        let expectedData = Data(bytes:[0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let h = HandshakeFrame(version: 0x01, size:0x04, serializer: "AAAA")
+        let expectedData = Data(bytes:[0x00, 0x00, 0x01])
+        let h = HandshakeFrame(version: 0x01)
         XCTAssertEqual(expectedData, try! h.toData())
     }
     

@@ -52,7 +52,7 @@ public class WebSocketConnection: YampConnection{
         }
         
         webSocket?.onConnect = {
-            let handshakeFrame = HandshakeFrame(version: self.version, size: 4, serializer: "json")
+            let handshakeFrame = HandshakeFrame(version: self.version)
             do{
                 self.webSocket?.write(data: try handshakeFrame.toData())
             }catch(let exp){

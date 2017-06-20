@@ -44,5 +44,4 @@ public struct RequestFrame: Equatable, YampFrame, YampTypedFrame{
         return res
     }
 
-    
 }
