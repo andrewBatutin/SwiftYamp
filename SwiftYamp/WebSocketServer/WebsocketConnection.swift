@@ -36,12 +36,8 @@ public class WebSocketConnection: YampConnection{
                     self.onClose?(closeFrame.reason)
                 case .Ping:
                     let pingFrame = frame as! PingFrame
-                    let pongFrame = PongFrame(size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
+                    let pongFrame = PingFrame(size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
                     self.webSocket?.write(data: try pongFrame.toData())
-                case .Pong:
-                    print("pong received")
-                case .Close_Redirect:
-                    print("Close_Redirect not supported")
                 case .Event:
                     self.onEvent?(frame as! EventFrame)
                 case .Response:

@@ -32,14 +32,12 @@ public enum ResponseType: UInt8 {
 
 public enum FrameType : UInt8 {
     case Handshake = 0x00
-    case Ping = 0x01
-    case Pong = 0x02
-    case Close = 0x03
-    case Close_Redirect = 0x04
-    case Event = 0x05
-    case Request = 0x06
-    case Cancel = 0x07
-    case Response = 0x08
+    case Close = 0x01
+    case Ping = 0x02
+    case Event = 0x10
+    case Request = 0x11
+    case Cancel = 0x12
+    case Response = 0x13
 }
 
 struct BaseFrame: Equatable, YampFrame{

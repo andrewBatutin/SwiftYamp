@@ -59,64 +59,22 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testPingFrameSerializationSuccsefull(){
-        let expectedData = Data(bytes: [0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let expectedData = Data(bytes: [0x02, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = PingFrame(size: 4, payload: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
     
     func testPingFrameSerializationSuccsefullWithoutPayload(){
-        let expectedData = Data(bytes: [0x01, 0x00])
+        let expectedData = Data(bytes: [0x02, 0x00])
         let subject = PingFrame(size: 0, payload: "")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
     
     func testPingFrameSerializationSuccsefullWithNilPayload(){
-        let expectedData = Data(bytes: [0x01, 0x00])
+        let expectedData = Data(bytes: [0x02, 0x00])
         let subject = PingFrame(size: 0, payload: nil)
-        let realData = try! subject.toData()
-        XCTAssertEqual(realData, expectedData)
-    }
-    
-    func testPongDeSerializationWithValidInput() {
-        let inputData = Data(bytes: [0x02, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = try! PongFrame(data: inputData)
-        XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Pong))
-        XCTAssertEqual(subject.size, 0x04)
-        XCTAssertEqual(subject.payload, "AAAA")
-    }
-    
-    func testPongDeSerializationWithValidInputEmptyPayload() {
-        let inputData = Data(bytes: [0x02, 0x00])
-        let subject = try! PongFrame(data: inputData)
-        XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Pong))
-        XCTAssertEqual(subject.size, 0x0)
-        XCTAssertEqual(subject.payload, "")
-    }
-    
-    func testPongDeSerializationWithInValidInputWrongPayload() {
-        let inputData = Data(bytes: [0x02, 0x04, 0x41, 0x41, 0x41])
-        XCTAssertThrowsError( try PongFrame(data: inputData) )
-    }
-    
-    func testPongFrameSerializationSuccsefullWithPayload(){
-        let expectedData = Data(bytes: [0x02, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = PongFrame(size: 4, payload: "AAAA")
-        let realData = try! subject.toData()
-        XCTAssertEqual(realData, expectedData)
-    }
-    
-    func testPongFrameSerializationSuccsefullWithoutPayload(){
-        let expectedData = Data(bytes: [0x02, 0x00])
-        let subject = PongFrame(size: 0, payload: "")
-        let realData = try! subject.toData()
-        XCTAssertEqual(realData, expectedData)
-    }
-    
-    func testPongFrameSerializationSuccsefullWithNilPayload(){
-        let expectedData = Data(bytes: [0x02, 0x00])
-        let subject = PongFrame(size: 0, payload: nil)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
@@ -143,42 +101,17 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseFrameSerializationSuccsefullWithPayload(){
-        let expectedData = Data(bytes: [0x03, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let expectedData = Data(bytes: [0x01, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = CloseFrame(size: 4, reason: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
     
     func testCloseFrameSerializationSuccsefullWithoutPayload(){
-        let expectedData = Data(bytes: [0x03, 0x00, 0x00])
+        let expectedData = Data(bytes: [0x01, 0x00, 0x00])
         let subject = CloseFrame(size: 0, reason: nil)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
-    
-    func testCloseRedirectFrameDeSerializationWithValidInput() {
-        let inputData = Data(bytes: [0x04, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = try! CloseRedirectFrame(data: inputData)
-        XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Close_Redirect))
-        XCTAssertEqual(subject.size, 0x04)
-        XCTAssertEqual(subject.url, "AAAA")
-    }
-    
-    func testCloseRedirectFrameDeSerializationWithInValidInputShortReason() {
-        let inputData = Data(bytes: [0x04, 0x00, 0x04, 0x41, 0x41, 0x41])
-        XCTAssertThrowsError( try CloseRedirectFrame(data: inputData) )
-    }
-    
-    func testCloseRedirectFrameDeSerializationWithInValidInputShortSize() {
-        let inputData = Data(bytes: [0x04, 0x04])
-        XCTAssertThrowsError( try CloseRedirectFrame(data: inputData) )
-    }
-    
-    func testCloseRedirectFrameSerializationSuccsefullWithPayload(){
-        let expectedData = Data(bytes: [0x04, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = CloseRedirectFrame(size: 4, url: "AAAA")
-        let realData = try! subject.toData()
-        XCTAssertEqual(realData, expectedData)
-    }
-    
+        
 }

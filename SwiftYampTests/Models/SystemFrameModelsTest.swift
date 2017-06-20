@@ -47,21 +47,6 @@ class SystemFrameModelsTest: XCTestCase {
         XCTAssertEqual(subject.payload, "")
     }
     
-    func testPongFrameCreatedCorrectly() {
-        let expectedType = BaseFrame(type: FrameType.Pong)
-        let subject = PongFrame(size: 0x02, payload: "pong")
-        XCTAssertEqual(subject.type, expectedType)
-        XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.payload, "pong")
-    }
-    
-    func testPongNoPayloadFrameCreatedCorrectly() {
-        let expectedType = BaseFrame(type: FrameType.Pong)
-        let subject = PongFrame(size: 0x02)
-        XCTAssertEqual(subject.type, expectedType)
-        XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.payload, "")
-    }
     
     func testCloseFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Close)
@@ -77,14 +62,6 @@ class SystemFrameModelsTest: XCTestCase {
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
         XCTAssertEqual(subject.reason, "")
-    }
-    
-    func testCloseRedirectFrameCreatedCorrectly() {
-        let expectedType = BaseFrame(type: FrameType.Close_Redirect)
-        let subject = CloseRedirectFrame(size: 0x02, url: "CloseRedirectFrame")
-        XCTAssertEqual(subject.type, expectedType)
-        XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.url, "CloseRedirectFrame")
     }
     
     func testUserMessageHeaderFrameCreatedCorrectly() {

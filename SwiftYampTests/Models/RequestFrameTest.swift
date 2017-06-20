@@ -10,10 +10,12 @@ import XCTest
 
 class RequestFrameTest: XCTestCase {
     
+    let requestType:UInt8 = 0x11
+    
     func testRequestFrameDeSerializationSuccsefullNotProgressive() {
         let expectedHeaderData:[UInt8] = [0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41]
         let expectedBodyData:[UInt8] = [0x00, 0x00, 0x00, 0x04, 0x01, 0x02, 0x03, 0x04]
-        let fullData = Data([0x06] + expectedHeaderData + [0x00] + expectedBodyData)
+        let fullData = Data([requestType] + expectedHeaderData + [0x00] + expectedBodyData)
         let subject = try! RequestFrame(data: fullData)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, fullData)
@@ -30,7 +32,7 @@ class RequestFrameTest: XCTestCase {
     func testRequestFrameDeSerializationSuccsefullIsProgressive() {
         let expectedHeaderData:[UInt8] = [0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41]
         let expectedBodyData:[UInt8] = [0x00, 0x00, 0x00, 0x04, 0x01, 0x02, 0x03, 0x04]
-        let fullData = Data([0x06] + expectedHeaderData + [0x01] + expectedBodyData)
+        let fullData = Data([requestType] + expectedHeaderData + [0x01] + expectedBodyData)
         let subject = try! RequestFrame(data: fullData)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, fullData)
@@ -50,14 +52,14 @@ class RequestFrameTest: XCTestCase {
         let subject = RequestFrame(header: header, isProgressive: true, body: body)
         let expectedHeaderData:[UInt8] = [0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41]
         let expectedBodyData:[UInt8] = [0x00, 0x00, 0x00, 0x04, 0x01, 0x02, 0x03, 0x04]
-        let expectedData = Data([0x06] + expectedHeaderData + [0x01] + expectedBodyData)
+        let expectedData = Data([requestType] + expectedHeaderData + [0x01] + expectedBodyData)
         XCTAssertEqual(expectedData, try! subject.toData())
     }
     
     func testRequestFrameDeSerializeThorwsForShortFrameWithNoIsProgressiveData(){
         let expectedHeaderData:[UInt8] = [0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41]
         let expectedBodyData:[UInt8] = [0x00, 0x00, 0x00, 0x04, 0x01, 0x02, 0x03, 0x04]
-        let fullData = Data([0x06] + expectedHeaderData + expectedBodyData)
+        let fullData = Data([requestType] + expectedHeaderData + expectedBodyData)
         XCTAssertThrowsError(try RequestFrame(data: fullData))
     }
     

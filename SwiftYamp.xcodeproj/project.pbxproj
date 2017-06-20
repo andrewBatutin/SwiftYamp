@@ -48,12 +48,8 @@
 		A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70311EF03384006F7F54 /* HandshakeFrame.swift */; };
 		A4EC70351EF033CF006F7F54 /* PingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70341EF033CF006F7F54 /* PingFrame.swift */; };
 		A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70341EF033CF006F7F54 /* PingFrame.swift */; };
-		A4EC70381EF033F8006F7F54 /* PongFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70371EF033F8006F7F54 /* PongFrame.swift */; };
-		A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70371EF033F8006F7F54 /* PongFrame.swift */; };
 		A4EC703B1EF0345A006F7F54 /* CloseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */; };
 		A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */; };
-		A4EC703E1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */; };
-		A4EC703F1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */; };
 		A4EC70411EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */; };
 		A4EC70421EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */; };
 		A4EC70441EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */; };
@@ -131,9 +127,7 @@
 		A4EC70271EF003F1006F7F54 /* ParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTest.swift; sourceTree = "<group>"; };
 		A4EC70311EF03384006F7F54 /* HandshakeFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandshakeFrame.swift; sourceTree = "<group>"; };
 		A4EC70341EF033CF006F7F54 /* PingFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingFrame.swift; sourceTree = "<group>"; };
-		A4EC70371EF033F8006F7F54 /* PongFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongFrame.swift; sourceTree = "<group>"; };
 		A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseFrame.swift; sourceTree = "<group>"; };
-		A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseRedirectFrame.swift; sourceTree = "<group>"; };
 		A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageHeaderFrame.swift; sourceTree = "<group>"; };
 		A4EC70431EF035BE006F7F54 /* UserMessageHeaderFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageHeaderFrameTest.swift; sourceTree = "<group>"; };
 		A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageBodyFrame.swift; sourceTree = "<group>"; };
@@ -272,9 +266,7 @@
 				A4BF1EF71EEEAA84006B075C /* FrameModels.swift */,
 				A4EC70311EF03384006F7F54 /* HandshakeFrame.swift */,
 				A4EC70341EF033CF006F7F54 /* PingFrame.swift */,
-				A4EC70371EF033F8006F7F54 /* PongFrame.swift */,
 				A4EC703A1EF0345A006F7F54 /* CloseFrame.swift */,
-				A4EC703D1EF03484006F7F54 /* CloseRedirectFrame.swift */,
 				A4EC70401EF03501006F7F54 /* UserMessageHeaderFrame.swift */,
 				A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */,
 				A4C841661EF1184C0093EBEE /* EventFrame.swift */,
@@ -624,7 +616,6 @@
 				A4C841671EF1184C0093EBEE /* EventFrame.swift in Sources */,
 				A4804F641EF12BAF005CBCCD /* RequestFrame.swift in Sources */,
 				A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */,
-				A4EC70381EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70461EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */,
 				A4804F6E1EF14045005CBCCD /* ResponseFrame.swift in Sources */,
 				A4EC70351EF033CF006F7F54 /* PingFrame.swift in Sources */,
@@ -633,7 +624,6 @@
 				A47D7AD31EF7B96A00028767 /* WebsocketConnection.swift in Sources */,
 				A4EC70411EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 				A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */,
-				A4EC703E1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */,
 				A4EC703B1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,7 +642,6 @@
 				A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */,
 				A4804F6A1EF12F1D005CBCCD /* CancelFrame.swift in Sources */,
 				A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
-				A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */,
 				A47D7AD41EF7B96A00028767 /* WebsocketConnection.swift in Sources */,
 				A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
@@ -665,7 +654,6 @@
 				A4804F651EF12BAF005CBCCD /* RequestFrame.swift in Sources */,
 				A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */,
 				A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */,
-				A4EC703F1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */,
 				A4EC70421EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
