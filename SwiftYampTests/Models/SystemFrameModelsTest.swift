@@ -33,7 +33,7 @@ class SystemFrameModelsTest: XCTestCase {
     
     func testPingFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Ping)
-        let subject = PingFrame(size: 0x02, payload: "ping")
+        let subject = PingFrame(ack: true, size: 0x02, payload: "ping")
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
         XCTAssertEqual(subject.payload, "ping")
@@ -41,7 +41,7 @@ class SystemFrameModelsTest: XCTestCase {
     
     func testPingNoPayloadFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Ping)
-        let subject = PingFrame(size: 0x02)
+        let subject = PingFrame(ack: true, size: 0x02)
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
         XCTAssertEqual(subject.payload, "")

@@ -11,8 +11,8 @@ import XCTest
 class ParserTest: XCTestCase {
     
     func testPingFrameDeSerializationSuccsesfyll() {
-        let inputData = Data(bytes: [0x02, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let expectedFrame = PingFrame(size: 4, payload: "AAAA")
+        let inputData = Data(bytes: [0x02, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let expectedFrame = PingFrame(ack: true, size: 4, payload: "AAAA")
         let realFrame = try! deserialize(data: inputData) as! PingFrame
         XCTAssertEqual(realFrame, expectedFrame)
     }

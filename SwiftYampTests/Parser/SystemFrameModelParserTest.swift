@@ -38,7 +38,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testPingDeSerializationWithValidInput() {
-        let inputData = Data(bytes: [0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x02, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = try! PingFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Ping))
         XCTAssertEqual(subject.size, 0x04)
@@ -46,7 +46,7 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testPingDeSerializationWithValidInputEmptyPayload() {
-        let inputData = Data(bytes: [0x01, 0x00])
+        let inputData = Data(bytes: [0x02, 0x01, 0x00])
         let subject = try! PingFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Ping))
         XCTAssertEqual(subject.size, 0x0)
@@ -54,27 +54,27 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testPingDeSerializationWithInValidInputWrongPayload() {
-        let inputData = Data(bytes: [0x01, 0x04, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x02, 0x01, 0x04, 0x41, 0x41, 0x41])
         XCTAssertThrowsError( try PingFrame(data: inputData) )
     }
     
     func testPingFrameSerializationSuccsefull(){
-        let expectedData = Data(bytes: [0x02, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = PingFrame(size: 4, payload: "AAAA")
+        let expectedData = Data(bytes: [0x02, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let subject = PingFrame(ack: true, size: 4, payload: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
     
     func testPingFrameSerializationSuccsefullWithoutPayload(){
-        let expectedData = Data(bytes: [0x02, 0x00])
-        let subject = PingFrame(size: 0, payload: "")
+        let expectedData = Data(bytes: [0x02, 0x01, 0x00])
+        let subject = PingFrame(ack: true, size: 0, payload: "")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
     
     func testPingFrameSerializationSuccsefullWithNilPayload(){
-        let expectedData = Data(bytes: [0x02, 0x00])
-        let subject = PingFrame(size: 0, payload: nil)
+        let expectedData = Data(bytes: [0x02, 0x01, 0x00])
+        let subject = PingFrame(ack: true, size: 0, payload: nil)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
