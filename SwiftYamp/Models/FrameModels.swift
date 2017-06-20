@@ -15,18 +15,22 @@ extension Bool {
     }
 }
 
-protocol YampFrame {
+public protocol YampFrame {
     func toData() throws -> Data
 }
 
-enum ResponseType: UInt8 {
+public protocol YampTypedFrame{
+    var frameType:FrameType {get}
+}
+
+public enum ResponseType: UInt8 {
     case Done = 0x00
     case Error = 0x01
     case Progress = 0x02
     case Cancelled = 0x03
 }
 
-enum FrameType : UInt8 {
+public enum FrameType : UInt8 {
     case Handshake = 0x00
     case Ping = 0x01
     case Pong = 0x02
@@ -38,7 +42,7 @@ enum FrameType : UInt8 {
     case Response = 0x08
 }
 
-struct BaseFrame: Equatable, YampFrame { 
+struct BaseFrame: Equatable, YampFrame{
     let type:FrameType;
     
     static func ==(lhs: BaseFrame, rhs: BaseFrame) -> Bool {

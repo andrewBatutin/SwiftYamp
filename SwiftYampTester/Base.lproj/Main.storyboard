@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftYampTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP2-SX-aid">
+                                <rect key="frame" x="16" y="66" width="343" height="30"/>
+                                <state key="normal" title="Send Ping"/>
+                                <connections>
+                                    <action selector="onPingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkG-xE-GPS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8a-ar-lHn">
+                                <rect key="frame" x="16" y="104" width="343" height="30"/>
+                                <state key="normal" title="Send Close"/>
+                                <connections>
+                                    <action selector="onCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qqd-sW-u0I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBk-GC-x5Q">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <state key="normal" title="Disconnect"/>
+                                <connections>
+                                    <action selector="onDisconnectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yh9-jJ-85h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-jV-a6w">
+                                <rect key="frame" x="16" y="180" width="343" height="30"/>
+                                <state key="normal" title="Send Request"/>
+                                <connections>
+                                    <action selector="onSendRequestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dz-gK-J3t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-qQ-evs">
+                                <rect key="frame" x="16" y="142" width="343" height="30"/>
+                                <state key="normal" title="Send Close Redirect"/>
+                                <connections>
+                                    <action selector="onCloseRedirectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LJB-Dx-XaR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwW-DP-8BV">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="onConnectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="34c-hL-dta"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MwW-DP-8BV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Rl-xn-aHx"/>
+                            <constraint firstItem="JP2-SX-aid" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1zc-P2-q2o"/>
+                            <constraint firstItem="hhO-jV-a6w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="46j-q2-Wpl"/>
+                            <constraint firstItem="A1s-qQ-evs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4lj-0a-EhN"/>
+                            <constraint firstItem="JP2-SX-aid" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6l9-3x-9DG"/>
+                            <constraint firstItem="o8a-ar-lHn" firstAttribute="top" secondItem="JP2-SX-aid" secondAttribute="bottom" constant="8" id="B4d-Wg-F8K"/>
+                            <constraint firstItem="A1s-qQ-evs" firstAttribute="top" secondItem="o8a-ar-lHn" secondAttribute="bottom" constant="8" id="Hba-mu-HEA"/>
+                            <constraint firstItem="hhO-jV-a6w" firstAttribute="top" secondItem="A1s-qQ-evs" secondAttribute="bottom" constant="8" id="Rxg-FS-kgh"/>
+                            <constraint firstItem="o8a-ar-lHn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SfD-DS-0aw"/>
+                            <constraint firstItem="zBk-GC-x5Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V1Y-gl-DIb"/>
+                            <constraint firstItem="hhO-jV-a6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WtU-OH-rVt"/>
+                            <constraint firstItem="MwW-DP-8BV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="X58-zQ-WyL"/>
+                            <constraint firstItem="A1s-qQ-evs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zl4-uc-jY3"/>
+                            <constraint firstItem="JP2-SX-aid" firstAttribute="top" secondItem="MwW-DP-8BV" secondAttribute="bottom" constant="8" id="eQz-df-Hus"/>
+                            <constraint firstItem="o8a-ar-lHn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eUF-ZO-Zew"/>
+                            <constraint firstItem="MwW-DP-8BV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hFi-Jr-KP2"/>
+                            <constraint firstItem="zBk-GC-x5Q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jBa-HC-8VV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zBk-GC-x5Q" secondAttribute="bottom" constant="20" id="qVQ-lZ-TDl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>

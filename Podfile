@@ -7,6 +7,11 @@ target 'SwiftYamp' do
 
   # Pods for SwiftYamp
   pod 'ByteBackpacker'
+  pod 'Starscream'
+  
+  target 'SwiftYampTester' do
+      pod 'Starscream'
+  end
 
   target 'SwiftYampTests' do
     inherit! :search_paths

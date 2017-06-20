@@ -25,6 +25,12 @@ class SystemFrameModelsTest: XCTestCase {
         XCTAssertEqual(subject.serializer, "1234")
     }
     
+    func testHandshakeSerizlizedCorrectly() {
+        let expectedData = Data(bytes:[0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let h = HandshakeFrame(version: 0x01, size:0x04, serializer: "AAAA")
+        XCTAssertEqual(expectedData, try! h.toData())
+    }
+    
     func testPingFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Ping)
         let subject = PingFrame(size: 0x02, payload: "ping")

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		00933C2BF28238BBB971494E /* Pods_SwiftYampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */; };
 		5F8B9E17C72B28730D318782 /* Pods_SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */; };
+		A47D7AD01EF7B6EA00028767 /* YampConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */; };
+		A47D7AD31EF7B96A00028767 /* WebsocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */; };
+		A47D7AD41EF7B96A00028767 /* WebsocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */; };
+		A47D7AD51EF7C8C000028767 /* YampConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */; };
 		A4804F621EF121A1005CBCCD /* EventFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F611EF121A1005CBCCD /* EventFrameTest.swift */; };
 		A4804F641EF12BAF005CBCCD /* RequestFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F631EF12BAF005CBCCD /* RequestFrame.swift */; };
 		A4804F651EF12BAF005CBCCD /* RequestFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F631EF12BAF005CBCCD /* RequestFrame.swift */; };
@@ -19,6 +23,14 @@
 		A4804F6E1EF14045005CBCCD /* ResponseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F6D1EF14045005CBCCD /* ResponseFrame.swift */; };
 		A4804F6F1EF14045005CBCCD /* ResponseFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F6D1EF14045005CBCCD /* ResponseFrame.swift */; };
 		A4804F711EF14337005CBCCD /* ResponseFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4804F701EF14337005CBCCD /* ResponseFrameTest.swift */; };
+		A494DC9B1EF273B1000698E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494DC9A1EF273B1000698E6 /* AppDelegate.swift */; };
+		A494DC9D1EF273B1000698E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494DC9C1EF273B1000698E6 /* ViewController.swift */; };
+		A494DCA01EF273B1000698E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494DC9E1EF273B1000698E6 /* Main.storyboard */; };
+		A494DCA21EF273B1000698E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A494DCA11EF273B1000698E6 /* Assets.xcassets */; };
+		A494DCA51EF273B1000698E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494DCA31EF273B1000698E6 /* LaunchScreen.storyboard */; };
+		A494DCB81EF27FF7000698E6 /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
+		A494DCB91EF28007000698E6 /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
+		A494DCBA1EF28007000698E6 /* SwiftYamp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A4BF1EF51EEEAA58006B075C /* SwiftYamp.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BF1EF41EEEAA58006B075C /* SwiftYamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF1EF71EEEAA84006B075C /* FrameModels.swift */; };
@@ -48,9 +60,17 @@
 		A4EC70461EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */; };
 		A4EC70471EF03DA9006F7F54 /* UserMessageBodyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70451EF03DA9006F7F54 /* UserMessageBodyFrame.swift */; };
 		A4EC70491EF040D5006F7F54 /* UserMessageBodyFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70481EF040D5006F7F54 /* UserMessageBodyFrameTest.swift */; };
+		FCD975898535C46DE2DE18F0 /* Pods_SwiftYamp_SwiftYampTester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6F858801373C5AD009861E /* Pods_SwiftYamp_SwiftYampTester.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A494DCBB1EF28007000698E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4BF1ECD1EEEA967006B075C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4BF1ED51EEEA967006B075C;
+			remoteInfo = SwiftYamp;
+		};
 		A4BF1EE11EEEA967006B075C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4BF1ECD1EEEA967006B075C /* Project object */;
@@ -60,10 +80,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A494DCBD1EF28007000698E6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A494DCBA1EF28007000698E6 /* SwiftYamp.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		24923E46D53A36B9899C328B /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp-SwiftYampTester.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp-SwiftYampTester/Pods-SwiftYamp-SwiftYampTester.release.xcconfig"; sourceTree = "<group>"; };
 		2ECA136DDD3A769D13C908BE /* Pods-SwiftYamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp/Pods-SwiftYamp.release.xcconfig"; sourceTree = "<group>"; };
+		4A94A5B6197097ACAC630C8B /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYamp-SwiftYampTester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYamp-SwiftYampTester/Pods-SwiftYamp-SwiftYampTester.debug.xcconfig"; sourceTree = "<group>"; };
 		7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D6F858801373C5AD009861E /* Pods_SwiftYamp_SwiftYampTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftYamp_SwiftYampTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftYampTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YampConnection.swift; sourceTree = "<group>"; };
+		A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketConnection.swift; sourceTree = "<group>"; };
 		A4804F611EF121A1005CBCCD /* EventFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFrameTest.swift; sourceTree = "<group>"; };
 		A4804F631EF12BAF005CBCCD /* RequestFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFrame.swift; sourceTree = "<group>"; };
 		A4804F661EF12CF8005CBCCD /* RequestFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFrameTest.swift; sourceTree = "<group>"; };
@@ -71,6 +110,13 @@
 		A4804F6B1EF137C6005CBCCD /* CancelFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelFrameTest.swift; sourceTree = "<group>"; };
 		A4804F6D1EF14045005CBCCD /* ResponseFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseFrame.swift; sourceTree = "<group>"; };
 		A4804F701EF14337005CBCCD /* ResponseFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseFrameTest.swift; sourceTree = "<group>"; };
+		A494DC981EF273B1000698E6 /* SwiftYampTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftYampTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A494DC9A1EF273B1000698E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A494DC9C1EF273B1000698E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A494DC9F1EF273B1000698E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A494DCA11EF273B1000698E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A494DCA41EF273B1000698E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A494DCA61EF273B1000698E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF1EDA1EEEA967006B075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BF1EDF1EEEA967006B075C /* SwiftYampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftYampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +144,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A494DC951EF273B1000698E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A494DCB91EF28007000698E6 /* SwiftYamp.framework in Frameworks */,
+				A494DCB81EF27FF7000698E6 /* SwiftYamp.framework in Frameworks */,
+				FCD975898535C46DE2DE18F0 /* Pods_SwiftYamp_SwiftYampTester.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4BF1ED21EEEA967006B075C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,8 +179,38 @@
 			children = (
 				7BFD47B3D281A0A0CADD5369 /* Pods_SwiftYamp.framework */,
 				A6B8140B353F09B2748B584A /* Pods_SwiftYampTests.framework */,
+				8D6F858801373C5AD009861E /* Pods_SwiftYamp_SwiftYampTester.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A47D7ACE1EF7B6C900028767 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				A47D7ACF1EF7B6EA00028767 /* YampConnection.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		A47D7AD11EF7B94700028767 /* WebSocketServer */ = {
+			isa = PBXGroup;
+			children = (
+				A47D7AD21EF7B96A00028767 /* WebsocketConnection.swift */,
+			);
+			path = WebSocketServer;
+			sourceTree = "<group>";
+		};
+		A494DC991EF273B1000698E6 /* SwiftYampTester */ = {
+			isa = PBXGroup;
+			children = (
+				A494DC9A1EF273B1000698E6 /* AppDelegate.swift */,
+				A494DC9C1EF273B1000698E6 /* ViewController.swift */,
+				A494DC9E1EF273B1000698E6 /* Main.storyboard */,
+				A494DCA11EF273B1000698E6 /* Assets.xcassets */,
+				A494DCA31EF273B1000698E6 /* LaunchScreen.storyboard */,
+				A494DCA61EF273B1000698E6 /* Info.plist */,
+			);
+			path = SwiftYampTester;
 			sourceTree = "<group>";
 		};
 		A4BF1ECC1EEEA967006B075C = {
@@ -132,6 +218,7 @@
 			children = (
 				A4BF1ED81EEEA967006B075C /* SwiftYamp */,
 				A4BF1EE31EEEA967006B075C /* SwiftYampTests */,
+				A494DC991EF273B1000698E6 /* SwiftYampTester */,
 				A4BF1ED71EEEA967006B075C /* Products */,
 				C91A9747702B814636A750E0 /* Pods */,
 				702C33D16BE9766EAC06C488 /* Frameworks */,
@@ -143,6 +230,7 @@
 			children = (
 				A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */,
 				A4BF1EDF1EEEA967006B075C /* SwiftYampTests.xctest */,
+				A494DC981EF273B1000698E6 /* SwiftYampTester.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +238,8 @@
 		A4BF1ED81EEEA967006B075C /* SwiftYamp */ = {
 			isa = PBXGroup;
 			children = (
+				A47D7AD11EF7B94700028767 /* WebSocketServer */,
+				A47D7ACE1EF7B6C900028767 /* Server */,
 				A4EC701A1EEFCF68006F7F54 /* Parser */,
 				A4BF1EF61EEEAA6C006B075C /* Models */,
 				A4BF1EF31EEEAA58006B075C /* Headers */,
@@ -234,6 +324,8 @@
 				2ECA136DDD3A769D13C908BE /* Pods-SwiftYamp.release.xcconfig */,
 				9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */,
 				BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */,
+				4A94A5B6197097ACAC630C8B /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */,
+				24923E46D53A36B9899C328B /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -252,6 +344,28 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A494DC971EF273B1000698E6 /* SwiftYampTester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A494DCB61EF273B1000698E6 /* Build configuration list for PBXNativeTarget "SwiftYampTester" */;
+			buildPhases = (
+				033DF9149A20277A3FB1E2E0 /* [CP] Check Pods Manifest.lock */,
+				A494DC941EF273B1000698E6 /* Sources */,
+				A494DC951EF273B1000698E6 /* Frameworks */,
+				A494DC961EF273B1000698E6 /* Resources */,
+				BA0E833D253976030E04DE1A /* [CP] Embed Pods Frameworks */,
+				979D9021E4FF16312364C93C /* [CP] Copy Pods Resources */,
+				A494DCBD1EF28007000698E6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A494DCBC1EF28007000698E6 /* PBXTargetDependency */,
+			);
+			name = SwiftYampTester;
+			productName = SwiftYampTester;
+			productReference = A494DC981EF273B1000698E6 /* SwiftYampTester.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A4BF1ED51EEEA967006B075C /* SwiftYamp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4BF1EEA1EEEA967006B075C /* Build configuration list for PBXNativeTarget "SwiftYamp" */;
@@ -303,6 +417,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Andrey Batutin";
 				TargetAttributes = {
+					A494DC971EF273B1000698E6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = JZHM2Q974G;
+						ProvisioningStyle = Automatic;
+					};
 					A4BF1ED51EEEA967006B075C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JZHM2Q974G;
@@ -322,6 +441,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A4BF1ECC1EEEA967006B075C;
 			productRefGroup = A4BF1ED71EEEA967006B075C /* Products */;
@@ -330,11 +450,22 @@
 			targets = (
 				A4BF1ED51EEEA967006B075C /* SwiftYamp */,
 				A4BF1EDE1EEEA967006B075C /* SwiftYampTests */,
+				A494DC971EF273B1000698E6 /* SwiftYampTester */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A494DC961EF273B1000698E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A494DCA51EF273B1000698E6 /* LaunchScreen.storyboard in Resources */,
+				A494DCA21EF273B1000698E6 /* Assets.xcassets in Resources */,
+				A494DCA01EF273B1000698E6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4BF1ED41EEEA967006B075C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +483,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		033DF9149A20277A3FB1E2E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		979D9021E4FF16312364C93C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYamp-SwiftYampTester/Pods-SwiftYamp-SwiftYampTester-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A3137ADA79A3FB8820E4150D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +541,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYampTests/Pods-SwiftYampTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA0E833D253976030E04DE1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftYamp-SwiftYampTester/Pods-SwiftYamp-SwiftYampTester-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCE37944A026259CA9B93079 /* [CP] Check Pods Manifest.lock */ = {
@@ -430,11 +606,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A494DC941EF273B1000698E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A494DC9D1EF273B1000698E6 /* ViewController.swift in Sources */,
+				A494DC9B1EF273B1000698E6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4BF1ED11EEEA967006B075C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A4804F691EF12F1D005CBCCD /* CancelFrame.swift in Sources */,
+				A47D7AD01EF7B6EA00028767 /* YampConnection.swift in Sources */,
 				A4C841671EF1184C0093EBEE /* EventFrame.swift in Sources */,
 				A4804F641EF12BAF005CBCCD /* RequestFrame.swift in Sources */,
 				A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */,
@@ -444,6 +630,7 @@
 				A4EC70351EF033CF006F7F54 /* PingFrame.swift in Sources */,
 				A4EC70321EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
 				A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */,
+				A47D7AD31EF7B96A00028767 /* WebsocketConnection.swift in Sources */,
 				A4EC70411EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 				A4BF1EF81EEEAA84006B075C /* FrameModels.swift in Sources */,
 				A4EC703E1EF03484006F7F54 /* CloseRedirectFrame.swift in Sources */,
@@ -461,11 +648,13 @@
 				A4EC70281EF003F1006F7F54 /* ParserTest.swift in Sources */,
 				A4804F621EF121A1005CBCCD /* EventFrameTest.swift in Sources */,
 				A4804F6C1EF137C6005CBCCD /* CancelFrameTest.swift in Sources */,
+				A47D7AD51EF7C8C000028767 /* YampConnection.swift in Sources */,
 				A4EC70361EF033CF006F7F54 /* PingFrame.swift in Sources */,
 				A4804F6A1EF12F1D005CBCCD /* CancelFrame.swift in Sources */,
 				A4EC703C1EF0345A006F7F54 /* CloseFrame.swift in Sources */,
 				A4EC70391EF033F8006F7F54 /* PongFrame.swift in Sources */,
 				A4EC70241EEFCFC8006F7F54 /* SystemFrameModelParserTest.swift in Sources */,
+				A47D7AD41EF7B96A00028767 /* WebsocketConnection.swift in Sources */,
 				A4EC70331EF03384006F7F54 /* HandshakeFrame.swift in Sources */,
 				A4804F711EF14337005CBCCD /* ResponseFrameTest.swift in Sources */,
 				A4C841681EF1184C0093EBEE /* EventFrame.swift in Sources */,
@@ -484,6 +673,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A494DCBC1EF28007000698E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4BF1ED51EEEA967006B075C /* SwiftYamp */;
+			targetProxy = A494DCBB1EF28007000698E6 /* PBXContainerItemProxy */;
+		};
 		A4BF1EE21EEEA967006B075C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A4BF1ED51EEEA967006B075C /* SwiftYamp */;
@@ -491,7 +685,56 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		A494DC9E1EF273B1000698E6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A494DC9F1EF273B1000698E6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A494DCA31EF273B1000698E6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A494DCA41EF273B1000698E6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		A494DCB21EF273B1000698E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A94A5B6197097ACAC630C8B /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JZHM2Q974G;
+				INFOPLIST_FILE = SwiftYampTester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HouseOfRisingSun.SwiftYampTester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A494DCB31EF273B1000698E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24923E46D53A36B9899C328B /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JZHM2Q974G;
+				INFOPLIST_FILE = SwiftYampTester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HouseOfRisingSun.SwiftYampTester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		A4BF1EE81EEEA967006B075C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -667,6 +910,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A494DCB61EF273B1000698E6 /* Build configuration list for PBXNativeTarget "SwiftYampTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A494DCB21EF273B1000698E6 /* Debug */,
+				A494DCB31EF273B1000698E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A4BF1ED01EEEA967006B075C /* Build configuration list for PBXProject "SwiftYamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
