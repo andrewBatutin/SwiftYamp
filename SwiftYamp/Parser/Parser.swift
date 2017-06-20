@@ -13,6 +13,7 @@ enum SerializationError: Error{
     case UnexpectedError
     case FrameTypeNotFound(UInt8)
     case ReponseTypeNotFound(UInt8)
+    case CloseCodeTypeNotFound(UInt8)
     case WrongDataFrameSize(Int)
     
 }

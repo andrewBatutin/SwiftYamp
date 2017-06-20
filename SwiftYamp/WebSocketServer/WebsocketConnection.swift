@@ -33,7 +33,7 @@ public class WebSocketConnection: YampConnection{
                     self.onConnect?()
                 case .Close:
                     let closeFrame:CloseFrame = frame as! CloseFrame
-                    self.onClose?(closeFrame.reason)
+                    self.onClose?(closeFrame.message)
                 case .Ping:
                     let pingFrame = frame as! PingFrame
                     let pongFrame = PingFrame(size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
@@ -72,7 +72,7 @@ public class WebSocketConnection: YampConnection{
     
     public func disconnect(reason: String?) {
         let size = reason?.characters.count ?? 0
-        let closeFrame = CloseFrame(size:UInt16(size), reason: reason)
+        let closeFrame = CloseFrame(closeCode: CloseCodeType.Unknown, size:UInt16(size), reason: reason)
         do{
             webSocket?.write(data: try closeFrame.toData())
         }catch(let exp){

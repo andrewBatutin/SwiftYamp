@@ -80,36 +80,42 @@ class SystemFrameModelParserTest: XCTestCase {
     }
     
     func testCloseFrameDeSerializationWithValidInput() {
-        let inputData = Data(bytes: [0x03, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x01, 0x03, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
         let subject = try! CloseFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Close))
         XCTAssertEqual(subject.size, 0x04)
-        XCTAssertEqual(subject.reason, "AAAA")
+        XCTAssertEqual(subject.message, "AAAA")
+        XCTAssertEqual(subject.closeCode, CloseCodeType.Redirect)
+    }
+    
+    func testCloseFrameDeSerializationWithInValidInputWrongCloseCode() {
+        let inputData = Data(bytes: [0x01, 0x99, 0x00, 0x04, 0x41, 0x41, 0x41])
+        XCTAssertThrowsError( try CloseFrame(data: inputData) )
     }
     
     func testCloseFrameDeSerializationWithInValidInputShortReason() {
-        let inputData = Data(bytes: [0x03, 0x00, 0x04, 0x41, 0x41, 0x41])
+        let inputData = Data(bytes: [0x01, 0x03, 0x00, 0x04, 0x41, 0x41, 0x41])
         XCTAssertThrowsError( try CloseFrame(data: inputData) )
     }
     
     func testCloseFrameDeSerializationWithValidInputEmptyReason() {
-        let inputData = Data(bytes: [0x03, 0x00, 0x00])
+        let inputData = Data(bytes: [0x01, 0x03, 0x00, 0x00])
         let subject = try! CloseFrame(data: inputData)
         XCTAssertEqual(subject.type, BaseFrame(type: FrameType.Close))
         XCTAssertEqual(subject.size, 0x0)
-        XCTAssertEqual(subject.reason, "")
+        XCTAssertEqual(subject.message, "")
     }
     
     func testCloseFrameSerializationSuccsefullWithPayload(){
-        let expectedData = Data(bytes: [0x01, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = CloseFrame(size: 4, reason: "AAAA")
+        let expectedData = Data(bytes: [0x01, 0x03, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
+        let subject = CloseFrame(closeCode: CloseCodeType.Redirect, size: 4, reason: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
     
     func testCloseFrameSerializationSuccsefullWithoutPayload(){
-        let expectedData = Data(bytes: [0x01, 0x00, 0x00])
-        let subject = CloseFrame(size: 0, reason: nil)
+        let expectedData = Data(bytes: [0x01, 0x03, 0x00, 0x00])
+        let subject = CloseFrame(closeCode: CloseCodeType.Redirect, size: 0, reason: nil)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
