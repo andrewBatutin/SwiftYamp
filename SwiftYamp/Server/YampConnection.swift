@@ -9,9 +9,13 @@
 import Foundation
 
 protocol YampConnection {
-
     func connect()
-    func disconnect(reason: String?)
+    func cancel(reason: String?)
     func sendFrame(frame: YampFrame)
     func sendPing(payload: String?)
+}
+
+protocol YampMessageConnection {
+    func sendMessage(uri: String, message: String)
+    func sendData(uri: String, data: Data)
 }

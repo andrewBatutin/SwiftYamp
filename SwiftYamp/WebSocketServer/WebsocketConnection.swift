@@ -9,7 +9,7 @@
 import Foundation
 import Starscream
 
-public class WebSocketConnection: YampConnection{
+public class WebSocketConnection: YampConnection, YampMessageConnection{
     var d:Data = Data()
     public var onConnect: ((Void)->Void)?
     public var onClose: ((String)->Void)?
@@ -70,7 +70,7 @@ public class WebSocketConnection: YampConnection{
         webSocket?.connect()
     }
     
-    public func disconnect(reason: String?) {
+    public func cancel(reason: String?) {
         let size = reason?.characters.count ?? 0
         let closeFrame = CloseFrame(closeCode: CloseCodeType.Unknown, size:UInt16(size), reason: reason)
         do{
@@ -80,7 +80,7 @@ public class WebSocketConnection: YampConnection{
         }
     }
     
-    public func sendFrame(frame: YampFrame) {
+    func sendFrame(frame: YampFrame) {
         do{
             webSocket?.write(data: try frame.toData())
         }catch(let exp){
@@ -98,6 +98,20 @@ public class WebSocketConnection: YampConnection{
         }
     }
     
+    public func sendData(uri: String, data: Data) {
+        let h = UserMessageHeaderFrame(uid: messageUuid(), size: UInt8(uri.characters.count), uri: uri)
+        let b = UserMessageBodyFrame(size: UInt32(data.count), body: data.toByteArray())
+        let r = RequestFrame(header: h, body: b)
+        self.sendFrame(frame: r)
+    }
+    
+    public func sendMessage(uri: String, message: String) {
+        guard let data = message.data(using: .utf8) else {
+            print("Error converting string to data")
+            return
+        }
+        self.sendData(uri: uri, data: data)
+    }
     
 
 }

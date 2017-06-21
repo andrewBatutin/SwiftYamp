@@ -25,14 +25,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onCloseButton(_ sender: Any) {
-        socket?.disconnect(reason: "close")
+        socket?.cancel(reason: "close")
     }
     
     @IBAction func onSendRequestButton(_ sender: Any) {
-        let h = UserMessageHeaderFrame(uid: [0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], size: 3, uri: "mul")
-        let b = UserMessageBodyFrame(size: 16, body: [0x7b, 0x22, 0x74, 0x65, 0x73, 0x74, 0x22, 0x3a, 0x20, 0x22, 0x74, 0x65, 0x73, 0x74, 0x22, 0x7d])
-        let r = RequestFrame(header: h, body: b)
-        socket?.sendFrame(frame: r)
+        socket?.sendMessage(uri: "uri", message: "Test")
     }
     
     
