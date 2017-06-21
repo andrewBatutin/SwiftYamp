@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A494DCAA1EF273B1000698E6"
-               BuildableName = "SwiftYampTesterTests.xctest"
-               BlueprintName = "SwiftYampTesterTests"
+               BlueprintIdentifier = "A4BF1EDE1EEEA967006B075C"
+               BuildableName = "SwiftYampTests.xctest"
+               BlueprintName = "SwiftYampTests"
                ReferencedContainer = "container:SwiftYamp.xcodeproj">
             </BuildableReference>
          </TestableReference>
