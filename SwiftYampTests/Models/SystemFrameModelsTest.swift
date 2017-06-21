@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import SwiftYamp
 
 class SystemFrameModelsTest: XCTestCase {
     
@@ -17,23 +16,21 @@ class SystemFrameModelsTest: XCTestCase {
     }
     
     func testHandshakeFrameIsCreatedCorrectly() {
-        let subject = HandshakeFrame(version: 0x01, size: 0x04, serializer: "1234")
+        let subject = HandshakeFrame(version: 0x01)
         let expectedType = BaseFrame(type: FrameType.Handshake)
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.version, 0x01)
-        XCTAssertEqual(subject.size, 0x04)
-        XCTAssertEqual(subject.serializer, "1234")
     }
     
     func testHandshakeSerizlizedCorrectly() {
-        let expectedData = Data(bytes:[0x00, 0x00, 0x01, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let h = HandshakeFrame(version: 0x01, size:0x04, serializer: "AAAA")
+        let expectedData = Data(bytes:[0x00, 0x00, 0x01])
+        let h = HandshakeFrame(version: 0x01)
         XCTAssertEqual(expectedData, try! h.toData())
     }
     
     func testPingFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Ping)
-        let subject = PingFrame(size: 0x02, payload: "ping")
+        let subject = PingFrame(ack: true, size: 0x02, payload: "ping")
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
         XCTAssertEqual(subject.payload, "ping")
@@ -41,50 +38,27 @@ class SystemFrameModelsTest: XCTestCase {
     
     func testPingNoPayloadFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Ping)
-        let subject = PingFrame(size: 0x02)
+        let subject = PingFrame(ack: true, size: 0x02)
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
         XCTAssertEqual(subject.payload, "")
     }
     
-    func testPongFrameCreatedCorrectly() {
-        let expectedType = BaseFrame(type: FrameType.Pong)
-        let subject = PongFrame(size: 0x02, payload: "pong")
-        XCTAssertEqual(subject.type, expectedType)
-        XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.payload, "pong")
-    }
-    
-    func testPongNoPayloadFrameCreatedCorrectly() {
-        let expectedType = BaseFrame(type: FrameType.Pong)
-        let subject = PongFrame(size: 0x02)
-        XCTAssertEqual(subject.type, expectedType)
-        XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.payload, "")
-    }
     
     func testCloseFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Close)
-        let subject = CloseFrame(size: 0x02, reason: "Close")
+        let subject = CloseFrame(closeCode: CloseCodeType.Unknown, size: 0x02, reason: "Close")
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.reason, "Close")
+        XCTAssertEqual(subject.message, "Close")
     }
     
     func testCloseNoReasonFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Close)
-        let subject = CloseFrame(size: 0x02)
+        let subject = CloseFrame(closeCode: CloseCodeType.Unknown, size: 0x02)
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.reason, "")
-    }
-    
-    func testCloseRedirectFrameCreatedCorrectly() {
-        let expectedType = BaseFrame(type: FrameType.Close_Redirect)
-        let subject = CloseRedirectFrame(size: 0x02, url: "CloseRedirectFrame")
-        XCTAssertEqual(subject.type, expectedType)
-        XCTAssertEqual(subject.size, 0x02)
-        XCTAssertEqual(subject.url, "CloseRedirectFrame")
+        XCTAssertEqual(subject.message, "")
     }
     
     func testUserMessageHeaderFrameCreatedCorrectly() {
@@ -147,9 +121,8 @@ class SystemFrameModelsTest: XCTestCase {
     func testRequestFrameCreatedCorrectly() {
         let header = UserMessageHeaderFrame(uid: [0x1, 0x2, 0x4], size: 0x01, uri: "uri")
         let body = UserMessageBodyFrame(size: 0x01, body: [0x00, 0x01])
-        let subject = RequestFrame(header: header, isProgressive: true, body: body)
+        let subject = RequestFrame(header: header, body: body)
         XCTAssertEqual(subject.header, header)
-        XCTAssertEqual(subject.isProgressive, true)
         XCTAssertEqual(subject.body, body)
     }
     

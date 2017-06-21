@@ -9,7 +9,7 @@
 import Foundation
 import Starscream
 
-public class WebSocketConnection: YampConnection{
+public class WebSocketConnection: YampConnection, YampMessageConnection{
     var d:Data = Data()
     public var onConnect: ((Void)->Void)?
     public var onClose: ((String)->Void)?
@@ -33,15 +33,11 @@ public class WebSocketConnection: YampConnection{
                     self.onConnect?()
                 case .Close:
                     let closeFrame:CloseFrame = frame as! CloseFrame
-                    self.onClose?(closeFrame.reason)
+                    self.onClose?(closeFrame.message)
                 case .Ping:
                     let pingFrame = frame as! PingFrame
-                    let pongFrame = PongFrame(size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
+                    let pongFrame = PingFrame(ack: true, size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
                     self.webSocket?.write(data: try pongFrame.toData())
-                case .Pong:
-                    print("pong received")
-                case .Close_Redirect:
-                    print("Close_Redirect not supported")
                 case .Event:
                     self.onEvent?(frame as! EventFrame)
                 case .Response:
@@ -56,7 +52,7 @@ public class WebSocketConnection: YampConnection{
         }
         
         webSocket?.onConnect = {
-            let handshakeFrame = HandshakeFrame(version: self.version, size: 4, serializer: "json")
+            let handshakeFrame = HandshakeFrame(version: self.version)
             do{
                 self.webSocket?.write(data: try handshakeFrame.toData())
             }catch(let exp){
@@ -74,9 +70,9 @@ public class WebSocketConnection: YampConnection{
         webSocket?.connect()
     }
     
-    public func disconnect(reason: String?) {
+    public func cancel(reason: String?) {
         let size = reason?.characters.count ?? 0
-        let closeFrame = CloseFrame(size:UInt16(size), reason: reason)
+        let closeFrame = CloseFrame(closeCode: CloseCodeType.Unknown, size:UInt16(size), reason: reason)
         do{
             webSocket?.write(data: try closeFrame.toData())
         }catch(let exp){
@@ -84,7 +80,7 @@ public class WebSocketConnection: YampConnection{
         }
     }
     
-    public func sendFrame(frame: YampFrame) {
+    func sendFrame(frame: YampFrame) {
         do{
             webSocket?.write(data: try frame.toData())
         }catch(let exp){
@@ -95,13 +91,27 @@ public class WebSocketConnection: YampConnection{
     public func sendPing(payload: String?){
         do{
             let size = payload?.characters.count ?? 0
-            let frame = PingFrame(size: UInt8(size), payload: payload)
+            let frame = PingFrame(ack: false, size: UInt8(size), payload: payload)
             webSocket?.write(data: try frame.toData())
         }catch(let exp){
             print(exp)
         }
     }
     
+    public func sendData(uri: String, data: Data) {
+        let h = UserMessageHeaderFrame(uid: messageUuid(), size: UInt8(uri.characters.count), uri: uri)
+        let b = UserMessageBodyFrame(size: UInt32(data.count), body: data.toByteArray())
+        let r = RequestFrame(header: h, body: b)
+        self.sendFrame(frame: r)
+    }
+    
+    public func sendMessage(uri: String, message: String) {
+        guard let data = message.data(using: .utf8) else {
+            print("Error converting string to data")
+            return
+        }
+        self.sendData(uri: uri, data: data)
+    }
     
 
 }

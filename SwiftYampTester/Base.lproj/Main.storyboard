@@ -36,25 +36,18 @@
                                     <action selector="onCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qqd-sW-u0I"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-jV-a6w">
-                                <rect key="frame" x="16" y="180" width="343" height="30"/>
-                                <state key="normal" title="Send Request"/>
-                                <connections>
-                                    <action selector="onSendRequestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dz-gK-J3t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-qQ-evs">
-                                <rect key="frame" x="16" y="142" width="343" height="30"/>
-                                <state key="normal" title="Send Close Redirect"/>
-                                <connections>
-                                    <action selector="onCloseRedirectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LJB-Dx-XaR"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwW-DP-8BV">
                                 <rect key="frame" x="16" y="28" width="343" height="30"/>
                                 <state key="normal" title="Connect"/>
                                 <connections>
                                     <action selector="onConnectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="34c-hL-dta"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-jV-a6w">
+                                <rect key="frame" x="16" y="142" width="343" height="30"/>
+                                <state key="normal" title="Send Request"/>
+                                <connections>
+                                    <action selector="onSendRequestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dz-gK-J3t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,15 +56,12 @@
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Rl-xn-aHx"/>
                             <constraint firstItem="JP2-SX-aid" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1zc-P2-q2o"/>
                             <constraint firstItem="hhO-jV-a6w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="46j-q2-Wpl"/>
-                            <constraint firstItem="A1s-qQ-evs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4lj-0a-EhN"/>
                             <constraint firstItem="JP2-SX-aid" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6l9-3x-9DG"/>
                             <constraint firstItem="o8a-ar-lHn" firstAttribute="top" secondItem="JP2-SX-aid" secondAttribute="bottom" constant="8" id="B4d-Wg-F8K"/>
-                            <constraint firstItem="A1s-qQ-evs" firstAttribute="top" secondItem="o8a-ar-lHn" secondAttribute="bottom" constant="8" id="Hba-mu-HEA"/>
-                            <constraint firstItem="hhO-jV-a6w" firstAttribute="top" secondItem="A1s-qQ-evs" secondAttribute="bottom" constant="8" id="Rxg-FS-kgh"/>
+                            <constraint firstItem="hhO-jV-a6w" firstAttribute="top" secondItem="o8a-ar-lHn" secondAttribute="bottom" constant="8" id="HDI-2q-7cx"/>
                             <constraint firstItem="o8a-ar-lHn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SfD-DS-0aw"/>
                             <constraint firstItem="hhO-jV-a6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WtU-OH-rVt"/>
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="X58-zQ-WyL"/>
-                            <constraint firstItem="A1s-qQ-evs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zl4-uc-jY3"/>
                             <constraint firstItem="JP2-SX-aid" firstAttribute="top" secondItem="MwW-DP-8BV" secondAttribute="bottom" constant="8" id="eQz-df-Hus"/>
                             <constraint firstItem="o8a-ar-lHn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eUF-ZO-Zew"/>
                             <constraint firstItem="MwW-DP-8BV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hFi-Jr-KP2"/>

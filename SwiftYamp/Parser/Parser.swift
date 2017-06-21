@@ -13,6 +13,7 @@ enum SerializationError: Error{
     case UnexpectedError
     case FrameTypeNotFound(UInt8)
     case ReponseTypeNotFound(UInt8)
+    case CloseCodeTypeNotFound(UInt8)
     case WrongDataFrameSize(Int)
     
 }
@@ -26,12 +27,8 @@ enum DeserializeFrame {
             return try HandshakeFrame(data: data)
         case .Frame(.Ping, let data):
             return try PingFrame(data: data)
-        case .Frame(.Pong, let data):
-            return try PongFrame(data: data)
         case .Frame(.Close, let data):
             return try CloseFrame(data: data)
-        case .Frame(.Close_Redirect, let data):
-            return try CloseRedirectFrame(data: data)
         case .Frame(.Event, let data):
             return try EventFrame(data: data)
         case .Frame(.Request, let data):
