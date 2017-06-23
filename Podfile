@@ -15,7 +15,8 @@ target 'SwiftYamp' do
 
   target 'SwiftYampTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
 end

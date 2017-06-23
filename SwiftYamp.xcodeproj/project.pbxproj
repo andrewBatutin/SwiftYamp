@@ -40,6 +40,7 @@
 		A4DA9D9E1EFA621F00151B98 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA9D9D1EFA621F00151B98 /* Utils.swift */; };
 		A4DA9D9F1EFA621F00151B98 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA9D9D1EFA621F00151B98 /* Utils.swift */; };
 		A4DA9DA51EFA632F00151B98 /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA9DA11EFA62E000151B98 /* UtilsTest.swift */; };
+		A4E348561EFBC08D006D8D2B /* YampConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E348551EFBC08D006D8D2B /* YampConnectionTest.swift */; };
 		A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701B1EEFCF68006F7F54 /* Parser.swift */; };
 		A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701C1EEFCF68006F7F54 /* Serializer.swift */; };
 		A4EC70211EEFCF88006F7F54 /* SystemFrameModelsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */; };
@@ -125,6 +126,7 @@
 		A4C841661EF1184C0093EBEE /* EventFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFrame.swift; sourceTree = "<group>"; };
 		A4DA9D9D1EFA621F00151B98 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A4DA9DA11EFA62E000151B98 /* UtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
+		A4E348551EFBC08D006D8D2B /* YampConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YampConnectionTest.swift; sourceTree = "<group>"; };
 		A4EC701B1EEFCF68006F7F54 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A4EC701C1EEFCF68006F7F54 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFrameModelsTest.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		A4BF1EE31EEEA967006B075C /* SwiftYampTests */ = {
 			isa = PBXGroup;
 			children = (
+				A4E348541EFBC081006D8D2B /* Server */,
 				A4DA9DA01EFA62D900151B98 /* Utils */,
 				A4EC70221EEFCFB3006F7F54 /* Parser */,
 				A4EC701F1EEFCF75006F7F54 /* Models */,
@@ -298,6 +301,14 @@
 				A4DA9DA11EFA62E000151B98 /* UtilsTest.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A4E348541EFBC081006D8D2B /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				A4E348551EFBC08D006D8D2B /* YampConnectionTest.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 		A4EC701A1EEFCF68006F7F54 /* Parser */ = {
@@ -678,6 +689,7 @@
 				A4804F671EF12CF8005CBCCD /* RequestFrameTest.swift in Sources */,
 				A4804F651EF12BAF005CBCCD /* RequestFrame.swift in Sources */,
 				A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */,
+				A4E348561EFBC08D006D8D2B /* YampConnectionTest.swift in Sources */,
 				A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */,
 				A4EC70421EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 				A4DA9D9F1EFA621F00151B98 /* Utils.swift in Sources */,

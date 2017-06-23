@@ -9,13 +9,15 @@
 import Foundation
 import Starscream
 
-public class WebSocketConnection: YampConnection, YampMessageConnection{
+public class WebSocketConnection: YampConnection, YampMessageConnection, YampConnectionCallback, YampDataCallback{
     var d:Data = Data()
     public var onConnect: ((Void)->Void)?
-    public var onClose: ((String)->Void)?
+    public var onClose: ((String, CloseCodeType)->Void)?
     public var onEvent: ((EventFrame)->Void)?
     public var onResponse: ((ResponseFrame)->Void)?
-    let version:UInt16 = 1
+    public var onPong: ((Data?) -> Void)?
+    var onData: ((Data?) -> Void)?
+    let versionSupported:[UInt16] =  [0x01]
     let webSocket:WebSocket?
     
     public init?(url: String){
@@ -28,12 +30,13 @@ public class WebSocketConnection: YampConnection, YampMessageConnection{
             self.d.append(data)
             do{
                 let frame:YampTypedFrame = try deserialize(data: self.d) as! YampTypedFrame
+                self.onData?(self.d)
                 switch frame.frameType {
                 case .Handshake:
-                    self.onConnect?()
+                    self.handshakeReceived(frame: frame as! HandshakeFrame)
                 case .Close:
                     let closeFrame:CloseFrame = frame as! CloseFrame
-                    self.onClose?(closeFrame.message)
+                    self.onClose?(closeFrame.message, closeFrame.closeCode)
                 case .Ping:
                     let pingFrame = frame as! PingFrame
                     let pongFrame = PingFrame(ack: true, size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
@@ -52,7 +55,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection{
         }
         
         webSocket?.onConnect = {
-            let handshakeFrame = HandshakeFrame(version: self.version)
+            let handshakeFrame = HandshakeFrame(version: self.versionSupported.last ?? 0x1)
             do{
                 self.webSocket?.write(data: try handshakeFrame.toData())
             }catch(let exp){
@@ -66,13 +69,24 @@ public class WebSocketConnection: YampConnection, YampMessageConnection{
         
     }
     
+    func handshakeReceived(frame: HandshakeFrame){
+        let v = frame.version
+        if ( self.versionSupported.contains(v) ){
+            self.onConnect?()
+        } else {
+            self.cancel(reason: "Version Not Supported", closeCode: .VersionNotSupported)
+            self.onClose?("Version Not Supported", .VersionNotSupported)
+        }
+        
+    }
+    
     public func connect() {
         webSocket?.connect()
     }
     
-    public func cancel(reason: String?) {
+    public func cancel(reason: String?, closeCode: CloseCodeType) {
         let size = reason?.characters.count ?? 0
-        let closeFrame = CloseFrame(closeCode: CloseCodeType.Unknown, size:UInt16(size), reason: reason)
+        let closeFrame = CloseFrame(closeCode: closeCode, size:UInt16(size), reason: reason)
         do{
             webSocket?.write(data: try closeFrame.toData())
         }catch(let exp){
@@ -111,6 +125,11 @@ public class WebSocketConnection: YampConnection, YampMessageConnection{
             return
         }
         self.sendData(uri: uri, data: data)
+    }
+    
+    public func timeout(){
+        self.cancel(reason: "Timeout", closeCode: .Timeout)
+        self.onClose?("Timeout", .Timeout)
     }
     
 

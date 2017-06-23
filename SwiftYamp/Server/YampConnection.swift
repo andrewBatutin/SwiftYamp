@@ -8,9 +8,22 @@
 
 import Foundation
 
+protocol YampDataCallback {
+    var onData: ((Data?) -> Void)? {get set}
+}
+
+protocol YampConnectionCallback {
+    var onConnect: ((Void) -> Void)? {get set}
+    var onClose: ((String, CloseCodeType) -> Void)? {get set}
+    var onEvent: ((EventFrame)->Void)? {get set}
+    var onResponse: ((ResponseFrame)->Void)? {get set}
+    var onPong: ((Data?) -> Void)? {get set}
+}
+
 protocol YampConnection {
     func connect()
-    func cancel(reason: String?)
+    func timeout()
+    func cancel(reason: String?, closeCode: CloseCodeType)
     func sendFrame(frame: YampFrame)
     func sendPing(payload: String?)
 }
