@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onCloseButton(_ sender: Any) {
-        socket?.cancel(reason: "close")
+        socket?.cancel(reason: "close", closeCode:  .Unknown)
     }
     
     @IBAction func onSendRequestButton(_ sender: Any) {
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             print("websocket is connected")
         }
         //websocketDidDisconnect
-        socket?.onClose = { (reason: String?) in
+        socket?.onClose = { (reason, closeCode) in
             print("websocket is disconnected: \(String(describing: reason))")
         }
         //websocketDidReceiveMessage

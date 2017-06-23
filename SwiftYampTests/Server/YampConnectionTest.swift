@@ -55,7 +55,21 @@ class TableOfContentsSpec: QuickSpec {
                     expect(closeCode).toEventually(equal(CloseCodeType.VersionNotSupported))
                     
                 }
-                
+            }
+            
+            context("redirect"){
+                it("should redirect to new url"){
+                    var closeCode:CloseCodeType?
+                    let sut = WebSocketConnection(url: "ws://localhost:8888")!
+                    
+                    sut.onClose = { reason, code in
+                        closeCode = code
+                    }
+                    
+                    sut.timeout()
+                    
+                    expect(closeCode).toEventually(equal(CloseCodeType.Timeout))
+                }
             }
         }
         
