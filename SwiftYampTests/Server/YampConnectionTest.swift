@@ -26,7 +26,7 @@ class TableOfContentsSpec: QuickSpec {
                     sut.onConnect = {
                         isConnected = true
                     }
-                    sut.onData = { data in
+                    sut.onDataReceived = { data in
                         
                         handshakeSend = try! HandshakeFrame(data: data!)
                     }
@@ -59,16 +59,26 @@ class TableOfContentsSpec: QuickSpec {
             
             context("redirect"){
                 it("should redirect to new url"){
+                    let h = HandshakeFrame(version: 0x1)
                     var closeCode:CloseCodeType?
+                    var closeFrame:CloseFrame?
                     let sut = WebSocketConnection(url: "ws://localhost:8888")!
+                    
+                    sut.onRedirect = {
+                        return "new_url"
+                    }
+                    
+                    sut.onDataSend = { data in
+                        closeFrame = try! CloseFrame(data: data!)
+                    }
                     
                     sut.onClose = { reason, code in
                         closeCode = code
                     }
                     
-                    sut.timeout()
-                    
-                    expect(closeCode).toEventually(equal(CloseCodeType.Timeout))
+                    sut.webSocket?.onData?(try! h.toData())
+                    expect(closeCode).toEventually(equal(CloseCodeType.Redirect))
+                    expect(closeFrame?.message).toEventually(equal("new_url"))
                 }
             }
         }

@@ -9,12 +9,14 @@
 import Foundation
 
 protocol YampDataCallback {
-    var onData: ((Data?) -> Void)? {get set}
+    var onDataReceived: ((Data?) -> Void)? {get set}
+    var onDataSend: ((Data?) -> Void)? {get set}
 }
 
 protocol YampConnectionCallback {
     var onConnect: ((Void) -> Void)? {get set}
     var onClose: ((String, CloseCodeType) -> Void)? {get set}
+    var onRedirect: ((Void) -> String)? {get set}
     var onEvent: ((EventFrame)->Void)? {get set}
     var onResponse: ((ResponseFrame)->Void)? {get set}
     var onPong: ((Data?) -> Void)? {get set}

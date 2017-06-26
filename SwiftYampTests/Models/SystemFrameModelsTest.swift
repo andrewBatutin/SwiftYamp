@@ -47,7 +47,7 @@ class SystemFrameModelsTest: XCTestCase {
     
     func testCloseFrameCreatedCorrectly() {
         let expectedType = BaseFrame(type: FrameType.Close)
-        let subject = CloseFrame(closeCode: CloseCodeType.Unknown, size: 0x02, reason: "Close")
+        let subject = CloseFrame(closeCode: CloseCodeType.Unknown, size: 0x02, message: "Close")
         XCTAssertEqual(subject.type, expectedType)
         XCTAssertEqual(subject.size, 0x02)
         XCTAssertEqual(subject.message, "Close")

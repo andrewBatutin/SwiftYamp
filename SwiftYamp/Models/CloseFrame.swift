@@ -41,10 +41,10 @@ public struct CloseFrame: Equatable, YampFrame, YampTypedFrame{
         self.size = size
     }
     
-    public init(closeCode: CloseCodeType, size: UInt16, reason: String?) {
+    public init(closeCode: CloseCodeType, size: UInt16, message: String?) {
         self.closeCode = closeCode
         self.size = size
-        self.message = reason ?? ""
+        self.message = message ?? ""
     }
     
     public init(data: Data) throws{

@@ -13,10 +13,12 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     var d:Data = Data()
     public var onConnect: ((Void)->Void)?
     public var onClose: ((String, CloseCodeType)->Void)?
+    public var onRedirect: ((Void) -> String)?
     public var onEvent: ((EventFrame)->Void)?
     public var onResponse: ((ResponseFrame)->Void)?
     public var onPong: ((Data?) -> Void)?
-    var onData: ((Data?) -> Void)?
+    var onDataReceived: ((Data?) -> Void)?
+    var onDataSend: ((Data?) -> Void)?
     let versionSupported:[UInt16] =  [0x01]
     let webSocket:WebSocket?
     
@@ -30,7 +32,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
             self.d.append(data)
             do{
                 let frame:YampTypedFrame = try deserialize(data: self.d) as! YampTypedFrame
-                self.onData?(self.d)
+                self.onDataReceived?(self.d)
                 switch frame.frameType {
                 case .Handshake:
                     self.handshakeReceived(frame: frame as! HandshakeFrame)
@@ -40,7 +42,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
                 case .Ping:
                     let pingFrame = frame as! PingFrame
                     let pongFrame = PingFrame(ack: true, size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
-                    self.webSocket?.write(data: try pongFrame.toData())
+                    self.sendFrame(frame: pongFrame)
                 case .Event:
                     self.onEvent?(frame as! EventFrame)
                 case .Response:
@@ -56,11 +58,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
         
         webSocket?.onConnect = {
             let handshakeFrame = HandshakeFrame(version: self.versionSupported.last ?? 0x1)
-            do{
-                self.webSocket?.write(data: try handshakeFrame.toData())
-            }catch(let exp){
-                print(exp)
-            }
+            self.sendFrame(frame: handshakeFrame)
         }
         
         webSocket?.onDisconnect = {(error)in
@@ -69,8 +67,19 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
         
     }
     
+    func shouldRedirect() -> String?{
+        return ""
+    }
+    
     func handshakeReceived(frame: HandshakeFrame){
         let v = frame.version
+        
+        if let s = self.onRedirect?() {
+            self.cancel(reason: s, closeCode: .Redirect)
+            self.onClose?("Redirect to \(s)", .Redirect)
+            return
+        }
+        
         if ( self.versionSupported.contains(v) ){
             self.onConnect?()
         } else {
@@ -86,30 +95,24 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     
     public func cancel(reason: String?, closeCode: CloseCodeType) {
         let size = reason?.characters.count ?? 0
-        let closeFrame = CloseFrame(closeCode: closeCode, size:UInt16(size), reason: reason)
-        do{
-            webSocket?.write(data: try closeFrame.toData())
-        }catch(let exp){
-            print(exp)
-        }
+        let closeFrame = CloseFrame(closeCode: closeCode, size:UInt16(size), message: reason)
+        self.sendFrame(frame: closeFrame)
     }
     
     func sendFrame(frame: YampFrame) {
         do{
-            webSocket?.write(data: try frame.toData())
+            let data = try frame.toData()
+            self.onDataSend?(data)
+            webSocket?.write(data: data)
         }catch(let exp){
             print(exp)
         }
     }
     
     public func sendPing(payload: String?){
-        do{
-            let size = payload?.characters.count ?? 0
-            let frame = PingFrame(ack: false, size: UInt8(size), payload: payload)
-            webSocket?.write(data: try frame.toData())
-        }catch(let exp){
-            print(exp)
-        }
+        let size = payload?.characters.count ?? 0
+        let frame = PingFrame(ack: false, size: UInt8(size), payload: payload)
+        self.sendFrame(frame: frame)
     }
     
     public func sendData(uri: String, data: Data) {

@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         socket = WebSocketConnection(url: "ws://localhost:8888")!
         
         
+        
         socket?.onConnect = {
             print("websocket is connected")
         }
