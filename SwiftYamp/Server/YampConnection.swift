@@ -31,6 +31,7 @@ protocol YampConnection {
 }
 
 protocol YampMessageConnection {
+    func sendEvent(uri: String, message: String)
     func sendMessage(uri: String, message: String)
     func sendData(uri: String, data: Data)
 }

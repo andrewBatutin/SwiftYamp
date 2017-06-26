@@ -35,7 +35,7 @@ public struct RequestFrame: Equatable, YampFrame, YampTypedFrame{
         body = try parseBody(data: data.subdata(in: offset..<data.count))
     }
     
-    public func  toData() throws -> Data {
+    public func toData() throws -> Data {
         var res = try type.toData()
         let hData = try header.toData()
         let bData = try body.toData()

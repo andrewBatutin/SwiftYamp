@@ -92,10 +92,31 @@ class TableOfContentsSpec: QuickSpec {
                     var closeCode:CloseCodeType?
                     let sut = WebSocketConnection(url: "ws://localhost:8888")!
                     
+                    var isConnected = false
+                    var handshakeSend:HandshakeFrame?
+                    
                     sut.onClose = { reason, code in
                         closeCode = code
+                        sut.reconnect(url: reason)
+                        
+                        let h = HandshakeFrame(version: 0x1)
+                        
+                        sut.onConnect = {
+                            isConnected = true
+                        }
+                        
+                        sut.onDataReceived = { data in
+                            
+                            handshakeSend = try! HandshakeFrame(data: data!)
+                        }
+                        
+                        sut.webSocket?.onData?(try! h.toData())
+                        
+                        expect(isConnected).toEventually(beTrue())
+                        expect(handshakeSend!.version).toEventually(equal(UInt16(0x01)))
+                        expect(reason).toEventually(equal("ws://localhost:7777"))
+                        
                     }
-                    
                     sut.webSocket?.onData?(try! redirectClose.toData())
                     expect(closeCode).toEventually(equal(CloseCodeType.Redirect))
                 }
@@ -119,6 +140,21 @@ class TableOfContentsSpec: QuickSpec {
                     
                     sut.timeout()
                     
+                    expect(closeCode).toEventually(equal(CloseCodeType.Timeout))
+                    
+                })
+                
+                it("received close.timeout", closure: {
+                    
+                    var closeCode:CloseCodeType?
+                    let c = CloseFrame(closeCode: .Timeout)
+                    let sut = WebSocketConnection(url: "ws://localhost:8888")!
+                    
+                    sut.onClose = { reason, code in
+                        closeCode = code
+                    }
+                    
+                    sut.webSocket?.onData?(try! c.toData())
                     expect(closeCode).toEventually(equal(CloseCodeType.Timeout))
                     
                 })

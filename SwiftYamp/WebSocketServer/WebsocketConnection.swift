@@ -43,6 +43,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     }
     
     private func incomingDataHandler() -> ((Data) -> Void)?{
+        self.d = Data()
         return { (data: Data) in
             self.d.append(data)
             do{
@@ -72,7 +73,6 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
         }
 
     }
-    
 
     func handshakeReceived(frame: HandshakeFrame){
         let v = frame.version
@@ -92,24 +92,29 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     }
     
     func closeReceived(frame: CloseFrame){
-        
+        self.onClose?(frame.message, frame.closeCode)
         switch frame.closeCode {
+        case .Timeout:
+            self.disconnect()
         case .Redirect:
-            self.onClose?(frame.message, frame.closeCode)
             self.reconnect(url: frame.message)
         default:
-            self.onClose?(frame.message, frame.closeCode)
+            print("")
         }
         
     }
     
     public func reconnect(url: String){
-        self.webSocket?.disconnect()
+        self.disconnect()
         guard let serverUrl = URL(string: url) else {
             return
         }
         self.webSocket = self.setupTransport(url: serverUrl)
         self.connect()
+    }
+    
+    private func disconnect(){
+        self.webSocket?.disconnect()
     }
     
     public func connect() {
@@ -144,6 +149,17 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
         self.sendFrame(frame: r)
     }
     
+    public func sendEvent(uri: String, message: String){
+        guard let data = message.data(using: .utf8) else {
+            print("Error converting string to data")
+            return
+        }
+        let h = UserMessageHeaderFrame(uid: messageUuid(), size: UInt8(uri.characters.count), uri: uri)
+        let b = UserMessageBodyFrame(size: UInt32(data.count), body: data.toByteArray())
+        let r = EventFrame(header: h, body: b)
+        self.sendFrame(frame: r)
+    }
+    
     public func sendMessage(uri: String, message: String) {
         guard let data = message.data(using: .utf8) else {
             print("Error converting string to data")
@@ -153,8 +169,8 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     }
     
     public func timeout(){
-        self.cancel(reason: "Timeout", closeCode: .Timeout)
         self.onClose?("Timeout", .Timeout)
+        self.cancel(reason: "Timeout", closeCode: .Timeout)
     }
     
 
