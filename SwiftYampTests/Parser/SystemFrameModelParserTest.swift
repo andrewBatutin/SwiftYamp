@@ -101,14 +101,14 @@ class SystemFrameModelParserTest: XCTestCase {
     
     func testCloseFrameSerializationSuccsefullWithPayload(){
         let expectedData = Data(bytes: [0x01, 0x03, 0x00, 0x04, 0x41, 0x41, 0x41, 0x41])
-        let subject = CloseFrame(closeCode: CloseCodeType.Redirect, size: 4, message: "AAAA")
+        let subject = CloseFrame(closeCode: CloseCodeType.Redirect, message: "AAAA")
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }
     
     func testCloseFrameSerializationSuccsefullWithoutPayload(){
         let expectedData = Data(bytes: [0x01, 0x03, 0x00, 0x00])
-        let subject = CloseFrame(closeCode: CloseCodeType.Redirect, size: 0, message: nil)
+        let subject = CloseFrame(closeCode: CloseCodeType.Redirect, message: nil)
         let realData = try! subject.toData()
         XCTAssertEqual(realData, expectedData)
     }

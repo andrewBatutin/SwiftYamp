@@ -20,15 +20,30 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     var onDataReceived: ((Data?) -> Void)?
     var onDataSend: ((Data?) -> Void)?
     let versionSupported:[UInt16] =  [0x01]
-    let webSocket:WebSocket?
+    var webSocket:WebSocket?
     
     public init?(url: String){
         guard let serverUrl = URL(string: url) else {
             return nil
         }
-        
-        webSocket = WebSocket(url: serverUrl)
-        webSocket?.onData = { (data: Data) in
+        webSocket = self.setupTransport(url: serverUrl)
+    }
+    
+    private func setupTransport(url: URL) -> WebSocket{
+        let webSocket = WebSocket(url: url)
+        webSocket.onData = self.incomingDataHandler()
+        webSocket.onConnect = {
+            let handshakeFrame = HandshakeFrame(version: self.versionSupported.last ?? 0x1)
+            self.sendFrame(frame: handshakeFrame)
+        }
+        webSocket.onDisconnect = {(error)in
+            print("\(String(describing: error?.localizedDescription))")
+        }
+        return webSocket
+    }
+    
+    private func incomingDataHandler() -> ((Data) -> Void)?{
+        return { (data: Data) in
             self.d.append(data)
             do{
                 let frame:YampTypedFrame = try deserialize(data: self.d) as! YampTypedFrame
@@ -38,7 +53,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
                     self.handshakeReceived(frame: frame as! HandshakeFrame)
                 case .Close:
                     let closeFrame:CloseFrame = frame as! CloseFrame
-                    self.onClose?(closeFrame.message, closeFrame.closeCode)
+                    self.closeReceived(frame: closeFrame)
                 case .Ping:
                     let pingFrame = frame as! PingFrame
                     let pongFrame = PingFrame(ack: true, size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
@@ -55,22 +70,10 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
                 print(exp)
             }
         }
-        
-        webSocket?.onConnect = {
-            let handshakeFrame = HandshakeFrame(version: self.versionSupported.last ?? 0x1)
-            self.sendFrame(frame: handshakeFrame)
-        }
-        
-        webSocket?.onDisconnect = {(error)in
-            print("\(String(describing: error?.localizedDescription))")
-        }
-        
+
     }
     
-    func shouldRedirect() -> String?{
-        return ""
-    }
-    
+
     func handshakeReceived(frame: HandshakeFrame){
         let v = frame.version
         
@@ -86,7 +89,27 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
             self.cancel(reason: "Version Not Supported", closeCode: .VersionNotSupported)
             self.onClose?("Version Not Supported", .VersionNotSupported)
         }
+    }
+    
+    func closeReceived(frame: CloseFrame){
         
+        switch frame.closeCode {
+        case .Redirect:
+            self.onClose?(frame.message, frame.closeCode)
+            self.reconnect(url: frame.message)
+        default:
+            self.onClose?(frame.message, frame.closeCode)
+        }
+        
+    }
+    
+    public func reconnect(url: String){
+        self.webSocket?.disconnect()
+        guard let serverUrl = URL(string: url) else {
+            return
+        }
+        self.webSocket = self.setupTransport(url: serverUrl)
+        self.connect()
     }
     
     public func connect() {
@@ -94,8 +117,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     }
     
     public func cancel(reason: String?, closeCode: CloseCodeType) {
-        let size = reason?.characters.count ?? 0
-        let closeFrame = CloseFrame(closeCode: closeCode, size:UInt16(size), message: reason)
+        let closeFrame = CloseFrame(closeCode: closeCode, message: reason)
         self.sendFrame(frame: closeFrame)
     }
     

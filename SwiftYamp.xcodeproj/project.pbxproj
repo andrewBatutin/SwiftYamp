@@ -28,7 +28,6 @@
 		A494DCA01EF273B1000698E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494DC9E1EF273B1000698E6 /* Main.storyboard */; };
 		A494DCA21EF273B1000698E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A494DCA11EF273B1000698E6 /* Assets.xcassets */; };
 		A494DCA51EF273B1000698E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494DCA31EF273B1000698E6 /* LaunchScreen.storyboard */; };
-		A494DCB81EF27FF7000698E6 /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A494DCB91EF28007000698E6 /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A494DCBA1EF28007000698E6 /* SwiftYamp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
@@ -150,7 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A494DCB91EF28007000698E6 /* SwiftYamp.framework in Frameworks */,
-				A494DCB81EF27FF7000698E6 /* SwiftYamp.framework in Frameworks */,
 				FCD975898535C46DE2DE18F0 /* Pods_SwiftYamp_SwiftYampTester.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

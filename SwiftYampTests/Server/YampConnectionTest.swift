@@ -57,8 +57,9 @@ class TableOfContentsSpec: QuickSpec {
                 }
             }
             
-            context("redirect"){
-                it("should redirect to new url"){
+            context("outgoing redirect"){
+            
+                it("should redirect to new url if redirect callback is implemented"){
                     let h = HandshakeFrame(version: 0x1)
                     var closeCode:CloseCodeType?
                     var closeFrame:CloseFrame?
@@ -80,7 +81,27 @@ class TableOfContentsSpec: QuickSpec {
                     expect(closeCode).toEventually(equal(CloseCodeType.Redirect))
                     expect(closeFrame?.message).toEventually(equal("new_url"))
                 }
+                
             }
+            
+            context("incoming redirect"){
+                
+                it("should reconnect to new url if close.redirect received"){
+                    
+                    let redirectClose = CloseFrame(closeCode: .Redirect, message: "ws://localhost:7777")
+                    var closeCode:CloseCodeType?
+                    let sut = WebSocketConnection(url: "ws://localhost:8888")!
+                    
+                    sut.onClose = { reason, code in
+                        closeCode = code
+                    }
+                    
+                    sut.webSocket?.onData?(try! redirectClose.toData())
+                    expect(closeCode).toEventually(equal(CloseCodeType.Redirect))
+                }
+                
+            }
+            
         }
         
         describe("normal operation"){
