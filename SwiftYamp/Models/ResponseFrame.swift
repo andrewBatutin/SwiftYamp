@@ -59,4 +59,18 @@ public struct ResponseFrame: Equatable, YampFrame, YampTypedFrame{
         return res
     }
     
+    public func payload() -> Data?{
+        guard let data = body.body else {
+            return nil
+        }
+        return Data(bytes: data)
+    }
+    
+    public func payload() -> String?{
+        guard let data = body.body else {
+            return nil
+        }
+        return String(data: Data(bytes: data), encoding: .utf8)
+    }
+    
 }

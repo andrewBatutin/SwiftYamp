@@ -32,19 +32,20 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     private func setupTransport(url: URL) -> WebSocket{
         let webSocket = WebSocket(url: url)
         webSocket.onData = self.incomingDataHandler()
-        webSocket.onConnect = {
+        webSocket.onConnect = { [unowned self] in
             let handshakeFrame = HandshakeFrame(version: self.versionSupported.last ?? 0x1)
             self.sendFrame(frame: handshakeFrame)
         }
-        webSocket.onDisconnect = {(error)in
-            print("\(String(describing: error?.localizedDescription))")
+        webSocket.onDisconnect = {[unowned self] (error)in
+            let c = CloseFrame(closeCode: .Unknown, message: error?.localizedDescription)
+            self.closeReceived(frame: c)
         }
         return webSocket
     }
     
     private func incomingDataHandler() -> ((Data) -> Void)?{
         self.d = Data()
-        return { (data: Data) in
+        return { [unowned self] (data: Data) in
             self.d.append(data)
             do{
                 let frame:YampTypedFrame = try deserialize(data: self.d) as! YampTypedFrame
@@ -77,9 +78,9 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     func handshakeReceived(frame: HandshakeFrame){
         let v = frame.version
         
-        if let s = self.onRedirect?() {
-            self.cancel(reason: s, closeCode: .Redirect)
-            self.onClose?("Redirect to \(s)", .Redirect)
+        if let str = self.onRedirect?() {
+            self.cancel(reason: str, closeCode: .Redirect)
+            self.onClose?("Redirect to \(str)", .Redirect)
             return
         }
         

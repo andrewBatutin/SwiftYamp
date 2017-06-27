@@ -91,7 +91,7 @@ class TableOfContentsSpec: QuickSpec {
                     let redirectClose = CloseFrame(closeCode: .Redirect, message: "ws://localhost:7777")
                     var closeCode:CloseCodeType?
                     let sut = WebSocketConnection(url: "ws://localhost:8888")!
-                    
+                    var reasonRedirect:String?
                     var isConnected = false
                     var handshakeSend:HandshakeFrame?
                     
@@ -112,13 +112,14 @@ class TableOfContentsSpec: QuickSpec {
                         
                         sut.webSocket?.onData?(try! h.toData())
                         
-                        expect(isConnected).toEventually(beTrue())
-                        expect(handshakeSend!.version).toEventually(equal(UInt16(0x01)))
-                        expect(reason).toEventually(equal("ws://localhost:7777"))
+                        reasonRedirect = reason
                         
                     }
                     sut.webSocket?.onData?(try! redirectClose.toData())
                     expect(closeCode).toEventually(equal(CloseCodeType.Redirect))
+                    expect(isConnected).toEventually(beTrue())
+                    expect(handshakeSend!.version).toEventually(equal(UInt16(0x01)))
+                    expect(reasonRedirect!).toEventually(equal("ws://localhost:7777"))
                 }
                 
             }

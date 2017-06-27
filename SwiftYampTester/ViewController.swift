@@ -32,13 +32,15 @@ class ViewController: UIViewController {
         socket?.sendMessage(uri: "mul", message: "22")
     }
     
+    @IBAction func onSendEventButton(_ sender: Any) {
+        socket?.sendEvent(uri: "mul", message: "22")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         socket = WebSocketConnection(url: "ws://localhost:8888")!
-        
-        
         
         socket?.onConnect = {
             print("websocket is connected")
@@ -49,7 +51,7 @@ class ViewController: UIViewController {
         }
         //websocketDidReceiveMessage
         socket?.onResponse = { (response: ResponseFrame) in
-            print("got some text: \(response)")
+            print("got some text: \(response.payload() as String?)")
         }
         
     }
