@@ -8,7 +8,7 @@
 
 import Quick
 import Nimble
-
+@testable import SwiftYamp
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {

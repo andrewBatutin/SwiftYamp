@@ -733,7 +733,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A94A5B6197097ACAC630C8B /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTester/Info.plist;
@@ -748,7 +748,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24923E46D53A36B9899C328B /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTester/Info.plist;
@@ -907,7 +907,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -921,7 +921,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -8,9 +8,10 @@
 
 import Foundation
 import Starscream
+import CocoaLumberjack
 
 public class WebSocketConnection: YampConnection, YampMessageConnection, YampConnectionCallback, YampDataCallback{
-    var d:Data = Data()
+    
     public var onConnect: ((Void)->Void)?
     public var onClose: ((String, CloseCodeType)->Void)?
     public var onRedirect: ((Void) -> String)?
@@ -19,8 +20,9 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     public var onPong: ((Data?) -> Void)?
     var onDataReceived: ((Data?) -> Void)?
     var onDataSend: ((Data?) -> Void)?
-    let versionSupported:[UInt16] =  [0x01]
-    var webSocket:WebSocket?
+    private var data:Data = Data()
+    public var versionSupported:[UInt16] =  [0x01]
+    public private(set) var webSocket:WebSocket?
     
     public init?(url: String){
         guard let serverUrl = URL(string: url) else {
@@ -44,35 +46,38 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     }
     
     private func incomingDataHandler() -> ((Data) -> Void)?{
-        self.d = Data()
+        self.data = Data()
         return { [unowned self] (data: Data) in
-            self.d.append(data)
+            self.data.append(data)
             do{
-                let frame:YampTypedFrame = try deserialize(data: self.d) as! YampTypedFrame
-                self.onDataReceived?(self.d)
-                switch frame.frameType {
-                case .Handshake:
-                    self.handshakeReceived(frame: frame as! HandshakeFrame)
-                case .Close:
-                    let closeFrame:CloseFrame = frame as! CloseFrame
-                    self.closeReceived(frame: closeFrame)
-                case .Ping:
-                    let pingFrame = frame as! PingFrame
-                    let pongFrame = PingFrame(ack: true, size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
-                    self.sendFrame(frame: pongFrame)
-                case .Event:
-                    self.onEvent?(frame as! EventFrame)
-                case .Response:
-                    self.onResponse?(frame as! ResponseFrame)
-                default:
-                    print("ops")
-                }
-                self.d = Data()
+                let frame:YampTypedFrame = try deserialize(data: self.data) as! YampTypedFrame
+                self.onDataReceived?(self.data)
+                self.handleFrame(frame: frame)
+                self.data = Data()
             }catch(let exp){
-                print(exp)
+                DDLogWarn(exp.localizedDescription)
             }
         }
-
+    }
+    
+    func handleFrame(frame:YampTypedFrame){
+        switch frame.frameType {
+        case .Handshake:
+            self.handshakeReceived(frame: frame as! HandshakeFrame)
+        case .Close:
+            let closeFrame:CloseFrame = frame as! CloseFrame
+            self.closeReceived(frame: closeFrame)
+        case .Ping:
+            let pingFrame = frame as! PingFrame
+            let pongFrame = PingFrame(ack: true, size:UInt8(pingFrame.payload.characters.count), payload: pingFrame.payload)
+            self.sendFrame(frame: pongFrame)
+        case .Event:
+            self.onEvent?(frame as! EventFrame)
+        case .Response:
+            self.onResponse?(frame as! ResponseFrame)
+        default:
+            DDLogInfo("we've got some unxpected frame \(frame.frameType)")
+        }
     }
 
     func handshakeReceived(frame: HandshakeFrame){
@@ -100,7 +105,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
         case .Redirect:
             self.reconnect(url: frame.message)
         default:
-            print("")
+            DDLogInfo("close with code \(frame.closeCode)")
         }
         
     }
@@ -133,7 +138,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
             self.onDataSend?(data)
             webSocket?.write(data: data)
         }catch(let exp){
-            print(exp)
+            DDLogError(exp.localizedDescription)
         }
     }
     
@@ -152,7 +157,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     
     public func sendEvent(uri: String, message: String){
         guard let data = message.data(using: .utf8) else {
-            print("Error converting string to data")
+            DDLogError("Error converting string to data")
             return
         }
         let h = UserMessageHeaderFrame(uid: messageUuid(), size: UInt8(uri.characters.count), uri: uri)
@@ -163,7 +168,7 @@ public class WebSocketConnection: YampConnection, YampMessageConnection, YampCon
     
     public func sendMessage(uri: String, message: String) {
         guard let data = message.data(using: .utf8) else {
-            print("Error converting string to data")
+            DDLogError("Error converting string to data")
             return
         }
         self.sendData(uri: uri, data: data)
