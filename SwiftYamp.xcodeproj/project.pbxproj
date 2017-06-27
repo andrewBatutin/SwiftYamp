@@ -109,6 +109,10 @@
 		A4804F6B1EF137C6005CBCCD /* CancelFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelFrameTest.swift; sourceTree = "<group>"; };
 		A4804F6D1EF14045005CBCCD /* ResponseFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseFrame.swift; sourceTree = "<group>"; };
 		A4804F701EF14337005CBCCD /* ResponseFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseFrameTest.swift; sourceTree = "<group>"; };
+		A489AAFB1F026DDA006C2DF5 /* dfdfd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dfdfd.h; sourceTree = "<group>"; };
+		A489AAFC1F026DDA006C2DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A489AB081F026DDB006C2DF5 /* dfdfdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dfdfdTests.swift; sourceTree = "<group>"; };
+		A489AB0A1F026DDB006C2DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A494DC981EF273B1000698E6 /* SwiftYampTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftYampTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A494DC9A1EF273B1000698E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A494DC9C1EF273B1000698E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +203,24 @@
 			path = WebSocketServer;
 			sourceTree = "<group>";
 		};
+		A489AAFA1F026DDA006C2DF5 /* dfdfd */ = {
+			isa = PBXGroup;
+			children = (
+				A489AAFB1F026DDA006C2DF5 /* dfdfd.h */,
+				A489AAFC1F026DDA006C2DF5 /* Info.plist */,
+			);
+			path = dfdfd;
+			sourceTree = "<group>";
+		};
+		A489AB071F026DDB006C2DF5 /* dfdfdTests */ = {
+			isa = PBXGroup;
+			children = (
+				A489AB081F026DDB006C2DF5 /* dfdfdTests.swift */,
+				A489AB0A1F026DDB006C2DF5 /* Info.plist */,
+			);
+			path = dfdfdTests;
+			sourceTree = "<group>";
+		};
 		A494DC991EF273B1000698E6 /* SwiftYampTester */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +240,8 @@
 				A4BF1ED81EEEA967006B075C /* SwiftYamp */,
 				A4BF1EE31EEEA967006B075C /* SwiftYampTests */,
 				A494DC991EF273B1000698E6 /* SwiftYampTester */,
+				A489AAFA1F026DDA006C2DF5 /* dfdfd */,
+				A489AB071F026DDB006C2DF5 /* dfdfdTests */,
 				A4BF1ED71EEEA967006B075C /* Products */,
 				C91A9747702B814636A750E0 /* Pods */,
 				702C33D16BE9766EAC06C488 /* Frameworks */,
