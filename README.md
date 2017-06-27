@@ -1,4 +1,4 @@
-[![Build Status](https://www.bitrise.io/app/5e77e826a80f7127/status.svg?token=c9VORAwDexEavp7T-DPt5g&branch=master)](https://www.bitrise.io/app/5e77e826a80f7127)
+[![Build Status](https://www.bitrise.io/app/18c4b75b277ee347/status.svg?token=0OcNGBfGYSN_OiiOlDglzA&branch=master)](https://www.bitrise.io/app/18c4b75b277ee347)
 
 ## SwiftYamp
 
