@@ -11,6 +11,7 @@ import Starscream
 import SwiftYamp
 import ByteBackpacker
 
+
 class ViewController: UIViewController {
     var d:Data = Data()
     var socket:WebSocketConnection?
@@ -25,11 +26,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onCloseButton(_ sender: Any) {
-        socket?.cancel(reason: "close")
+        socket?.cancel(reason: "close", closeCode:  .Unknown)
     }
     
     @IBAction func onSendRequestButton(_ sender: Any) {
         socket?.sendMessage(uri: "mul", message: "22")
+    }
+    
+    @IBAction func onSendEventButton(_ sender: Any) {
+        socket?.sendEvent(uri: "mul", message: "22")
     }
     
     
@@ -38,17 +43,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         socket = WebSocketConnection(url: "ws://localhost:8888")!
         
-        
         socket?.onConnect = {
             print("websocket is connected")
         }
         //websocketDidDisconnect
-        socket?.onClose = { (reason: String?) in
+        socket?.onClose = { (reason, closeCode) in
             print("websocket is disconnected: \(String(describing: reason))")
         }
         //websocketDidReceiveMessage
         socket?.onResponse = { (response: ResponseFrame) in
-            print("got some text: \(response)")
+            print("got some text: \(response.payload() as String?)")
         }
         
     }

@@ -50,6 +50,14 @@
                                     <action selector="onSendRequestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dz-gK-J3t"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rc-tq-nln">
+                                <rect key="frame" x="16" y="180" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send Event"/>
+                                <connections>
+                                    <action selector="onSendEventButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="424-TR-b4y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

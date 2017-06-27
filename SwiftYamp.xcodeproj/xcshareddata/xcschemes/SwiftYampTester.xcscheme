@@ -38,6 +38,16 @@
                ReferencedContainer = "container:SwiftYamp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A489AB001F026DDB006C2DF5"
+               BuildableName = "dfdfdTests.xctest"
+               BlueprintName = "dfdfdTests"
+               ReferencedContainer = "container:SwiftYamp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

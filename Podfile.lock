@@ -1,15 +1,26 @@
 PODS:
   - ByteBackpacker (1.1.1)
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Swift (3.2.0):
+    - CocoaLumberjack/Default
+  - Nimble (7.0.1)
+  - Quick (1.1.0)
   - Starscream (2.0.4)
 
 DEPENDENCIES:
   - ByteBackpacker
+  - CocoaLumberjack/Swift
+  - Nimble
+  - Quick
   - Starscream
 
 SPEC CHECKSUMS:
   ByteBackpacker: 456301d0a1f5a7fded8c8e87c9ad295a8f4b3056
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
+  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   Starscream: df5974ee928b157c8eda8af8de7c620276b7dfcc
 
-PODFILE CHECKSUM: ef6273be77661200c1e74b176472242f0de745b6
+PODFILE CHECKSUM: 3f74fb58c7cce2a764649281fc40944ee59005b0
 
 COCOAPODS: 1.2.1

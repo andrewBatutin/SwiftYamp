@@ -35,13 +35,27 @@ public struct RequestFrame: Equatable, YampFrame, YampTypedFrame{
         body = try parseBody(data: data.subdata(in: offset..<data.count))
     }
     
-    public func  toData() throws -> Data {
+    public func toData() throws -> Data {
         var res = try type.toData()
         let hData = try header.toData()
         let bData = try body.toData()
         res.append(hData)
         res.append(bData)
         return res
+    }
+    
+    public func payload() -> Data?{
+        guard let data = body.body else {
+            return nil
+        }
+        return Data(bytes: data)
+    }
+    
+    public func payload() -> String?{
+        guard let data = body.body else {
+            return nil
+        }
+        return String(data: Data(bytes: data), encoding: .utf8)
     }
 
 }

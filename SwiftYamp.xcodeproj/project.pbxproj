@@ -28,7 +28,6 @@
 		A494DCA01EF273B1000698E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494DC9E1EF273B1000698E6 /* Main.storyboard */; };
 		A494DCA21EF273B1000698E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A494DCA11EF273B1000698E6 /* Assets.xcassets */; };
 		A494DCA51EF273B1000698E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494DCA31EF273B1000698E6 /* LaunchScreen.storyboard */; };
-		A494DCB81EF27FF7000698E6 /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A494DCB91EF28007000698E6 /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
 		A494DCBA1EF28007000698E6 /* SwiftYamp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4BF1EE01EEEA967006B075C /* SwiftYamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BF1ED61EEEA967006B075C /* SwiftYamp.framework */; };
@@ -40,6 +39,7 @@
 		A4DA9D9E1EFA621F00151B98 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA9D9D1EFA621F00151B98 /* Utils.swift */; };
 		A4DA9D9F1EFA621F00151B98 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA9D9D1EFA621F00151B98 /* Utils.swift */; };
 		A4DA9DA51EFA632F00151B98 /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA9DA11EFA62E000151B98 /* UtilsTest.swift */; };
+		A4E348561EFBC08D006D8D2B /* YampConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E348551EFBC08D006D8D2B /* YampConnectionTest.swift */; };
 		A4EC701D1EEFCF68006F7F54 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701B1EEFCF68006F7F54 /* Parser.swift */; };
 		A4EC701E1EEFCF68006F7F54 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC701C1EEFCF68006F7F54 /* Serializer.swift */; };
 		A4EC70211EEFCF88006F7F54 /* SystemFrameModelsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */; };
@@ -109,6 +109,10 @@
 		A4804F6B1EF137C6005CBCCD /* CancelFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelFrameTest.swift; sourceTree = "<group>"; };
 		A4804F6D1EF14045005CBCCD /* ResponseFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseFrame.swift; sourceTree = "<group>"; };
 		A4804F701EF14337005CBCCD /* ResponseFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseFrameTest.swift; sourceTree = "<group>"; };
+		A489AAFB1F026DDA006C2DF5 /* dfdfd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dfdfd.h; sourceTree = "<group>"; };
+		A489AAFC1F026DDA006C2DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A489AB081F026DDB006C2DF5 /* dfdfdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dfdfdTests.swift; sourceTree = "<group>"; };
+		A489AB0A1F026DDB006C2DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A494DC981EF273B1000698E6 /* SwiftYampTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftYampTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A494DC9A1EF273B1000698E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A494DC9C1EF273B1000698E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		A4C841661EF1184C0093EBEE /* EventFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFrame.swift; sourceTree = "<group>"; };
 		A4DA9D9D1EFA621F00151B98 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A4DA9DA11EFA62E000151B98 /* UtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
+		A4E348551EFBC08D006D8D2B /* YampConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YampConnectionTest.swift; sourceTree = "<group>"; };
 		A4EC701B1EEFCF68006F7F54 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A4EC701C1EEFCF68006F7F54 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		A4EC70201EEFCF88006F7F54 /* SystemFrameModelsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFrameModelsTest.swift; sourceTree = "<group>"; };
@@ -148,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A494DCB91EF28007000698E6 /* SwiftYamp.framework in Frameworks */,
-				A494DCB81EF27FF7000698E6 /* SwiftYamp.framework in Frameworks */,
 				FCD975898535C46DE2DE18F0 /* Pods_SwiftYamp_SwiftYampTester.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +203,24 @@
 			path = WebSocketServer;
 			sourceTree = "<group>";
 		};
+		A489AAFA1F026DDA006C2DF5 /* dfdfd */ = {
+			isa = PBXGroup;
+			children = (
+				A489AAFB1F026DDA006C2DF5 /* dfdfd.h */,
+				A489AAFC1F026DDA006C2DF5 /* Info.plist */,
+			);
+			path = dfdfd;
+			sourceTree = "<group>";
+		};
+		A489AB071F026DDB006C2DF5 /* dfdfdTests */ = {
+			isa = PBXGroup;
+			children = (
+				A489AB081F026DDB006C2DF5 /* dfdfdTests.swift */,
+				A489AB0A1F026DDB006C2DF5 /* Info.plist */,
+			);
+			path = dfdfdTests;
+			sourceTree = "<group>";
+		};
 		A494DC991EF273B1000698E6 /* SwiftYampTester */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +240,8 @@
 				A4BF1ED81EEEA967006B075C /* SwiftYamp */,
 				A4BF1EE31EEEA967006B075C /* SwiftYampTests */,
 				A494DC991EF273B1000698E6 /* SwiftYampTester */,
+				A489AAFA1F026DDA006C2DF5 /* dfdfd */,
+				A489AB071F026DDB006C2DF5 /* dfdfdTests */,
 				A4BF1ED71EEEA967006B075C /* Products */,
 				C91A9747702B814636A750E0 /* Pods */,
 				702C33D16BE9766EAC06C488 /* Frameworks */,
@@ -251,6 +275,7 @@
 		A4BF1EE31EEEA967006B075C /* SwiftYampTests */ = {
 			isa = PBXGroup;
 			children = (
+				A4E348541EFBC081006D8D2B /* Server */,
 				A4DA9DA01EFA62D900151B98 /* Utils */,
 				A4EC70221EEFCFB3006F7F54 /* Parser */,
 				A4EC701F1EEFCF75006F7F54 /* Models */,
@@ -298,6 +323,14 @@
 				A4DA9DA11EFA62E000151B98 /* UtilsTest.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A4E348541EFBC081006D8D2B /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				A4E348551EFBC08D006D8D2B /* YampConnectionTest.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 		A4EC701A1EEFCF68006F7F54 /* Parser */ = {
@@ -678,6 +711,7 @@
 				A4804F671EF12CF8005CBCCD /* RequestFrameTest.swift in Sources */,
 				A4804F651EF12BAF005CBCCD /* RequestFrame.swift in Sources */,
 				A4BF1EF91EEEAA84006B075C /* FrameModels.swift in Sources */,
+				A4E348561EFBC08D006D8D2B /* YampConnectionTest.swift in Sources */,
 				A4EC70261EEFD58B006F7F54 /* Serializer.swift in Sources */,
 				A4EC70421EF03501006F7F54 /* UserMessageHeaderFrame.swift in Sources */,
 				A4DA9D9F1EFA621F00151B98 /* Utils.swift in Sources */,
@@ -723,7 +757,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A94A5B6197097ACAC630C8B /* Pods-SwiftYamp-SwiftYampTester.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTester/Info.plist;
@@ -738,7 +772,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24923E46D53A36B9899C328B /* Pods-SwiftYamp-SwiftYampTester.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTester/Info.plist;
@@ -897,7 +931,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9028460ACAFDDDD612A99C9E /* Pods-SwiftYampTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -911,7 +945,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC4BCB047F532A956DD69657 /* Pods-SwiftYampTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = JZHM2Q974G;
 				INFOPLIST_FILE = SwiftYampTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

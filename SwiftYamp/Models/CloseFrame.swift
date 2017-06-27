@@ -36,15 +36,15 @@ public struct CloseFrame: Equatable, YampFrame, YampTypedFrame{
         return lhs.type == rhs.type && lhs.closeCode == rhs.closeCode && lhs.size == rhs.size && lhs.message == rhs.message
     }
     
-    public init(closeCode: CloseCodeType, size: UInt16) {
+    public init(closeCode: CloseCodeType) {
         self.closeCode = closeCode
-        self.size = size
+        self.size = 0
     }
     
-    public init(closeCode: CloseCodeType, size: UInt16, reason: String?) {
+    public init(closeCode: CloseCodeType, message: String?) {
         self.closeCode = closeCode
-        self.size = size
-        self.message = reason ?? ""
+        self.size = UInt16(message?.characters.count ?? 0)
+        self.message = message ?? ""
     }
     
     public init(data: Data) throws{

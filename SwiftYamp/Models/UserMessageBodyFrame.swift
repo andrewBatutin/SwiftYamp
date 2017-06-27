@@ -11,8 +11,8 @@ import ByteBackpacker
 
 public struct UserMessageBodyFrame: Equatable, YampFrame {
     
-    let size:UInt32
-    var body:[UInt8]? // (optional) maximum 4Gb
+    public let size:UInt32
+    public private(set) var body:[UInt8]? // (optional) maximum 4Gb
     
     public static func ==(lhs: UserMessageBodyFrame, rhs: UserMessageBodyFrame) -> Bool {
         let lBody = lhs.body ?? []
